@@ -1,0 +1,1919 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://tno-logistics.nl/LogiCO#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:time="http://www.w3.org/2006/time#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://tno-logistics.nl/LogiCO">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LogiCO (Logistics Core Ontology) contains the core concepts and properties used in the Logistics domain</rdfs:comment>
+    <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LogiCO</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >$Date: 2013/11/26 14:22:28 $</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Pallet">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Package"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pallet</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MoveableEquipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Amount">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A quantity, independently from how it is measured, computed, etc.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Amount in DOLCE UltraLite (DUL) ontology.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Amount</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Abstract"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Carrier">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Actor"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Carrier</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is carrying the goods and is operating the transport means. That's why a synonym of carrier is Operator.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Barge">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Barge</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TransportMeans"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Container">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:ID="ContainerSize"/>
+        </owl:onClass>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasContainerSize"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Container</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MoveableEquipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Train">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Train</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TransportMeans"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Crane">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Crane</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StaticEquipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tray">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tray</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Warehouse">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Warehouse</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Facility"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Toxic">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Toxic</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ProductClass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PhysicalState">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Abstract"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical state</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Entity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Entity in:&#xD;
+- DOLCE UltraLite (DUL) ontology:  'Anything: real, possible, or imaginary, which some modeller wants to talk about for some purpose.'&#xD;
+- PROTON ontology: 'Any sort of an entity of interest, usually something existing, happening, or purely abstract'</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Anything of interest in a certain universe of discourse (in our case, the logistics domain). </rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Entity</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Object">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Any physical, social, or mental object, or a substance.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Object in DOLCE UltraLite (DUL) ontology.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Object</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="EquipmentSize">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Size"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equipment size</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TemporalRegionUnit">
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2006/time"/>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#TemporalUnit"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Temporal region unit</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UnitOfMeasure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="KGM">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KGM</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="WeightUnit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Size">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PhysicalAttribute"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Size</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="UniformLoadDevice">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Uniform load device</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MoveableEquipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Facility">
+    <owl:disjointWith>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="FacilityStructure"/>
+          <owl:Class rdf:about="#StaticEquipment"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:about="#FacilityStructure"/>
+        </owl:onClass>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:ID="isPartOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:about="#StaticEquipment"/>
+        </owl:onClass>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hosts"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="GeoPoint"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasLocation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specialization of the concept of Physical Place in DOLCE UltraLite (DUL) ontology: 'A physical object that is inherently located; for example, a water area.'</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Static resource (usually a building) built, installed or established to facilitate related activities in a point location. A facility has a location of type GeoPoint (in contrast to facility structures, such as ports or airports, which have a location of type GeoArea since they denote an entire geographical area)</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Facility</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StaticResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Terminal">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Terminal</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Facility"/>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Forwarder">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Actor"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Forwarder</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is handling/organizing the shipment on behalf of somebody else that owns the goods. This organization sometimes is hust about having a phone and a desk, maybe a computer, and booking resources. In other cases, for example DHL, the forwarder also executes some parts because he owns resources (airplanes, trucks), but the forwarder never own the goods himself.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Port">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Port</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#FacilityStructure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpaceRegionUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Space region unit</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#UnitOfMeasure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Height">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PhysicalAttribute"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Height</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Celsius">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Celsius</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TemperatureUnit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Region">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GeoArea"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Region</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasRegionName"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Location"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PhysicalAttributeUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical attribute unit</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#UnitOfMeasure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#TransportMeans">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="#TransportMeans"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isMovedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reusable object that facilitates the activity of transport and moves on its own (powered vehicle)</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Transport means</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MoveableResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RailwayTransport">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TransportMode"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Railway transport</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MonetaryUnit">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="MonetaryAmount"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="measures"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasAmountValue"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Monetary unit</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AmountUnit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#FacilityStructure">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:about="#StaticEquipment"/>
+        </owl:onClass>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hosts"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#GeoArea"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasLocation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specialization of the concept of Physical Place in DOLCE UltraLite (DUL) ontology: 'A physical object that is inherently located; for example, a water area.'</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Static resource built, installed or established to facilitate related activities in a geographical area. A facility structure has a location of type GeoArea (in contrast to a facility, which has a location of type GeoPoint since it denotes a point location)</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Facility structure</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StaticResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#StaticResource">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MoveableResource"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Static Resource is a Physical Resource that is used to handle moveable objects in a facility prior to their transportation.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Static resource</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PhysicalResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Carton">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Carton</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Box">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Box</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MoveableEquipment">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="#TransportMeans"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#isMovedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="#TransportMeans"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isContainedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="hasEquipmentID"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A moveable euipment is a reusable object used for containment, protection and movement of product classes with or without package. A moveable equipment cannot move on its own (unpowered vehicle), but can be pulled by or contained in a transport means</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Moveable equipment</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MoveableResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Requirement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Requirement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Object"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Building">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GeoPoint"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Building</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasBuildingNumber"/>
+        </owl:onProperty>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasBuildingName"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Location"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Airport">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Airport</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FacilityStructure"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SeaTransport">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TransportMode"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sea transport</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Perishable">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Perishable</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProductClass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Regular">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Regular</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProductClass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Van">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Van</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#TransportMeans"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SemiTrailer">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Semi trailer</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Truck"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PhysicalResource">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MoveableResource"/>
+          <owl:Class rdf:about="#StaticResource"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#PhysicalAttribute"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasPhysicalAttribute"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="SpaceRegion"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasLocation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="Temperature"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasTemperature"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Amount"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasQuantity"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical resource</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical resources are physical objects that are used in logistics activities, such as, for example, the moveable resources used during the activity of transport (i.e., the transport means and equipment used to move items to their destination). A physical resource is further specialized in a Moveable Resource, which is characterized by the capability of moving on its own or being contained for the purpose of transportation, and a Static Resource, which is used to handle moveable objects in a facility prior to their transportation.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of PhysicalObject in DOLCE UltraLite (DUL) ontology: 'Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)'</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Stevedore">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Actor"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stevedore</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is phisically handling the containers in a location (sea transport related)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Flammable">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flammable</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProductClass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SeaTerminalOperator">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TerminalOperator"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sea terminal operator</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#GeoArea">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SpaceRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Geo area</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Actor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An actor represents a company, an authority or an individual that provides or requests activities and operates on physical resources. We have identified a number of Actor types that are relevant for logistics, but the list can be further extended.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Actor</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Agent in the DOLCE UltraLite (DUL) ontology: 'Any agentive Object , either physical (e.g. a whale, a robot, an oak), or social (e.g. a corporation, an institution, a community)'.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Modality">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A modality is an abstract that denotes the specific mode in which an entity is used. For example, the mode of transport is a modality that denotes which particluar mode is used for the activity of transport (i.e., air transport, road transport, etc.).</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Modality</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Abstract"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SizeUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Size unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalAttributeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CustomsBroker">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Customs broker</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is acting on behalf of an importer (who can be the buyer) or exporter (who can be the seller) for customs related issues</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Capacity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PhysicalAttribute"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Capacity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#TerminalOperator">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Terminal operator</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Street">
+    <rdfs:subClassOf rdf:resource="#GeoArea"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Street</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasStreetName"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasStreetNumber"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Location"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Buyer">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Buyer</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is paying</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#GeoPoint">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SpaceRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Geo point</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#WeightUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Weight unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalAttributeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ContainerSize">
+    <rdfs:subClassOf rdf:resource="#EquipmentSize"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Container size</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Bottle">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bottle</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Document">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Document</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Object"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Shipper">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Shipper</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is shipping (sometimes is the same than the seller) - Consignor is a synonym of Shipper</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#PhysicalAttribute">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Physical Attribute in DOLCE UltraLite (DUL) ontology.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical value of a physical object, e.g. density, color, etc.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical attribute</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Abstract"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+  </owl:Class>
+  <owl:Class>
+    <owl:oneOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:oneOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Address">
+    <rdfs:subClassOf rdf:resource="#Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Address</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasBuilding"/>
+        </owl:onProperty>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="#Building"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasCity"/>
+        </owl:onProperty>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:ID="City"/>
+        </owl:onClass>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasCountry"/>
+        </owl:onProperty>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:ID="Country"/>
+        </owl:onClass>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasStreet"/>
+        </owl:onProperty>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="#Street"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasPostalCode"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="GrossWeight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Weight"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gross weight</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Activity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Activity denotes an action that is relevant for the purpose of logistics and provides value for a potential customer.                                                              &#xD;
+Activities and their properties are further specialized in the LogiServ (Logistics Service Ontology).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Activity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Weight">
+    <rdfs:subClassOf rdf:resource="#PhysicalAttribute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Weight</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NetWeight">
+    <rdfs:subClassOf rdf:resource="#Weight"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Net weight</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="RoadTransport">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TransportMode"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Road transport</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MoveableResource">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Moveable Resource is a physical resource characterized by the capability of moving on its own or being contained for the purpose of transportation</rdfs:comment>
+    <owl:disjointWith rdf:resource="#StaticResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Moveable resource</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalResource"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Location">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Place in the DOLCE UltraLite (DUL) ontology:  'A location, in a very generic sense: a political geographic entity (Roma, Lesotho), a non-material location determined by the presence of other entities ('the area close to Roma'), pivot events or signs ('the area where the helicopter fell'), complements of other entities ('the area under the table'), etc. In this generic sense, a Place is a relative location.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >It represents the relative location used to define the place(s) relevant for logistics activities. For an absolute location, see the class SpaceRegion.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Location</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Object"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Number">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#hasAmountValue"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Number</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AmountUnit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:about="#UnitOfMeasure">
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of UnitOf Measure in DOLCE UltraLite (DUL) ontology.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Units of measure are parameters on regions (Space Regions, Temporal Regions), which can be valued as datatype values.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Parameter"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unit of measure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="GeoCoordinateSystem">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Geo coordinate system</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#SpaceRegionUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LenghtUnith">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lenght unith</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalAttributeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Airplane">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Airplane</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#TransportMeans"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Lenght">
+    <rdfs:subClassOf rdf:resource="#PhysicalAttribute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lenght</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Fahrenheit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fahrenheit</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TemperatureUnit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Instant">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TemporalRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Instant</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#Instant"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ContainerSizeUnit">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#ContainerSize"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#measures"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Container size unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#SizeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Vessel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vessel</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#TransportMeans"/>
+  </owl:Class>
+  <owl:Class rdf:ID="InlandTerminalOperator">
+    <rdfs:subClassOf rdf:resource="#TerminalOperator"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inland terminal operator</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#TemperatureUnit">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Temperature"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#measures"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Temperature"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#measures"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Temperature unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalAttributeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TowedBarge">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Towed barge</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MoveableEquipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Tank">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tank</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HeavyMachinery">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Heavy machinery</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProductClass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Abstract">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Any Entity that cannot be located in space-time. </rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Abstract in DOLCE UltraLite (DUL) ontology.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Insurer">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Insurer</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="HeightUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Height unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalAttributeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SpaceRegion">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Space Region in DOLCE UltraLite (DUL) ontology:  'Any Region in a dimensional space that is used to localize an Entity'</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >It represents the specific dimensional space tha defines the absolute location of an entity. In contrast, the class Location (which is a subclass of Object) represents the relative location of an entity.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Space region</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Abstract"/>
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ProductClass">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="isOversize"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:about="#Package"/>
+        </owl:onClass>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#isContainedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="isDangerous"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="#TransportMeans"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#isMovedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#MoveableResource"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A product class is used to select proper package, moveable equipment and transport means for several logistics activities, especially for transport. The selection is based on relevant properties of the product class, such as its physical state (solid, liquid, gas), required temperature, dangerousness, etc.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Product class</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="isRefeer"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="#PhysicalState"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasPhysicalState"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AirTransport">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TransportMode"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Air transport</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#StaticEquipment">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Facility"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isUsedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#hasEquipmentID"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reusable object that is used in a facility to handle moveable resources</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Static equipment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#StaticResource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Hub">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hub</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Facility"/>
+  </owl:Class>
+  <owl:Class rdf:about="#City">
+    <rdfs:subClassOf rdf:resource="#GeoArea"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >City</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasCityName"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Location"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Organic">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organic</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ProductClass"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TransportMode">
+    <rdfs:subClassOf rdf:resource="#Modality"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Transport mode</rdfs:label>
+  </owl:Class>
+  <owl:Class>
+    <owl:oneOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:oneOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Bucket">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bucket</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Trailer">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Trailer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MoveableEquipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Crate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Crate</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Country">
+    <rdfs:subClassOf rdf:resource="#GeoArea"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Country</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hasCountryName"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Location"/>
+  </owl:Class>
+  <owl:Class rdf:ID="EquipmentRequirement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equipment requirement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Requirement"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Parameter">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Concept that classifies an Abstract, such as, for example, a Physical Attribute, a Space Region or a Temporal Region. The difference between an Abstract and a Parameter is that abstracts represent sets of observable values, e.g. 'the height of a given building', while parameters represent constraints or selections on observable values, e.g. 'VeryHigh'. </rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Equivalent to the concept of Parameter in DOLCE UltraLite (DUL) ontology.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Parameter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Object"/>
+    <rdfs:seeAlso rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Tractor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tractor</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Truck"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Drum">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Drum</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Bank">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bank</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Barrel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Barrel</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Interval">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TemporalRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Interval</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NormalTruck">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Normal truck</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Truck"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RailwayWagon">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Railway wagon</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MoveableEquipment"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Truck">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Truck</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#TransportMeans"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Width">
+    <rdfs:subClassOf rdf:resource="#PhysicalAttribute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Width</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Basket">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Basket</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Consignee">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Consignee</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is receving (sometimes buyer and consignee are the same)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Temperature">
+    <rdfs:subClassOf rdf:resource="#PhysicalAttribute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Temperature</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="RailwayStation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Railway station</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Facility"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WidthUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Width unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalAttributeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Consignor">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Consignor</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is shipping (sometimes is the same than the seller) - Shipper is a synonym of Consignor</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MonetaryAmount">
+    <rdfs:subClassOf rdf:resource="#Amount"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Monetary amount</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A type of amount (monetary)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Bag">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bag</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Percentage">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#hasAmountValue"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Percentage</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AmountUnit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Bulk">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bulk</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ProductClass"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Volume">
+    <rdfs:subClassOf rdf:resource="#PhysicalAttribute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Volume</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Feet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Feet</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ContainerSizeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="GovernmentAgency">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Government agency</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Event">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Event is a trigger that can be used to synchronize two or more activities. Events and their properties are further specialized in LogiServ (Logistics Service Ontology). With this definition, we specialize the concept of Event defined in a general way (on purpose) in the DOLCE UltraLite (DUL) ontology. According to the DUL definition, an event consists of any physical, social, or mental process, event, or state.                                                                                                                       </rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Case">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Case</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Package"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CustomsAuthorithy">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Customs authorithy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Electronics">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Electronics</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Regular"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AmountUnit">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Amount"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#measures"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Amount"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#measures"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Amount unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#UnitOfMeasure"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TemporalRegion">
+    <rdfs:subClassOf rdf:resource="#Abstract"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Temporal region</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Any Region in a dimensional space that aims at representing time. We use it to represent the start time, end time or time interval associated to activities. 																															        Equivalent to the concept of Temporal Entity in the Time ontology</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2006/time"/>
+  </owl:Class>
+  <owl:Class rdf:ID="InlandWaterTransport">
+    <rdfs:subClassOf rdf:resource="#TransportMode"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inland water transport</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Seller">
+    <rdfs:subClassOf rdf:resource="#Actor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Seller</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who is selling (is getting paid)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Package">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="#TransportMeans"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#isMovedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="#MoveableEquipment"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#isContainedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Number"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasQuantity"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Material used for containment, protection and movement of product classes</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Package</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#MoveableResource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="VolumeUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Volume unit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhysicalAttributeUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="GrossVolume">
+    <rdfs:subClassOf rdf:resource="#Volume"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gross volume</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#hasPhysicalAttribute">
+    <rdfs:domain rdf:resource="#Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has physical attribute</rdfs:label>
+    <rdfs:range rdf:resource="#PhysicalAttribute"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasBuilding">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has building</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasLocation"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasStreet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has street</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasLocation"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="contains">
+    <rdfs:range rdf:resource="#MoveableResource"/>
+    <rdfs:domain rdf:resource="#MoveableResource"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#isContainedIn"/>
+    </owl:inverseOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >contains</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isUsedIn">
+    <rdfs:domain rdf:resource="#Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is used in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hosts">
+    <rdfs:range rdf:resource="#StaticResource"/>
+    <rdfs:domain rdf:resource="#StaticResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hosts</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasLocation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has location</rdfs:label>
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdfs:range rdf:resource="#Entity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasPhysicalState">
+    <rdfs:range rdf:resource="#PhysicalState"/>
+    <rdfs:domain rdf:resource="#ProductClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has physical state</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasCountry">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has country</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasLocation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSize">
+    <rdfs:range rdf:resource="#Size"/>
+    <rdfs:domain rdf:resource="#PhysicalResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has size</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasPhysicalAttribute"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRegion">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has region</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasLocation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasCity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has city</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasLocation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#measures">
+    <rdfs:range rdf:resource="#Abstract"/>
+    <rdfs:domain rdf:resource="#UnitOfMeasure"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isMeasuredIn"/>
+    </owl:inverseOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >measures</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasTemperature">
+    <rdfs:range rdf:resource="#Temperature"/>
+    <rdfs:domain rdf:resource="#PhysicalResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has temperature</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasPhysicalAttribute"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWeight">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has weight</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasPhysicalAttribute"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMeasuredIn">
+    <rdfs:range rdf:resource="#UnitOfMeasure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is measured in</rdfs:label>
+    <rdfs:domain rdf:resource="#Abstract"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasQuantity">
+    <rdfs:range rdf:resource="#Amount"/>
+    <rdfs:domain rdf:resource="#Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has quantity</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasContainerSize">
+    <rdfs:range rdf:resource="#ContainerSize"/>
+    <rdfs:domain rdf:resource="#Container"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has container size</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasSize"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isContainedIn">
+    <owl:inverseOf rdf:resource="#contains"/>
+    <rdfs:range rdf:resource="#MoveableResource"/>
+    <rdfs:domain rdf:resource="#MoveableResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is contained in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMovedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="moves"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#MoveableResource"/>
+    <rdfs:domain rdf:resource="#MoveableResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is moved by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#moves">
+    <owl:inverseOf rdf:resource="#isMovedBy"/>
+    <rdfs:range rdf:resource="#MoveableResource"/>
+    <rdfs:domain rdf:resource="#MoveableResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >moves</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#hasBuildingName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="hasName"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Building"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has building name</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#isRefeer">
+    <rdfs:domain rdf:resource="#ProductClass"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="hasSpecialRequirement"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is refeer</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasCountryName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasName"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has country name</rdfs:label>
+    <rdfs:domain rdf:resource="#Country"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#isOversize">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasSpecialRequirement"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is oversize</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasValue">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#UnitOfMeasure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasPostalCode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has postal code</rdfs:label>
+    <rdfs:domain rdf:resource="#Address"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasTemperatureValue">
+    <rdfs:domain rdf:resource="#TemperatureUnit"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has temperature value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasAmountValue">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#AmountUnit"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has amount value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasCityName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has city name</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasName"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#City"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isOpenTop">
+    <rdfs:domain rdf:resource="#MoveableEquipment"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasSpecialRequirement"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is open top</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isPacked">
+    <rdfs:domain rdf:resource="#ProductClass"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasSpecialRequirement"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is packed</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasHeightValue">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#HeightUnit"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has height value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasLenghtValue">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#LenghtUnith"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has lenght value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasRegionName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has region name</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasName"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Region"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#isDangerous">
+    <rdfs:domain rdf:resource="#ProductClass"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasSpecialRequirement"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is dangerous</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isFull">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MoveableEquipment"/>
+          <owl:Class rdf:about="#TransportMeans"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasSpecialRequirement"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is full</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasStreetNumber">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has street number</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="hasNumber"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Street"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasVolumeValue">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#VolumeUnit"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has volume value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has name</rdfs:label>
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasNumber">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has number</rdfs:label>
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasStreetName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="#hasName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has street name</rdfs:label>
+    <rdfs:domain rdf:resource="#Street"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasID">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Object"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has ID</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSizeValue">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SizeUnit"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has size value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasBuildingNumber">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has building number</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#hasNumber"/>
+    <rdfs:domain rdf:resource="#Building"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasWeightValue">
+    <rdfs:domain rdf:resource="#WeightUnit"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has weight value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasSpecialRequirement">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#boolean"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#MoveableResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has special requirement</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasWidthValue">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#WidthUnit"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has width value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="#isPartOf">
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:ID="hasPart"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Entity"/>
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is part of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="#hasPart">
+    <owl:inverseOf rdf:resource="#isPartOf"/>
+    <rdfs:range rdf:resource="#Entity"/>
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has part</rdfs:label>
+  </owl:TransitiveProperty>
+  <owl:FunctionalProperty rdf:about="#hasEquipmentID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MoveableEquipment"/>
+          <owl:Class rdf:about="#StaticEquipment"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="#hasID"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has equipment ID</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

@@ -1,0 +1,49 @@
+[PrefixDeclaration]
+:		http://www.icargo.eu/def/containers#
+ap:		http://www.icargo.eu/example/id/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+LogiCO:		http://tno-logistics.nl/LogiCO#
+
+[SourceDeclaration]
+sourceUri	PostgreSQL
+connectionUrl	jdbc:postgresql://localhost:5432/icargo
+username	postgres
+password	esclppg.
+driverClass	org.postgresql.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	M1
+target		:Location/{id} a :Location ; LogiCO:hasName {description}^^xsd:string . 
+source		SELECT id, description FROM locations;
+			
+
+mappingId	M2
+target		:Truck/{identifier} a :Truck ; LogiCO:hasName {name}^^xsd:string . 
+source		SELECT identifier, name FROM transportmeans WHERE type = 'Truck' ;
+			
+
+mappingId	M3
+target		:Truck/{identifier} LogiCO:hasLocation :Location/{location} . 
+source		SELECT identifier, location FROM transportmeans WHERE type = 'Truck' ;
+			
+
+mappingId	M4
+target		:Ship/{identifier} a :Ship ; LogiCO:hasName {name}^^xsd:string ; LogiCO:hasLocation :Location/{location} . 
+source		SELECT identifier, name, location FROM transportmeans WHERE type = 'Ship' ;
+			
+
+mappingId	M5
+target		:Container/{id} a :Container ; LogiCO:hasName {id}^^xsd:string ; :size {size}^^xsd:string ; LogiCO:isFull "0" ; LogiCO:hasLocation :Location/{location} . 
+source		SELECT id, size, carriedBy, location FROM containers WHERE empty = TRUE;
+			
+
+mappingId	M6
+target		:Container/{id} a :Container ; LogiCO:hasName {id}^^xsd:string ; :size {size}^^xsd:string ; LogiCO:isFull "100" ; LogiCO:hasLocation :Location/{location} . 
+source		SELECT id, size, carriedBy, location FROM containers WHERE empty = FALSE;
+			
+]]
+

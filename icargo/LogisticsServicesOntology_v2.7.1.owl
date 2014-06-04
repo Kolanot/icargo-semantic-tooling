@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.logistics.com/LogisticsServicesOntology.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     ontologyIRI="http://www.logistics.com/LogisticsServicesOntology.owl">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Import>http://www.w3.org/2006/time</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Logistics Service Ontology is an extension of the Logistics Core Ontology. Therefore the Logistics Service Ontology should be imported in the Logistics Core Ontology. 
+
+The Logistics Service Ontology models business activities (such as Transport, Transshipment, Load, Discharge, Storage, Consolidation, Deconsolidation, etc.) and their properties as the basis for specifying logistic services.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#date"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">01-06-2013</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">LogisticsServicesOntology_v2.7.1</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#publisher"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">TNO</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#creator"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Laura Daniele</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://www.logistics.com/MultimodalRoadSeaTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arrive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AtomicActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComplexActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consolidation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consumer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deconsolidation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Depart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Discharge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Load"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LoadTransportDischarge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Notify"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Provider"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Storage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Subscribe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Suspend"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transshipment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasTrigger"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isConstituentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isTriggerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConsumer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDestination"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOrigin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProvider"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isConsumerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProviderOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#a1:Activity"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#publisher"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Activity"/>
+        <ObjectUnionOf>
+            <Class IRI="#AtomicActivity"/>
+            <Class IRI="#ComplexActivity"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.logistics.com/MultimodalRoadSeaTransport"/>
+        <Class IRI="#ComplexActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasConsumer"/>
+            <Class IRI="#Consumer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProvider"/>
+            <Class IRI="#Provider"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTime"/>
+            <Class IRI="http://www.logistics.com/LogisticsCoreOntology.owl#TemporalRegion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arrive"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtomicActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtomicActivity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isConstituentOf"/>
+            <Class IRI="#ComplexActivity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComplexActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComplexActivity"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent"/>
+            <Class IRI="#Activity"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consolidation"/>
+        <Class IRI="#AtomicActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consumer"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deconsolidation"/>
+        <Class IRI="#AtomicActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Depart"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Discharge"/>
+        <Class IRI="#AtomicActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drop"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Load"/>
+        <Class IRI="#AtomicActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LoadTransportDischarge"/>
+        <Class IRI="#ComplexActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LoadTransportDischarge"/>
+        <ObjectUnionOf>
+            <Class IRI="#Discharge"/>
+            <Class IRI="#Load"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent"/>
+                <Class IRI="#Discharge"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Notify"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pick"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Provider"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resume"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Storage"/>
+        <Class IRI="#AtomicActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Subscribe"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Suspend"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transport"/>
+        <Class IRI="#AtomicActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transport"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasDestination"/>
+            <Class IRI="http://www.logistics.com/LogisticsCoreOntology.owl#SpaceRegion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transport"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasOrigin"/>
+            <Class IRI="http://www.logistics.com/LogisticsCoreOntology.owl#SpaceRegion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transport"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/2006/time#hasBeginning"/>
+            <Class IRI="http://www.w3.org/2006/time#Instant"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transport"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/2006/time#hasEnd"/>
+            <Class IRI="http://www.w3.org/2006/time#Instant"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transshipment"/>
+        <Class IRI="#AtomicActivity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Consolidation"/>
+        <Class IRI="#Deconsolidation"/>
+        <Class IRI="#Discharge"/>
+        <Class IRI="#Load"/>
+        <Class IRI="#Storage"/>
+        <Class IRI="#Transport"/>
+        <Class IRI="#Transshipment"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Transport"/>
+        <NamedIndividual IRI="#a1:Activity"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDestination"/>
+        <NamedIndividual IRI="#a1:Activity"/>
+        <NamedIndividual IRI="http://www.logistics.com/LogisticsCoreOntology.owl#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOrigin"/>
+        <NamedIndividual IRI="#a1:Activity"/>
+        <NamedIndividual IRI="http://www.logistics.com/LogisticsCoreOntology.owl#Malaysia"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isConstituentOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDestination"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOrigin"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isConstituentOf"/>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isTriggerOf"/>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasTrigger"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent"/>
+        <Class IRI="#ComplexActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasTrigger"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isConstituentOf"/>
+        <Class IRI="#AtomicActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isTriggerOf"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConsumer"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProvider"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTime"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isConsumerOf"/>
+        <Class IRI="#Consumer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProviderOf"/>
+        <Class IRI="#Provider"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#hasTrigger"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isConstituentOf"/>
+        <Class IRI="#ComplexActivity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.logistics.com/LogisticsCoreOntology.owl#isTriggerOf"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConsumer"/>
+        <Class IRI="#Consumer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDestination"/>
+        <Class IRI="http://www.logistics.com/LogisticsCoreOntology.owl#SpaceRegion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOrigin"/>
+        <Class IRI="http://www.logistics.com/LogisticsCoreOntology.owl#SpaceRegion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProvider"/>
+        <Class IRI="#Provider"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTime"/>
+        <Class IRI="http://www.logistics.com/LogisticsCoreOntology.owl#TemporalRegion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isConsumerOf"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProviderOf"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.logistics.com/LogisticsCoreOntology.owl#hasConstituent</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">from DUL ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An Activity denotes an action that is relevant for the purpose of logistics and provides value for a potential customer.
+An Activity can be Atomic or Complex. Atomic activities can be used to compose more complex activities. 
+
+Properties:
+- An Activity must have a Consumer (at least one)
+- An Activity must have a Provider (at least one)
+- An Activity must specify a location (at least one)
+- An Activity must specify a Time interval or instant (at least one)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AtomicActivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An atomic activity is a basic building block that can be used to compose more complex activities. 
+
+We have identified some relevant atomic activity types for logistics, but the list is not complete and can be further extended. The identified activity types are the following:
+- Transport, which denotes the activity of moving resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) from an origin to a destination, in a certain time, using suitable transport mode and transport means;
+- Transhipment, which denotes the activity of changing transport mode at an intermediate destination and, consequently, transshipment implies a change of transport means (for example, from a truck to a vessel in a port);
+- Loading,  which denotes the activity of placing resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) into/onto a transport means; 
+- Discherge, which denotes the activity of taking out resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) from a transport means;
+- Storage, which denotes the activity of keeping in stock resources (namely, products and/or packages and/or pieces of equipment, but also empty containers) in a warehouse facility for a certain period of time;
+- Consolidation, which denotes the activity of assembling several (smaller) resource units into one (bigger) unit;
+- Deconsolidation, which denotes the activity of disassembling of one (bigger) unit of resources in several (smaller) units.
+
+Properties:
+An atomic activity isConstituentOf some complex activty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ComplexActivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A complex activity is an activity that can be decomposed in more atomic activities. A complex activity consists of at least two other activities (atomic or complex).
+
+An example of complex activity is LoadTransportDischarge activity type, which we defined as follows:
+1) Loading a certain transport means with a container at an origin
+2) Transport of the container using the transport means towards a destination
+3) Discharge of the transport means at destination
+
+Properties:
+- A ComplexActivity hasConstituent at least 2 activities, which can be atomic or complex activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An event is a trigger that can be used to synchronize two or more logistics activities.  
+For example, consider an activity of road transport by truck, which is followed by the activity of discharge of this truck at destination. In this case, the departure of the truck can be regarded as a trigger for the activity of transport, while the arrival of this truck to its destination can be regarded as a trigger for the activity of discharge.
+
+With the definition above, we specialize the concept of Event defined in a general way (on purpose) in the DOLCE UltraLite (DUL) ontology. According to the DUL definition, an event consists of any physical, social, or mental process, event, or state. 
+
+Properties:
+An event can be trigger of an activity (Event isTriggerOf Activity) 
+An activity can have as trigger an event (Activity hasTrigge Event)</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

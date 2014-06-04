@@ -1,0 +1,2776 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.logistics.com/LogisticsCoreOntology.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     ontologyIRI="http://www.logistics.com/LogisticsCoreOntology.owl">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Import>http://www.w3.org/2006/time</Import>
+    <Annotation>
+        <AnnotationProperty IRI="#date"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">07-06-2013</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#creator"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Laura Daniele</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#publisher"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">TNO</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">LogisticsCoreOntology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">version 2.7.1</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Logistics Core Ontology is the main module of a network of ontologies for logistics. </Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://www.logistics.com/Container"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.logistics.com/Pallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Abstract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Address"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AirTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Airplane"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Airport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Amount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AmountUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bag"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bank"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Barge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Barrel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Basket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bottle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Box"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bucket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Building"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bulk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Buyer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Capacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Carrier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Carton"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Case"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Celsius"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consignee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consignor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Container"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContainerSize"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crane"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CustomsAuthorithy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CustomsBroker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Document"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Electronics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Facility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FacilityStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fahrenheit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Flammable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Forwarder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeoArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeoCoordinateSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeoPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeavyMachinery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Height"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InlandTerminalOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InlandWaterTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Insurer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interval"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lenght"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Modality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MoveableEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MoveableResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NormalTruck"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Number"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Package"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Percentage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Perishable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Port"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RailwayStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RailwayTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RailwayWagon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Region"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Regular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RoadTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SeaTerminalOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SeaTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Seller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SemiTrailer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Size"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceRegionUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Standard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StaticEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StaticResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stevedore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Street"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tank"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Terminal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TerminalOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TowedBarge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Toxic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tractor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trailer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Train"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportMeans"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportMode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tray"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Truck"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UniformLoadDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Van"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vessel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Volume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Warehouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Weight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Width"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBuilding"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasComponent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConstituent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasContainerSize"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCountry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPhysicalAttribute"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPhysicalState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasQuantity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRegion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSize"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStreet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTemperature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTrigger"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hosts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#identifies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBuildingOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCityOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isComponentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isConstituentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isContainedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCountryOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMeasuredIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMovedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPackagedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRegionOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStreetOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTriggerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUsedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#measures"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#moves"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAmountValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBuildingName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBuildingNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCityName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCountryName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPostalCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRegionName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSpecialRequirement"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStreetName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStreetNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTemperatureValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isDangerous"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isOversize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isRefeer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#20&#39;Container"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#40&#39;Container"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#45&#39;Container"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Amsterdam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bag"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Barrel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Basket"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bottle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Box"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bucket"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C1:Container"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Carton"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Case"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Container"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Crate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DHL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Drum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FlatContainer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Germany"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hamburg"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HamburgMetropolitanRegion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Limburg"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Liquid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Malaysia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NationalCarrier1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Netherlands"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NorthHolland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OpenTopContainer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#P1:Package"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pallet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Penang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PortOfHamburg"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PortOfPenang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PortOfRotterdam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PortOfVenlo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RegionalCarrierA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rotterdam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RotterdamRailwayStation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RotterdamTheHagueAirport"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SchipholRailwayStation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Solid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SouthHolland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StandardContainer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TM1:TransportMeans"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tank"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TankContainer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Terminal1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Terminal2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Terminal3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TerminalA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TerminalB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TerminalC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tray"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Venlo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VenloRailwayStation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fs1:FacilityStructure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fs2:FacilityStructure"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#publisher"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.logistics.com/Container"/>
+        <Class IRI="#Container"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.logistics.com/Pallet"/>
+        <Class IRI="#Pallet"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Instant"/>
+        <Class IRI="http://www.w3.org/2006/time#Instant"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Interval"/>
+        <Class IRI="http://www.w3.org/2006/time#Interval"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PhysicalResource"/>
+        <ObjectUnionOf>
+            <Class IRI="#MoveableResource"/>
+            <Class IRI="#StaticResource"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.logistics.com/Container"/>
+        <Class IRI="#MoveableEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.logistics.com/Container"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasContainerSize"/>
+            <Class IRI="#ContainerSize"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.logistics.com/Pallet"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Abstract"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Address"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Address"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasBuilding"/>
+            <Class IRI="#Building"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Address"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasComponent"/>
+            <Class IRI="#Country"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Address"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasComponent"/>
+            <Class IRI="#Street"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AirTransport"/>
+        <Class IRI="#TransportMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Airplane"/>
+        <Class IRI="#TransportMeans"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Airport"/>
+        <Class IRI="#FacilityStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Amount"/>
+        <Class IRI="#Abstract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmountUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmountUnit"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#Amount"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmountUnit"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#Amount"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmountUnit"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasAmountValue"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bag"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bank"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Barge"/>
+        <Class IRI="#TransportMeans"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Barrel"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Basket"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bottle"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Box"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bucket"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Building"/>
+        <Class IRI="#GeoPoint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Building"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Building"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasBuildingName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Building"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasBuildingNumber"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bulk"/>
+        <Class IRI="#ProductClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Buyer"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Capacity"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Carrier"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Carton"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Case"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Celsius"/>
+        <Class IRI="#TemperatureUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#GeoArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasCityName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consignee"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consignor"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Container"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContainerSize"/>
+        <Class IRI="#Size"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Country"/>
+        <Class IRI="#GeoArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Country"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Country"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasCountryName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crane"/>
+        <Class IRI="#StaticEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crate"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CustomsAuthorithy"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CustomsBroker"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Document"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drum"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electronics"/>
+        <Class IRI="#Regular"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Facility"/>
+        <Class IRI="#StaticResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Facility"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <Class IRI="#GeoPoint"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Facility"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#hosts"/>
+            <Class IRI="#StaticEquipment"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Facility"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isPartOf"/>
+            <Class IRI="#FacilityStructure"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FacilityStructure"/>
+        <Class IRI="#StaticResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FacilityStructure"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <Class IRI="#GeoArea"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FacilityStructure"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#hosts"/>
+            <Class IRI="#StaticEquipment"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fahrenheit"/>
+        <Class IRI="#TemperatureUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Flammable"/>
+        <Class IRI="#ProductClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Forwarder"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoArea"/>
+        <Class IRI="#SpaceRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoCoordinateSystem"/>
+        <Class IRI="#SpaceRegionUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoPoint"/>
+        <Class IRI="#SpaceRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeavyMachinery"/>
+        <Class IRI="#ProductClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Height"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hub"/>
+        <Class IRI="#Facility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InlandTerminalOperator"/>
+        <Class IRI="#TerminalOperator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InlandWaterTransport"/>
+        <Class IRI="#TransportMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instant"/>
+        <Class IRI="#TemporalRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Insurer"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interval"/>
+        <Class IRI="#TemporalRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lenght"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Modality"/>
+        <Class IRI="#Abstract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MoveableEquipment"/>
+        <Class IRI="#MoveableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MoveableEquipment"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isContainedIn"/>
+            <Class IRI="#TransportMeans"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MoveableEquipment"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isMovedBy"/>
+            <Class IRI="#TransportMeans"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MoveableResource"/>
+        <Class IRI="#PhysicalResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NormalTruck"/>
+        <Class IRI="#Truck"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Number"/>
+        <Class IRI="#AmountUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organic"/>
+        <Class IRI="#ProductClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Package"/>
+        <Class IRI="#MoveableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Package"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isContainedIn"/>
+            <Class IRI="#MoveableEquipment"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Package"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isMovedBy"/>
+            <Class IRI="#TransportMeans"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pallet"/>
+        <Class IRI="#MoveableEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parameter"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Percentage"/>
+        <Class IRI="#AmountUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Perishable"/>
+        <Class IRI="#ProductClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalAttribute"/>
+        <Class IRI="#Abstract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalResource"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPhysicalAttribute"/>
+            <Class IRI="#PhysicalAttribute"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasQuantity"/>
+            <Class IRI="#Amount"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTemperature"/>
+            <Class IRI="#Temperature"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalState"/>
+        <Class IRI="#Abstract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Port"/>
+        <Class IRI="#FacilityStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductClass"/>
+        <Class IRI="#MoveableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductClass"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isContainedIn"/>
+            <Class IRI="#Package"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductClass"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isMovedBy"/>
+            <Class IRI="#TransportMeans"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductClass"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasPhysicalState"/>
+            <Class IRI="#PhysicalState"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductClass"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#isDangerous"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductClass"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#isOversize"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductClass"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#isRefeer"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RailwayStation"/>
+        <Class IRI="#Facility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RailwayTransport"/>
+        <Class IRI="#TransportMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RailwayWagon"/>
+        <Class IRI="#MoveableEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Region"/>
+        <Class IRI="#GeoArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Region"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Region"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasRegionName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Regular"/>
+        <Class IRI="#ProductClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RoadTransport"/>
+        <Class IRI="#TransportMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SeaTerminalOperator"/>
+        <Class IRI="#TerminalOperator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SeaTransport"/>
+        <Class IRI="#TransportMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Seller"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SemiTrailer"/>
+        <Class IRI="#Truck"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Size"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceRegion"/>
+        <Class IRI="#Abstract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceRegionUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Standard"/>
+        <Class IRI="http://www.logistics.com/Container"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StaticEquipment"/>
+        <Class IRI="#StaticResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StaticEquipment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isUsedIn"/>
+            <Class IRI="#Facility"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StaticResource"/>
+        <Class IRI="#PhysicalResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stevedore"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Street"/>
+        <Class IRI="#GeoArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Street"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Street"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasPostalCode"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Street"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasStreetName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tank"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isMeasuredIn"/>
+            <Class IRI="#TemperatureUnit"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureUnit"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#Temperature"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureUnit"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#Temperature"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureUnit"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasTemperatureValue"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalRegion"/>
+        <Class IRI="#Abstract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Terminal"/>
+        <Class IRI="#Facility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TerminalOperator"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TowedBarge"/>
+        <Class IRI="#MoveableEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Toxic"/>
+        <Class IRI="#ProductClass"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tractor"/>
+        <Class IRI="#Truck"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trailer"/>
+        <Class IRI="#MoveableEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Train"/>
+        <Class IRI="#TransportMeans"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportMeans"/>
+        <Class IRI="#MoveableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportMeans"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#isMovedBy"/>
+            <Class IRI="#TransportMeans"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportMode"/>
+        <Class IRI="#Modality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tray"/>
+        <Class IRI="#Package"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Truck"/>
+        <Class IRI="#TransportMeans"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UniformLoadDevice"/>
+        <Class IRI="#MoveableEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnitOfMeasure"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Van"/>
+        <Class IRI="#TransportMeans"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vessel"/>
+        <Class IRI="#TransportMeans"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Volume"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Warehouse"/>
+        <Class IRI="#Facility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weight"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Width"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AirTransport"/>
+        <Class IRI="#InlandWaterTransport"/>
+        <Class IRI="#RailwayTransport"/>
+        <Class IRI="#RoadTransport"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Airplane"/>
+        <Class IRI="#Barge"/>
+        <Class IRI="#Train"/>
+        <Class IRI="#Truck"/>
+        <Class IRI="#Van"/>
+        <Class IRI="#Vessel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Facility"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#FacilityStructure"/>
+            <Class IRI="#StaticEquipment"/>
+        </ObjectIntersectionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MoveableResource"/>
+        <Class IRI="#StaticResource"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NormalTruck"/>
+        <Class IRI="#SemiTrailer"/>
+        <Class IRI="#Tractor"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#ContainerSize"/>
+        <NamedIndividual IRI="#20&#39;Container"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ContainerSize"/>
+        <NamedIndividual IRI="#40&#39;Container"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ContainerSize"/>
+        <NamedIndividual IRI="#45&#39;Container"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Amsterdam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Airport"/>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Bag"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Barrel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Basket"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Bottle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Box"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Bucket"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Standard"/>
+        <NamedIndividual IRI="#C1:Container"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Carton"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Case"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Container"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Crate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Carrier"/>
+        <NamedIndividual IRI="#DHL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CustomsBroker"/>
+        <NamedIndividual IRI="#DHL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Forwarder"/>
+        <NamedIndividual IRI="#DHL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Drum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.logistics.com/Container"/>
+        <NamedIndividual IRI="#FlatContainer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalState"/>
+        <NamedIndividual IRI="#Gas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Hamburg"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Region"/>
+        <NamedIndividual IRI="#HamburgMetropolitanRegion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Region"/>
+        <NamedIndividual IRI="#Limburg"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalState"/>
+        <NamedIndividual IRI="#Liquid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Malaysia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Carrier"/>
+        <NamedIndividual IRI="#NationalCarrier1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Region"/>
+        <NamedIndividual IRI="#NorthHolland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.logistics.com/Container"/>
+        <NamedIndividual IRI="#OpenTopContainer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Box"/>
+        <NamedIndividual IRI="#P1:Package"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Electronics"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Pallet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Region"/>
+        <NamedIndividual IRI="#Penang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Port"/>
+        <NamedIndividual IRI="#PortOfHamburg"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Port"/>
+        <NamedIndividual IRI="#PortOfPenang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Port"/>
+        <NamedIndividual IRI="#PortOfRotterdam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Port"/>
+        <NamedIndividual IRI="#PortOfVenlo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Carrier"/>
+        <NamedIndividual IRI="#RegionalCarrierA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Rotterdam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RailwayStation"/>
+        <NamedIndividual IRI="#RotterdamRailwayStation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Airport"/>
+        <NamedIndividual IRI="#RotterdamTheHagueAirport"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RailwayStation"/>
+        <NamedIndividual IRI="#SchipholRailwayStation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalState"/>
+        <NamedIndividual IRI="#Solid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Region"/>
+        <NamedIndividual IRI="#SouthHolland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.logistics.com/Container"/>
+        <NamedIndividual IRI="#StandardContainer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vessel"/>
+        <NamedIndividual IRI="#TM1:TransportMeans"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Tank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.logistics.com/Container"/>
+        <NamedIndividual IRI="#TankContainer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Terminal"/>
+        <NamedIndividual IRI="#Terminal1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Terminal"/>
+        <NamedIndividual IRI="#Terminal2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Terminal"/>
+        <NamedIndividual IRI="#Terminal3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Terminal"/>
+        <NamedIndividual IRI="#TerminalA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Terminal"/>
+        <NamedIndividual IRI="#TerminalB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Terminal"/>
+        <NamedIndividual IRI="#TerminalC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Package"/>
+        <NamedIndividual IRI="#Tray"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Venlo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RailwayStation"/>
+        <NamedIndividual IRI="#VenloRailwayStation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Port"/>
+        <NamedIndividual IRI="#fs1:FacilityStructure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Port"/>
+        <NamedIndividual IRI="#fs2:FacilityStructure"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#Amsterdam"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRegion"/>
+        <NamedIndividual IRI="#Amsterdam"/>
+        <NamedIndividual IRI="#NorthHolland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hosts"/>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+        <NamedIndividual IRI="#SchipholRailwayStation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasContainerSize"/>
+        <NamedIndividual IRI="#C1:Container"/>
+        <NamedIndividual IRI="#20&#39;Container"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isMovedBy"/>
+        <NamedIndividual IRI="#C1:Container"/>
+        <NamedIndividual IRI="#TM1:TransportMeans"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#Hamburg"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRegion"/>
+        <NamedIndividual IRI="#Hamburg"/>
+        <NamedIndividual IRI="#HamburgMetropolitanRegion"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#HamburgMetropolitanRegion"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#Limburg"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#NorthHolland"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPhysicalState"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+        <NamedIndividual IRI="#Solid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isContainedIn"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+        <NamedIndividual IRI="#C1:Container"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isContainedIn"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+        <NamedIndividual IRI="#P1:Package"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isContainedIn"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+        <NamedIndividual IRI="#StandardContainer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#Penang"/>
+        <NamedIndividual IRI="#Malaysia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#PortOfHamburg"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#PortOfPenang"/>
+        <NamedIndividual IRI="#Malaysia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#PortOfRotterdam"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#PortOfVenlo"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#Rotterdam"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRegion"/>
+        <NamedIndividual IRI="#Rotterdam"/>
+        <NamedIndividual IRI="#SouthHolland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#RotterdamTheHagueAirport"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <NamedIndividual IRI="#SchipholRailwayStation"/>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#SouthHolland"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <NamedIndividual IRI="#Terminal1"/>
+        <NamedIndividual IRI="#PortOfRotterdam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <NamedIndividual IRI="#Terminal2"/>
+        <NamedIndividual IRI="#PortOfRotterdam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <NamedIndividual IRI="#Terminal3"/>
+        <NamedIndividual IRI="#PortOfVenlo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <NamedIndividual IRI="#TerminalA"/>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <NamedIndividual IRI="#TerminalB"/>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <NamedIndividual IRI="#TerminalC"/>
+        <NamedIndividual IRI="#AmsterdamAirportSchiphol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#Venlo"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRegion"/>
+        <NamedIndividual IRI="#Venlo"/>
+        <NamedIndividual IRI="#Limburg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#fs1:FacilityStructure"/>
+        <NamedIndividual IRI="#Malaysia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#fs2:FacilityStructure"/>
+        <NamedIndividual IRI="#Netherlands"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAmountValue"/>
+        <NamedIndividual IRI="#P1:Package"/>
+        <Literal datatypeIRI="&xsd;integer">15</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isDangerous"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+        <Literal datatypeIRI="&xsd;boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isOversize"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+        <Literal datatypeIRI="&xsd;boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isRefeer"/>
+        <NamedIndividual IRI="#PC1:ProductClass"/>
+        <Literal datatypeIRI="&xsd;boolean">false</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBuilding"/>
+        <ObjectProperty IRI="#hasLocation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCity"/>
+        <ObjectProperty IRI="#hasLocation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasComponent"/>
+        <ObjectProperty IRI="#hasPart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConstituent"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasContainerSize"/>
+        <ObjectProperty IRI="#hasSize"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCountry"/>
+        <ObjectProperty IRI="#hasLocation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasQuantity"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRegion"/>
+        <ObjectProperty IRI="#hasLocation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSize"/>
+        <ObjectProperty IRI="#hasPhysicalAttribute"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStreet"/>
+        <ObjectProperty IRI="#hasLocation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTemperature"/>
+        <ObjectProperty IRI="#hasPhysicalAttribute"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCityOf"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isComponentOf"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isConstituentOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCountryOf"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPackagedIn"/>
+        <ObjectProperty IRI="#isContainedIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRegionOf"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isStreetOf"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#moves"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#contains"/>
+        <ObjectProperty IRI="#isContainedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBuilding"/>
+        <ObjectProperty IRI="#isBuildingOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCity"/>
+        <ObjectProperty IRI="#isCityOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasComponent"/>
+        <ObjectProperty IRI="#isComponentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isConstituentOf"/>
+        <ObjectProperty IRI="#hasConstituent"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCountry"/>
+        <ObjectProperty IRI="#isCountryOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPartOf"/>
+        <ObjectProperty IRI="#hasPart"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRegionOf"/>
+        <ObjectProperty IRI="#hasRegion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasStreet"/>
+        <ObjectProperty IRI="#isStreetOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <ObjectProperty IRI="#hasTrigger"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#measures"/>
+        <ObjectProperty IRI="#isMeasuredIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#moves"/>
+        <ObjectProperty IRI="#isMovedBy"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasPart"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isPartOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasComponent"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConstituent"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasContainerSize"/>
+        <Class IRI="http://www.logistics.com/Container"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCoordinates"/>
+        <Class IRI="#GeoArea"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCoordinates"/>
+        <Class IRI="#GeoPoint"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPhysicalAttribute"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPhysicalState"/>
+        <Class IRI="#ProductClass"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasQuantity"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSize"/>
+        <Class IRI="#PhysicalResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTemperature"/>
+        <Class IRI="#PhysicalResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hosts"/>
+        <Class IRI="#StaticResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#identifies"/>
+        <Class IRI="#Address"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBuildingOf"/>
+        <Class IRI="#Building"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCityOf"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isConstituentOf"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isContainedIn"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCountryOf"/>
+        <Class IRI="#Country"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLocationOf"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMeasuredIn"/>
+        <Class IRI="#Abstract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMovedBy"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPackagedIn"/>
+        <Class IRI="#ProductClass"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRegionOf"/>
+        <Class IRI="#Region"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStreetOf"/>
+        <Class IRI="#Street"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isUsedIn"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#measures"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#moves"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAddress"/>
+        <Class IRI="#Address"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBuilding"/>
+        <Class IRI="#Building"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCity"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasComponent"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConstituent"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasContainerSize"/>
+        <Class IRI="#ContainerSize"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCoordinates"/>
+        <Class IRI="#GeoCoordinateSystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCountry"/>
+        <Class IRI="#Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPhysicalAttribute"/>
+        <Class IRI="#PhysicalAttribute"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPhysicalState"/>
+        <Class IRI="#PhysicalState"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasQuantity"/>
+        <Class IRI="#Amount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRegion"/>
+        <Class IRI="#Region"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSize"/>
+        <Class IRI="#Size"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStreet"/>
+        <Class IRI="#Street"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTemperature"/>
+        <Class IRI="#Temperature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hosts"/>
+        <Class IRI="#StaticResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#identifies"/>
+        <Class IRI="#GeoPoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isConstituentOf"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isContainedIn"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLocationOf"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMeasuredIn"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMovedBy"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPackagedIn"/>
+        <Class IRI="#Package"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#measures"/>
+        <Class IRI="#Abstract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#moves"/>
+        <Class IRI="#MoveableResource"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAmountValue"/>
+        <DataProperty IRI="#hasValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTemperatureValue"/>
+        <DataProperty IRI="#hasValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isDangerous"/>
+        <DataProperty IRI="#hasSpecialRequirement"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isOversize"/>
+        <DataProperty IRI="#hasSpecialRequirement"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isRefeer"/>
+        <DataProperty IRI="#hasSpecialRequirement"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAmountValue"/>
+        <Class IRI="#AmountUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSpecialRequirement"/>
+        <Class IRI="#MoveableResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStreetName"/>
+        <Class IRI="#Street"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTemperatureValue"/>
+        <Class IRI="#TemperatureUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasValue"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isDangerous"/>
+        <Class IRI="#ProductClass"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isOversize"/>
+        <Class IRI="#ProductClass"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isRefeer"/>
+        <Class IRI="#ProductClass"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAmountValue"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSpecialRequirement"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStreetName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTemperatureValue"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isDangerous"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isOversize"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isRefeer"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Abstract</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Any Entity that cannot be located in space-time. 
+
+Equivalent to the concept of Abstract in DOLCE UltraLite (DUL) ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Abstract</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An Activity denotes an action that is relevant for the purpose of logistics and provides value for a potential customer.
+An Activity can be Atomic or Complex. Atomic activities can be used to compose more complex activities. 
+
+Activities and their properties are further specialized in the Logistics Service Ontology.
+
+Properties:
+An activity can have as trigger an event (Activity hasTrigger Event)
+An event can be trigger of an activity (Event isTriggerOf Activity) </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An actor represents a company, an authority or an individual that provides or requests activities and operates on physical resources 
+
+We have identified a number of Actor types that are relevant for logistics, but the list can be further extended.
+
+Equivalent to the concept of Agent in:
+DOLCE UltraLite (DUL) ontology: &#39;Any agentive Object , either physical (e.g. a whale, a robot, an oak), or social (e.g. a corporation, an institution, a community)&#39;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Amount</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A quantity, independently from how it is measured, computed, etc.
+
+Equivalent to the concept of Amount in DOLCE UltraLite (DUL) ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Amount</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Buyer</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Who is paying </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Carrier</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Who is carrying the goods and is operating the transport means. That&#39;s why a synonim of carrier is Operator.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Consignee</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Who is receving (sometimes buyer and consignee are the same)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Consignor</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Who is shipping (sometimes is the same than the seller) - Shipper is a synonym of Consignor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CustomsBroker</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">who is acting on behalf of an importer (who can be the buyer) or exporter (who can be the seller) for customs related issues</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Entity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Anything of interest in a certain universe of discourse (in our case, the logistics domain)
+
+Equivalent to the concept of Entity in:
+- DOLCE UltraLite (DUL) ontology:  &#39;Anything: real, possible, or imaginary, which some modeller wants to talk about for some purpose.&#39;
+- PROTON ontology: &#39;Any sort of an entity of interest, usually something existing, happening, or purely abstract&#39; </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Entity</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An event is a trigger that can be used to synchronize two or more activities. Events and their properties are further specialized in the Logistics Service Ontology.
+
+For example, consider an activity of road transport by truck, which is followed by the activity of discharge of this truck at destination. In this case, the departure of the truck can be regarded as a trigger for the activity of transport, while the arrival of this truck to its destination can be regarded as a trigger for the activity of discharge.
+
+Properties:
+An event can be trigger of an activity (Event isTriggerOf Activity) 
+An activity can have as trigger an event (Activity hasTrigger Event)
+
+With the definition above, we specialize the concept of Event defined in a general way (on purpose) in the DOLCE UltraLite (DUL) ontology. According to the DUL definition, an event consists of any physical, social, or mental process, event, or state. 
+
+
+
+
+
+
+
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Event</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Facility</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Static resource (usually a building) built, installed or established to facilitate related activities in a point location. 
+
+A facility has a location of type GeoPoint (in contrast to facility structures, such as ports or airports, which have a location of type GeoArea since they denote an entire geographical area)
+
+Specialization of the concept of Physical Place in:
+- DOLCE UltraLite (DUL) ontology: &#39;A physical object that is inherently located; for example, a water area.&#39;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FacilityStructure</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Static resource built, installed or established to facilitate related activities in a geographical area.
+
+A facility structure has a location of type GeoArea (in contrast to a facility, which has a location of type GeoPoint since it denotes a point location)
+
+Specialization of the concept of Physical Place in:
+- DOLCE UltraLite (DUL) ontology: &#39;A physical object that is inherently located; for example, a water area.&#39;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Forwarder</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Who is handling/organizing the shipment on behalf of somebody else that owns the goods. This organization sometimes is hust about having a phone and a desk, maybe a computer, and booking resources. In other cases, for example DHL, the forwarder also executes some parts because he owns resources (airplanes, trucks), but the forwarder never own the goods himself. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">It represents the relative location used to define the place(s) relevant for logistics activities
+
+Equivalent to the concept of Place in:
+- DOLCE UltraLite (DUL) ontology:  &#39;A location, in a very generic sense: a political geographic entity (Roma, Lesotho), a non-material location determined by the presence of other entities (&#39;the area close to Roma&#39;), pivot events or signs (&#39;the area where the helicopter fell&#39;), complements of other entities (&#39;the area under the table&#39;), etc. 
+In this generic sense, a Place is a relative location. For an absolute location, see the class SpaceRegion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Modality</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A modality is an abstract that denotes the specific mode in which an entity is used.
+
+For example, the mode of transport is a modality that denotes which particluar mode is used for the activity of transport, i.e., air transport, road transport, etc. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MoveableEquipment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Reusable object used for containment, protection and movement of product classes with or without package. A moveable equipment cannot move on its own (unpowered vehicle), but can be pulled or contained in a transport means</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MoveableResource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A Moveable Resource is a physical resource characterized by the capability of moving on its own or being contained for the purpose of transportation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Object</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Any physical, social, or mental object, or a substance
+
+Equivalent to the concept of Object in DOLCE UltraLite (DUL) ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Object</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Package</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Material used for containment, protection and movement of product classes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Parameter</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A Concept that classifies an Abstract, such as, for example, a Physical Attribute, a Space Region or a Temporal Region.
+The difference between an Abstract and a Parameter is that abstracts represent sets of observable values, e.g. &#39;the height  of a given building&#39;, while parameters represent constraints or selections on observable values, e.g. &#39;VeryHigh&#39;. 
+
+Equivalent to the concept of Parameter in DOLCE UltraLite (DUL) ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Parameter</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalAttribute</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Physical value of a physical object, e.g. density, color, etc.
+
+Equivalent to the concept of Physical Attribute in DOLCE UltraLite (DUL) ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#PhysicalAttribute</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalResource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Physical objects that are used in logistics activities, such as, for example, the moveable resources used during the activity of transport, i.e., the transport means and equipment used to move items to their destination.
+
+A physical resource is further specialized in a Moveable Resource, which is characterized by the capability of moving on its own or being contained for the purpose of transportation, and a Static Resource, which is used to handle moveable objects in a facility prior to their transportation.
+
+Equivalent to the concept of PhysicalObject in:
+- DOLCE UltraLite (DUL) ontology: &#39;Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)&#39;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProductClass</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A product class is used to select proper package, moveable equipment and transport means for several logistics activities, especially for transport. The selection is based on relevant properties of the product class, such as its physical state (solid, liquid, gas), required temperature, dangerousness, etc. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Seller</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Who is selling (is getting paid)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpaceRegion</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">It represents the specific dimensional space tha defines the absolute location of an entity.
+In contrast, the class Location (which is a subclass of Object) represents the relative location of an entity.
+
+Equivalent to the concept of Space Region in:
+- DOLCE UltraLite (DUL) ontology:  &#39;Any Region in a dimensional space that is used to localize an Entity&#39;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#SpaceRegion</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StaticEquipment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Reusable object that is used in a facility to handle moveable resources</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StaticResource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A Static Resource is a Physical Resource that is used to handle moveable objects in a facility prior to their transportation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stevedore</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">who is phisically handling the containers in a location (sea transport related)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemporalRegion</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Any Region in a dimensional space that aims at representing time. We use it to represent the start time, end time or time interval associated to activities.
+
+Equivalent to the concept of Temporal Entity in:
+Time ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#TemporalRegion</IRI>
+        <IRI>http://www.w3.org/2006/time</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TransportMeans</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Reusable object that facilitates the activity of transport and moves on its own (powered vehicle)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnitOfMeasure</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Units of measure are parameters on regions (Space Regions, Temporal Regions), which can be valued as datatype values.
+
+Equivalent to the concept of UnitOf Measure in DOLCE UltraLite (DUL) ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#UnitOfMeasure</IRI>
+        <IRI>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasComponent</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">from DUL ontology
+
+is the hasPart property, but without transitivity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConstituent</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">from DUL ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPart</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">from DUL ontology</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
