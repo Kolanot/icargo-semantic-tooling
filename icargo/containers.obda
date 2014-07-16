@@ -3,47 +3,37 @@
 ap:		http://www.icargo.eu/example/id/
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
-xml:		http://www.w3.org/XML/1998/namespace
+xml:		http://www.w3.org/XML/1998/namespace#
 xsd:		http://www.w3.org/2001/XMLSchema#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
 LogiCO:		http://tno-logistics.nl/LogiCO#
 
 [SourceDeclaration]
-sourceUri	PostgreSQL
+sourceUri	Demo
 connectionUrl	jdbc:postgresql://localhost:5432/icargo
 username	postgres
-password	esclppg.
+password	postgres
 driverClass	org.postgresql.Driver
 
 [MappingDeclaration] @collection [[
-mappingId	M1
-target		:Location/{id} a :Location ; LogiCO:hasName {description}^^xsd:string . 
+mappingId	MAPID-1b8bf71bc04143cd99030b293abcd22f
+target		ap:Location/{id} a :Location ; :hasName {description} . 
 source		SELECT id, description FROM locations;
-			
 
-mappingId	M2
-target		:Truck/{identifier} a :Truck ; LogiCO:hasName {name}^^xsd:string . 
-source		SELECT identifier, name FROM transportmeans WHERE type = 'Truck' ;
-			
+mappingId	MAPID-2380a0c45b514776a66c8d851afea8c1
+target		ap:TransportMeans/{identifier} a :Truck ; :hasName {name} ; LogiCO:hasLocation ap:Location/{location} . 
+source		SELECT identifier, name, location FROM transportmeans WHERE type = 'Truck' ;
 
-mappingId	M3
-target		:Truck/{identifier} LogiCO:hasLocation :Location/{location} . 
-source		SELECT identifier, location FROM transportmeans WHERE type = 'Truck' ;
-			
-
-mappingId	M4
-target		:Ship/{identifier} a :Ship ; LogiCO:hasName {name}^^xsd:string ; LogiCO:hasLocation :Location/{location} . 
+mappingId	MAPID-d0d0465810b04c08bb044051a4e8549b
+target		ap:Ship/{identifier} a :Ship ; :hasName {name} ; LogiCO:hasLocation ap:Location/{location} . 
 source		SELECT identifier, name, location FROM transportmeans WHERE type = 'Ship' ;
-			
 
-mappingId	M5
-target		:Container/{id} a :Container ; LogiCO:hasName {id}^^xsd:string ; :size {size}^^xsd:string ; LogiCO:isFull "0" ; LogiCO:hasLocation :Location/{location} . 
+mappingId	MAPID-e0de1ed62cee40e392954b101d103490
+target		ap:Container/{id} a :Container ; :hasName {id} ; :size {size} ; LogiCO:isFull "0"^^xsd:integer ; LogiCO:hasLocation ap:Location/{location} . 
 source		SELECT id, size, carriedBy, location FROM containers WHERE empty = TRUE;
-			
 
-mappingId	M6
-target		:Container/{id} a :Container ; LogiCO:hasName {id}^^xsd:string ; :size {size}^^xsd:string ; LogiCO:isFull "100" ; LogiCO:hasLocation :Location/{location} . 
+mappingId	MAPID-e0de1ed62cee40e392954b101d103490(0)
+target		ap:Container/{id} a :Container ; :hasName {id} ; :size {size} ; LogiCO:isFull "100"^^xsd:integer ; LogiCO:hasLocation ap:Location/{location} . 
 source		SELECT id, size, carriedBy, location FROM containers WHERE empty = FALSE;
-			
 ]]
 
