@@ -1,157 +1,171 @@
 # baseURI: http://www.nlip.org/PaperlessTransport/GenericElements
-# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents
+# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
+# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
+# imports: urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
+# imports: urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2
 
-@prefix :        <http://www.nlip.org/PaperlessTransport/GenericElements#> .
-@prefix cac:     <urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents#> .
-@prefix cbc:     <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-
+# c14n-version: 3
+@prefix : <http://www.nlip.org/PaperlessTransport/GenericElements#> .
+@prefix cac: <urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2#> .
+@prefix cbc: <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 <http://www.nlip.org/PaperlessTransport/GenericElements>
-      rdf:type owl:Ontology ;
-      owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents> ;
-      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
-
+  rdf:type owl:Ontology ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2> ;
+  owl:imports <urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
 :Location
-      rdf:type owl:Class ;
-      rdfs:label "Location"^^xsd:string ;
-      rdfs:subClassOf cac:Location ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:longitudeDegreesMeasureRef
-                        ] ;
-                owl:onProperty cac:locationCoordinateRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                owl:onProperty cac:descriptionRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:latitudeDirectionCodeRef
-                        ] ;
-                owl:onProperty cac:locationCoordinateRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:latitudeDegreesMeasureRef
-                        ] ;
-                owl:onProperty cac:locationCoordinateRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:latitudeMinutesMeasureRef
-                        ] ;
-                owl:onProperty cac:locationCoordinateRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:longitudeDirectionCodeRef
-                        ] ;
-                owl:onProperty cac:locationCoordinateRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                owl:onProperty cac:locationCoordinateRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:longitudeMinutesMeasureRef
-                        ] ;
-                owl:onProperty cac:locationCoordinateRef
-              ] .
-
+  rdf:type owl:Class ;
+  rdfs:label "Location"^^xsd:string ;
+  rdfs:subClassOf cac:Location ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:latitudeDegreesMeasureRef ;
+        ] ;
+      owl:onProperty cac:locationCoordinateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:latitudeDirectionCodeRef ;
+        ] ;
+      owl:onProperty cac:locationCoordinateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:latitudeMinutesMeasureRef ;
+        ] ;
+      owl:onProperty cac:locationCoordinateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:longitudeDegreesMeasureRef ;
+        ] ;
+      owl:onProperty cac:locationCoordinateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:longitudeDirectionCodeRef ;
+        ] ;
+      owl:onProperty cac:locationCoordinateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:longitudeMinutesMeasureRef ;
+        ] ;
+      owl:onProperty cac:locationCoordinateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty cac:descriptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty cac:locationCoordinateRef ;
+    ] ;
+.
 :Party
-      rdf:type owl:Class ;
-      rdfs:label "Party"^^xsd:string ;
-      rdfs:subClassOf cac:Party ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                owl:onProperty cac:partyNameRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:registrationAddressRef
-                        ] ;
-                owl:onProperty cac:partyLegalEntityRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:allValuesFrom
-                                  [ rdf:type owl:Restriction ;
-                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty cac:valueRef
-                                  ] ;
-                          owl:onProperty cac:otherCommunicationRef
-                        ] ;
-                owl:onProperty cac:contactRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:noteRef
-                        ] ;
-                owl:onProperty cac:contactRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:allValuesFrom
-                                  [ rdf:type owl:Restriction ;
-                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty cac:channelCodeRef
-                                  ] ;
-                          owl:onProperty cac:otherCommunicationRef
-                        ] ;
-                owl:onProperty cac:contactRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                owl:onProperty cac:partyLegalEntityRef
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:allValuesFrom
-                        [ rdf:type owl:Restriction ;
-                          owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onProperty cac:nameRef
-                        ] ;
-                owl:onProperty cac:contactRef
-              ] .
-
+  rdf:type owl:Class ;
+  rdfs:label "Party"^^xsd:string ;
+  rdfs:subClassOf cac:Party ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:allValuesFrom [
+              rdf:type owl:Restriction ;
+              owl:cardinality "1"^^xsd:nonNegativeInteger ;
+              owl:onProperty cac:channelCodeRef ;
+            ] ;
+          owl:onProperty cac:otherCommunicationRef ;
+        ] ;
+      owl:onProperty cac:contactRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:allValuesFrom [
+              rdf:type owl:Restriction ;
+              owl:cardinality "1"^^xsd:nonNegativeInteger ;
+              owl:onProperty cac:valueRef ;
+            ] ;
+          owl:onProperty cac:otherCommunicationRef ;
+        ] ;
+      owl:onProperty cac:contactRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:nameRef ;
+        ] ;
+      owl:onProperty cac:contactRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:registrationAddressRef ;
+        ] ;
+      owl:onProperty cac:partyLegalEntityRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom [
+          rdf:type owl:Restriction ;
+          owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty cac:noteRef ;
+        ] ;
+      owl:onProperty cac:contactRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty cac:partyNameRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty cac:partyLegalEntityRef ;
+    ] ;
+.
+:TransportServiceProviderParty
+  rdf:type owl:Class ;
+  rdfs:label "Transport service provider party"^^xsd:string ;
+  rdfs:subClassOf :Party ;
+  rdfs:subClassOf cac:TransportServiceProviderParty ;
+.
 :TransportUserParty
-      rdf:type owl:Class ;
-      rdfs:label "Transport user party"^^xsd:string ;
-      rdfs:subClassOf cac:TransportUserParty , :Party .
+  rdf:type owl:Class ;
+  rdfs:label "Transport user party"^^xsd:string ;
+  rdfs:subClassOf :Party ;
+  rdfs:subClassOf cac:TransportUserParty ;
+.
