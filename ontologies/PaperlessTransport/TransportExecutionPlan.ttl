@@ -31,12 +31,12 @@
   rdfs:subClassOf tep:TransportExecutionPlan ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom GenericElements:TransportServiceProviderParty ;
+      owl:allValuesFrom GenericElements:Party ;
       owl:onProperty tep:transportServiceProviderPartyRef ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom GenericElements:TransportUserParty ;
+      owl:allValuesFrom GenericElements:Party ;
       owl:onProperty tep:transportUserPartyRef ;
     ] ;
   rdfs:subClassOf [
