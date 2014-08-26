@@ -1,0 +1,1117 @@
+# baseURI: urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+
+# c14n-version: 3
+@prefix : <urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#> .
+@prefix ccts: <urn:un:unece:uncefact:documentation:2#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2, urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2, urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"^^xsd:string ;
+.
+:Amount
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#AmountType" ;
+  rdfs:label "Amount"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:decimal ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :currencyCodeListVersionID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The VersionID of the UN/ECE Rec9 code list."@en ;
+      ccts:dictionaryEntryName "Amount Currency. Code List Version. Identifier"@en ;
+      ccts:objectClass "Amount Currency"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Code List Version"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000001-SC3"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :currencyID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The currency of the amount."@en ;
+      ccts:dictionaryEntryName "Amount Currency. Identifier"@en ;
+      ccts:objectClass "Amount Currency"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Identification"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000001-SC2"@en ;
+      ccts:usageRule "Reference UNECE Rec 9, using 3-letter alphabetic codes."@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :currencyCodeListVersionID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :currencyID ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A number of monetary units specified in a currency where the unit of the currency is explicit or implied."@en ;
+  ccts:dictionaryEntryName "Amount. Type"@en ;
+  ccts:primitiveType "decimal"@en ;
+  ccts:representationTermName "Amount"@en ;
+  ccts:uniqueID "UNDT000001"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:BinaryObject
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#BinaryObjectType" ;
+  rdfs:label "Binary object"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty :uri ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The Uniform Resource Identifier that identifies where the binary object is located."@en ;
+      ccts:dictionaryEntryName "Binary Object. Uniform Resource. Identifier"@en ;
+      ccts:objectClass "Binary Object"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Uniform Resource Identifier"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000002-SC6"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :characterSetCode ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The character set of the binary object if the mime type is text."@en ;
+      ccts:dictionaryEntryName "Binary Object. Character Set. Code"@en ;
+      ccts:objectClass "Binary Object"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Character Set"@en ;
+      ccts:representationTermName "Code"@en ;
+      ccts:uniqueID "UNDT000002-SC5"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :encodingCode ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "Specifies the decoding algorithm of the binary object."@en ;
+      ccts:dictionaryEntryName "Binary Object. Encoding. Code"@en ;
+      ccts:objectClass "Binary Object"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Encoding"@en ;
+      ccts:representationTermName "Code"@en ;
+      ccts:uniqueID "UNDT000002-SC4"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :mimeCode ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The mime type of the binary object."@en ;
+      ccts:dictionaryEntryName "Binary Object. Mime. Code"@en ;
+      ccts:objectClass "Binary Object"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Mime"@en ;
+      ccts:representationTermName "Code"@en ;
+      ccts:uniqueID "UNDT000002-SC3"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :filename ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The filename of the binary object."@en ;
+      ccts:dictionaryEntryName "Binary Object. Filename.Text"@en ;
+      ccts:objectClass "Binary Object"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Filename"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000002-SC7"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :format ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The format of the binary content."@en ;
+      ccts:dictionaryEntryName "Binary Object. Format. Text"@en ;
+      ccts:objectClass "Binary Object"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Format"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000002-SC2"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :characterSetCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :encodingCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :filename ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :format ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :mimeCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :uri ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A set of finite-length sequences of binary octets."@en ;
+  ccts:dictionaryEntryName "Binary Object. Type"@en ;
+  ccts:primitiveType "binary"@en ;
+  ccts:representationTermName "Binary Object"@en ;
+  ccts:uniqueID "UNDT000002"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:Code
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#CodeType" ;
+  rdfs:label "Code"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty :listSchemeURI ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The Uniform Resource Identifier that identifies where the code list scheme is located."@en ;
+      ccts:dictionaryEntryName "Code List Scheme. Uniform Resource. Identifier"@en ;
+      ccts:objectClass "Code List Scheme"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Uniform Resource Identifier"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000007-SC10"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty :listURI ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The Uniform Resource Identifier that identifies where the code list is located."@en ;
+      ccts:dictionaryEntryName "Code List. Uniform Resource. Identifier"@en ;
+      ccts:objectClass "Code List"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Uniform Resource Identifier"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000007-SC9"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:language ;
+      owl:onProperty :languageID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The identifier of the language used in the code name."@en ;
+      ccts:dictionaryEntryName "Language. Identifier"@en ;
+      ccts:objectClass "Language"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Identification"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000007-SC8"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :listAgencyID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "An agency that maintains one or more lists of codes."@en ;
+      ccts:dictionaryEntryName "Code List. Agency. Identifier"@en ;
+      ccts:objectClass "Code List"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Agency"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000007-SC3"@en ;
+      ccts:usageRule "Defaults to the UN/EDIFACT data element 3055 code list."@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :listID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The identification of a list of codes."@en ;
+      ccts:dictionaryEntryName "Code List. Identifier"@en ;
+      ccts:objectClass "Code List"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Identification"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000007-SC2"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :listVersionID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The version of the list of codes."@en ;
+      ccts:dictionaryEntryName "Code List. Version. Identifier"@en ;
+      ccts:objectClass "Code List"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Version"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000007-SC6"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :listAgencyName ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The name of the agency that maintains the list of codes."@en ;
+      ccts:dictionaryEntryName "Code List. Agency Name. Text"@en ;
+      ccts:objectClass "Code List"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Agency Name"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000007-SC4"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :listName ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The name of a list of codes."@en ;
+      ccts:dictionaryEntryName "Code List. Name. Text"@en ;
+      ccts:objectClass "Code List"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Name"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000007-SC5"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :name ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The textual equivalent of the code content component."@en ;
+      ccts:dictionaryEntryName "Code. Name. Text"@en ;
+      ccts:objectClass "Code"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Name"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000007-SC7"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :languageID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :listAgencyID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :listAgencyName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :listID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :listName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :listSchemeURI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :listURI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :listVersionID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :name ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A character string (letters, figures, or symbols) that for brevity and/or languange independence may be used to represent or replace a definitive value or text of an attribute together with relevant supplementary information."@en ;
+  ccts:dictionaryEntryName "Code. Type"@en ;
+  ccts:primitiveType "string"@en ;
+  ccts:representationTermName "Code"@en ;
+  ccts:uniqueID "UNDT000007"@en ;
+  ccts:usageRule "Should not be used if the character string identifies an instance of an object class or an object in the real world, in which case the Identifier. Type should be used."@en ;
+  ccts:versionID "1.0"@en ;
+.
+:DateTime
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#DateTimeType" ;
+  rdfs:label "Date time"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :format ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The format of the date time content"@en ;
+      ccts:dictionaryEntryName "Date Time. Format. Text"@en ;
+      ccts:objectClass "Date Time"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Format"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000008-SC1"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :format ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A particular point in the progression of time together with the relevant supplementary information."@en ;
+  ccts:dictionaryEntryName "Date Time. Type"@en ;
+  ccts:primitiveType "string"@en ;
+  ccts:representationTermName "Date Time"@en ;
+  ccts:uniqueID "UNDT000008"@en ;
+  ccts:usageRule "Can be used for a date and/or time."@en ;
+  ccts:versionID "1.0"@en ;
+.
+:Identifier
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#IdentifierType" ;
+  rdfs:label "Identifier"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty :schemeDataURI ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The Uniform Resource Identifier that identifies where the identification scheme data is located."@en ;
+      ccts:dictionaryEntryName "Identification Scheme Data. Uniform Resource. Identifier"@en ;
+      ccts:objectClass "Identification Scheme Data"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Uniform Resource Identifier"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000011-SC7"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty :schemeURI ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The Uniform Resource Identifier that identifies where the identification scheme is located."@en ;
+      ccts:dictionaryEntryName "Identification Scheme. Uniform Resource. Identifier"@en ;
+      ccts:objectClass "Identification Scheme"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Uniform Resource Identifier"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000011-SC8"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :schemeAgencyID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The identification of the agency that maintains the identification scheme."@en ;
+      ccts:dictionaryEntryName "Identification Scheme Agency. Identifier"@en ;
+      ccts:objectClass "Identification Scheme Agency"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Identification"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000011-SC4"@en ;
+      ccts:usageRule "Defaults to the UN/EDIFACT data element 3055 code list."@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :schemeID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The identification of the identification scheme."@en ;
+      ccts:dictionaryEntryName "Identification Scheme. Identifier"@en ;
+      ccts:objectClass "Identification Scheme"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Identification"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000011-SC2"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :schemeVersionID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The version of the identification scheme."@en ;
+      ccts:dictionaryEntryName "Identification Scheme. Version. Identifier"@en ;
+      ccts:objectClass "Identification Scheme"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Version"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000011-SC6"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :schemeAgencyName ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The name of the agency that maintains the identification scheme."@en ;
+      ccts:dictionaryEntryName "Identification Scheme Agency. Name. Text"@en ;
+      ccts:objectClass "Identification Scheme Agency"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Agency Name"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000011-SC5"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :schemeName ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The name of the identification scheme."@en ;
+      ccts:dictionaryEntryName "Identification Scheme. Name. Text"@en ;
+      ccts:objectClass "Identification Scheme"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Name"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000011-SC3"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :schemeAgencyID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :schemeAgencyName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :schemeDataURI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :schemeID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :schemeName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :schemeURI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :schemeVersionID ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information."@en ;
+  ccts:dictionaryEntryName "Identifier. Type"@en ;
+  ccts:primitiveType "string"@en ;
+  ccts:representationTermName "Identifier"@en ;
+  ccts:uniqueID "UNDT000011"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:Indicator
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#IndicatorType" ;
+  rdfs:label "Indicator"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :format ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "Whether the indicator is numeric, textual or binary."@en ;
+      ccts:dictionaryEntryName "Indicator. Format. Text"@en ;
+      ccts:objectClass "Indicator"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Format"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000012-SC2"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :format ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A list of two mutually exclusive Boolean values that express the only possible states of a Property."@en ;
+  ccts:dictionaryEntryName "Indicator. Type"@en ;
+  ccts:primitiveType "string"@en ;
+  ccts:representationTermName "Indicator"@en ;
+  ccts:uniqueID "UNDT000012"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:Measure
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#MeasureType" ;
+  rdfs:label "Measure"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:decimal ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :unitCode ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The type of unit of measure."@en ;
+      ccts:dictionaryEntryName "Measure Unit. Code"@en ;
+      ccts:objectClass "Measure Unit"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Code"@en ;
+      ccts:representationTermName "Code"@en ;
+      ccts:uniqueID "UNDT000013-SC2"@en ;
+      ccts:usageRule "Reference UNECE Rec. 20 and X12 355"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :unitCodeListVersionID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The version of the measure unit code list."@en ;
+      ccts:dictionaryEntryName "Measure Unit. Code List Version. Identifier"@en ;
+      ccts:objectClass "Measure Unit"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Code List Version"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000013-SC3"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :unitCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :unitCodeListVersionID ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A numeric value determined by measuring an object along with the specified unit of measure."@en ;
+  ccts:dictionaryEntryName "Measure. Type"@en ;
+  ccts:primitiveType "decimal"@en ;
+  ccts:representationTermName "Measure"@en ;
+  ccts:uniqueID "UNDT000013"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:Numeric
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#NumericType" ;
+  rdfs:label "Numeric"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:decimal ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :format ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "Whether the number is an integer, decimal, real number or percentage."@en ;
+      ccts:dictionaryEntryName "Numeric. Format. Text"@en ;
+      ccts:objectClass "Numeric"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Format"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000014-SC2"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :format ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure."@en ;
+  ccts:dictionaryEntryName "Numeric. Type"@en ;
+  ccts:primitiveType "string"@en ;
+  ccts:representationTermName "Numeric"@en ;
+  ccts:uniqueID "UNDT000014"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:Quantity
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#QuantityType" ;
+  rdfs:label "Quantity"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:decimal ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :unitCode ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The unit of the quantity"@en ;
+      ccts:dictionaryEntryName "Quantity. Unit. Code"@en ;
+      ccts:objectClass "Quantity"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Unit Code"@en ;
+      ccts:representationTermName "Code"@en ;
+      ccts:uniqueID "UNDT000018-SC2"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :unitCodeListAgencyID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The identification of the agency that maintains the quantity unit code list"@en ;
+      ccts:dictionaryEntryName "Quantity Unit. Code List Agency. Identifier"@en ;
+      ccts:objectClass "Quantity Unit"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Code List Agency"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000018-SC4"@en ;
+      ccts:usageRule "Defaults to the UN/EDIFACT data element 3055 code list."@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :unitCodeListID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The quantity unit code list."@en ;
+      ccts:dictionaryEntryName "Quantity Unit. Code List. Identifier"@en ;
+      ccts:objectClass "Quantity Unit"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Code List"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000018-SC3"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty :unitCodeListAgencyName ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The name of the agency which maintains the quantity unit code list."@en ;
+      ccts:dictionaryEntryName "Quantity Unit. Code List Agency Name. Text"@en ;
+      ccts:objectClass "Quantity Unit"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Code List Agency Name"@en ;
+      ccts:representationTermName "Text"@en ;
+      ccts:uniqueID "UNDT000018-SC5"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :unitCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :unitCodeListAgencyID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :unitCodeListAgencyName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :unitCodeListID ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A counted number of non-monetary units possibly including fractions."@en ;
+  ccts:dictionaryEntryName "Quantity. Type"@en ;
+  ccts:primitiveType "decimal"@en ;
+  ccts:representationTermName "Quantity"@en ;
+  ccts:uniqueID "UNDT000018"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:Text
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#TextType" ;
+  rdfs:label "Text"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:language ;
+      owl:onProperty :languageID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The identifier of the language used in the content component."@en ;
+      ccts:dictionaryEntryName "Language. Identifier"@en ;
+      ccts:objectClass "Language"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Identification"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000019-SC2"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty :languageLocaleID ;
+      ccts:categoryCode "SC"@en ;
+      ccts:definition "The identification of the locale of the language."@en ;
+      ccts:dictionaryEntryName "Language. Locale. Identifier"@en ;
+      ccts:objectClass "Language"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:propertyTermName "Locale"@en ;
+      ccts:representationTermName "Identifier"@en ;
+      ccts:uniqueID "UNDT000019-SC3"@en ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :languageID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :languageLocaleID ;
+    ] ;
+  ccts:categoryCode "CCT"@en ;
+  ccts:definition "A character string (i.e. a finite set of characters) generally in the form of words of a language."@en ;
+  ccts:dictionaryEntryName "Text. Type"@en ;
+  ccts:primitiveType "string"@en ;
+  ccts:representationTermName "Text"@en ;
+  ccts:uniqueID "UNDT000019"@en ;
+  ccts:versionID "1.0"@en ;
+.
+:characterSetCode
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#characterSetCode" ;
+  rdfs:label "character set code"^^xsd:string ;
+.
+:currencyCodeListVersionID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#currencyCodeListVersionID" ;
+  rdfs:label "currency code list version ID"^^xsd:string ;
+.
+:currencyID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#currencyID" ;
+  rdfs:label "currency ID"^^xsd:string ;
+.
+:encodingCode
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#encodingCode" ;
+  rdfs:label "encoding code"^^xsd:string ;
+.
+:filename
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#filename" ;
+  rdfs:label "filename"^^xsd:string ;
+.
+:format
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#format" ;
+  rdfs:label "format"^^xsd:string ;
+.
+:languageID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#languageID" ;
+  rdfs:label "language ID"^^xsd:string ;
+.
+:languageLocaleID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#languageLocaleID" ;
+  rdfs:label "language locale ID"^^xsd:string ;
+.
+:listAgencyID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#listAgencyID" ;
+  rdfs:label "list agency ID"^^xsd:string ;
+.
+:listAgencyName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#listAgencyName" ;
+  rdfs:label "list agency name"^^xsd:string ;
+.
+:listID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#listID" ;
+  rdfs:label "list ID"^^xsd:string ;
+.
+:listName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#listName" ;
+  rdfs:label "list name"^^xsd:string ;
+.
+:listSchemeURI
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#listSchemeURI" ;
+  rdfs:label "list scheme URI"^^xsd:string ;
+.
+:listURI
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#listURI" ;
+  rdfs:label "list URI"^^xsd:string ;
+.
+:listVersionID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#listVersionID" ;
+  rdfs:label "list version ID"^^xsd:string ;
+.
+:mimeCode
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#mimeCode" ;
+  rdfs:label "mime code"^^xsd:string ;
+.
+:name
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#name" ;
+  rdfs:label "name"^^xsd:string ;
+.
+:schemeAgencyID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#schemeAgencyID" ;
+  rdfs:label "scheme agency ID"^^xsd:string ;
+.
+:schemeAgencyName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#schemeAgencyName" ;
+  rdfs:label "scheme agency name"^^xsd:string ;
+.
+:schemeDataURI
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#schemeDataURI" ;
+  rdfs:label "scheme data URI"^^xsd:string ;
+.
+:schemeID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#schemeID" ;
+  rdfs:label "scheme ID"^^xsd:string ;
+.
+:schemeName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#schemeName" ;
+  rdfs:label "scheme name"^^xsd:string ;
+.
+:schemeURI
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#schemeURI" ;
+  rdfs:label "scheme URI"^^xsd:string ;
+.
+:schemeVersionID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#schemeVersionID" ;
+  rdfs:label "scheme version ID"^^xsd:string ;
+.
+:unitCode
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#unitCode" ;
+  rdfs:label "unit code"^^xsd:string ;
+.
+:unitCodeListAgencyID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#unitCodeListAgencyID" ;
+  rdfs:label "unit code list agency ID"^^xsd:string ;
+.
+:unitCodeListAgencyName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#unitCodeListAgencyName" ;
+  rdfs:label "unit code list agency name"^^xsd:string ;
+.
+:unitCodeListID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#unitCodeListID" ;
+  rdfs:label "unit code list ID"^^xsd:string ;
+.
+:unitCodeListVersionID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#unitCodeListVersionID" ;
+  rdfs:label "unit code list version ID"^^xsd:string ;
+.
+:uri
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2#uri" ;
+  rdfs:label "uri"^^xsd:string ;
+.
+ccts:categoryCode
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "category code"^^xsd:string ;
+.
+ccts:definition
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "definition"^^xsd:string ;
+.
+ccts:dictionaryEntryName
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "dictionary entry name"^^xsd:string ;
+.
+ccts:objectClass
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "object class"^^xsd:string ;
+.
+ccts:primitiveType
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "primitive type"^^xsd:string ;
+.
+ccts:propertyTermName
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "property term name"^^xsd:string ;
+.
+ccts:representationTermName
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "representation term name"^^xsd:string ;
+.
+ccts:uniqueID
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "unique ID"^^xsd:string ;
+.
+ccts:usageRule
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "usage rule"^^xsd:string ;
+.
+ccts:versionID
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "version ID"^^xsd:string ;
+.

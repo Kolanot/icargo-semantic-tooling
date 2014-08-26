@@ -1,0 +1,1143 @@
+# baseURI: http://www.w3.org/2000/09/xmldsig
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ds: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://www.w3.org/2000/09/xmldsig>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://www.w3.org/2000/09/xmldsig#, http://www.w3.org/2000/09/xmldsig#, http://www.w3.org/2000/09/xmldsig#"^^xsd:string ;
+.
+ds:CanonicalizationMethod
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#CanonicalizationMethodType" ;
+  rdfs:label "Canonicalization method"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+.
+ds:CryptoBinaryDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Crypto binary datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:base64Binary ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:base64Binary ;
+    ] ;
+.
+ds:DSAKeyValue
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#DSAKeyValueType" ;
+  rdfs:label "DSAKey value"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:p ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:q ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:g ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:y ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:j ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:seed ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:pgenCounter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:p ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:pgenCounter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:q ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:seed ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:y ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:g ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:j ;
+    ] ;
+.
+ds:DigestMethod
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#DigestMethodType" ;
+  rdfs:label "Digest method"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+.
+ds:DigestValueDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Digest value datatype"^^xsd:string ;
+  rdfs:subClassOf ds:DigestValueDatatype ;
+  rdfs:subClassOf xsd:base64Binary ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype ds:DigestValueDatatype ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:base64Binary ;
+    ] ;
+.
+ds:HMACOutputLengthDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "HMACOutput length datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:integer ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:integer ;
+    ] ;
+.
+ds:KeyInfo
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#KeyInfoType" ;
+  rdfs:label "Key info"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:KeyNameDatatype ;
+      owl:onProperty ds:keyName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom ds:KeyValue ;
+      owl:onProperty ds:keyValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom ds:RetrievalMethod ;
+      owl:onProperty ds:retrievalMethodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom ds:X509Data ;
+      owl:onProperty ds:x509DataRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom ds:PGPData ;
+      owl:onProperty ds:pGPDataRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom ds:SPKIData ;
+      owl:onProperty ds:sPKIDataRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom ds:MgmtDataDatatype ;
+      owl:onProperty ds:mgmtData ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+.
+ds:KeyNameDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Key name datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+ds:KeyValue
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#KeyValueType" ;
+  rdfs:label "Key value"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:DSAKeyValue ;
+      owl:onProperty ds:dSAKeyValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom ds:RSAKeyValue ;
+      owl:onProperty ds:rSAKeyValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:dSAKeyValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:rSAKeyValueRef ;
+    ] ;
+.
+ds:Manifest
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#ManifestType" ;
+  rdfs:label "Manifest"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:Reference ;
+      owl:onProperty ds:referenceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty ds:referenceRef ;
+    ] ;
+.
+ds:MgmtDataDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Mgmt data datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+ds:Object
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#ObjectType" ;
+  rdfs:label "Object"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:encoding ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty ds:mimeType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:encoding ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:mimeType ;
+    ] ;
+.
+ds:PGPData
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#PGPDataType" ;
+  rdfs:label "PGPData"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty ds:pGPKeyID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty ds:pGPKeyPacket ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:pGPKeyID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:pGPKeyPacket ;
+    ] ;
+.
+ds:RSAKeyValue
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#RSAKeyValueType" ;
+  rdfs:label "RSAKey value"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:modulus ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom ds:CryptoBinaryDatatype ;
+      owl:onProperty ds:exponent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:exponent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:modulus ;
+    ] ;
+.
+ds:Reference
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#ReferenceType" ;
+  rdfs:label "Reference"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:Transforms ;
+      owl:onProperty ds:transformsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom ds:DigestMethod ;
+      owl:onProperty ds:digestMethodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom ds:DigestValueDatatype ;
+      owl:onProperty ds:digestValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:type ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:uRI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:digestMethodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:digestValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:transformsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:type ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:uRI ;
+    ] ;
+.
+ds:RetrievalMethod
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#RetrievalMethodType" ;
+  rdfs:label "Retrieval method"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:Transforms ;
+      owl:onProperty ds:transformsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:type ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:uRI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:transformsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:type ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:uRI ;
+    ] ;
+.
+ds:SPKIData
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SPKIDataType" ;
+  rdfs:label "SPKIData"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty ds:sPKISexp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:sPKISexp ;
+    ] ;
+.
+ds:Signature
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignatureType" ;
+  rdfs:label "Signature"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:SignedInfo ;
+      owl:onProperty ds:signedInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom ds:SignatureValue ;
+      owl:onProperty ds:signatureValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom ds:KeyInfo ;
+      owl:onProperty ds:keyInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom ds:Object ;
+      owl:onProperty ds:objectRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:signatureValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:signedInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:keyInfoRef ;
+    ] ;
+.
+ds:SignatureMethod
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignatureMethodType" ;
+  rdfs:label "Signature method"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:HMACOutputLengthDatatype ;
+      owl:onProperty ds:hMACOutputLength ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:hMACOutputLength ;
+    ] ;
+.
+ds:SignatureProperties
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignaturePropertiesType" ;
+  rdfs:label "Signature properties"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:SignatureProperty ;
+      owl:onProperty ds:signaturePropertyRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty ds:signaturePropertyRef ;
+    ] ;
+.
+ds:SignatureProperty
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignaturePropertyType" ;
+  rdfs:label "Signature property"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:target ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:target ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+.
+ds:SignatureValue
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignatureValueType" ;
+  rdfs:label "Signature value"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+.
+ds:SignedInfo
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignedInfoType" ;
+  rdfs:label "Signed info"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:CanonicalizationMethod ;
+      owl:onProperty ds:canonicalizationMethodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom ds:SignatureMethod ;
+      owl:onProperty ds:signatureMethodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom ds:Reference ;
+      owl:onProperty ds:referenceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:canonicalizationMethodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:signatureMethodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ds:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty ds:referenceRef ;
+    ] ;
+.
+ds:Transform
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#TransformType" ;
+  rdfs:label "Transform"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty ds:xPath ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:algorithm ;
+    ] ;
+.
+ds:Transforms
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#TransformsType" ;
+  rdfs:label "Transforms"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:Transform ;
+      owl:onProperty ds:transformRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty ds:transformRef ;
+    ] ;
+.
+ds:X509Data
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#X509DataType" ;
+  rdfs:label "X509Data"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom ds:X509IssuerSerial ;
+      owl:onProperty ds:x509IssuerSerialRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty ds:x509SKI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty ds:x509SubjectName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty ds:x509Certificate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty ds:x509CRL ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:x509CRL ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:x509Certificate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:x509IssuerSerialRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:x509SKI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:x509SubjectName ;
+    ] ;
+.
+ds:X509IssuerSerial
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#X509IssuerSerialType" ;
+  rdfs:label "X509Issuer serial"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty ds:x509IssuerName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:integer ;
+      owl:onProperty ds:x509SerialNumber ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:x509IssuerName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ds:x509SerialNumber ;
+    ] ;
+.
+ds:algorithm
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Algorithm" ;
+  rdfs:label "algorithm"^^xsd:string ;
+.
+ds:canonicalizationMethodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#CanonicalizationMethod" ;
+  rdfs:label "canonicalization method ref"^^xsd:string ;
+.
+ds:dSAKeyValueRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#DSAKeyValue" ;
+  rdfs:label "d SAKey value ref"^^xsd:string ;
+.
+ds:digestMethodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#DigestMethod" ;
+  rdfs:label "digest method ref"^^xsd:string ;
+.
+ds:digestValue
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#DigestValue" ;
+  rdfs:label "digest value"^^xsd:string ;
+.
+ds:encoding
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Encoding" ;
+  rdfs:label "encoding"^^xsd:string ;
+.
+ds:exponent
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Exponent" ;
+  rdfs:label "exponent"^^xsd:string ;
+.
+ds:g
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#G" ;
+  rdfs:label "g"^^xsd:string ;
+.
+ds:hMACOutputLength
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#HMACOutputLength" ;
+  rdfs:label "h MACOutput length"^^xsd:string ;
+.
+ds:id
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Id" ;
+  rdfs:label "id"^^xsd:string ;
+.
+ds:j
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#J" ;
+  rdfs:label "j"^^xsd:string ;
+.
+ds:keyInfoRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#KeyInfo" ;
+  rdfs:label "key info ref"^^xsd:string ;
+.
+ds:keyName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#KeyName" ;
+  rdfs:label "key name"^^xsd:string ;
+.
+ds:keyValueRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#KeyValue" ;
+  rdfs:label "key value ref"^^xsd:string ;
+.
+ds:mgmtData
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#MgmtData" ;
+  rdfs:label "mgmt data"^^xsd:string ;
+.
+ds:mimeType
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#MimeType" ;
+  rdfs:label "mime type"^^xsd:string ;
+.
+ds:modulus
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Modulus" ;
+  rdfs:label "modulus"^^xsd:string ;
+.
+ds:objectRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#Object" ;
+  rdfs:label "object ref"^^xsd:string ;
+.
+ds:p
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#P" ;
+  rdfs:label "p"^^xsd:string ;
+.
+ds:pGPDataRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#PGPData" ;
+  rdfs:label "p GPData ref"^^xsd:string ;
+.
+ds:pGPKeyID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#PGPKeyID" ;
+  rdfs:label "p GPKey ID"^^xsd:string ;
+.
+ds:pGPKeyPacket
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#PGPKeyPacket" ;
+  rdfs:label "p GPKey packet"^^xsd:string ;
+.
+ds:pgenCounter
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#PgenCounter" ;
+  rdfs:label "pgen counter"^^xsd:string ;
+.
+ds:q
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Q" ;
+  rdfs:label "q"^^xsd:string ;
+.
+ds:rSAKeyValueRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#RSAKeyValue" ;
+  rdfs:label "r SAKey value ref"^^xsd:string ;
+.
+ds:referenceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#Reference" ;
+  rdfs:label "reference ref"^^xsd:string ;
+.
+ds:retrievalMethodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#RetrievalMethod" ;
+  rdfs:label "retrieval method ref"^^xsd:string ;
+.
+ds:sPKIDataRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SPKIData" ;
+  rdfs:label "s PKIData ref"^^xsd:string ;
+.
+ds:sPKISexp
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#SPKISexp" ;
+  rdfs:label "s PKISexp"^^xsd:string ;
+.
+ds:seed
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Seed" ;
+  rdfs:label "seed"^^xsd:string ;
+.
+ds:signatureMethodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignatureMethod" ;
+  rdfs:label "signature method ref"^^xsd:string ;
+.
+ds:signaturePropertyRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignatureProperty" ;
+  rdfs:label "signature property ref"^^xsd:string ;
+.
+ds:signatureValueRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignatureValue" ;
+  rdfs:label "signature value ref"^^xsd:string ;
+.
+ds:signedInfoRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#SignedInfo" ;
+  rdfs:label "signed info ref"^^xsd:string ;
+.
+ds:target
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Target" ;
+  rdfs:label "target"^^xsd:string ;
+.
+ds:transformRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#Transform" ;
+  rdfs:label "transform ref"^^xsd:string ;
+.
+ds:transformsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#Transforms" ;
+  rdfs:label "transforms ref"^^xsd:string ;
+.
+ds:type
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Type" ;
+  rdfs:label "type"^^xsd:string ;
+.
+ds:uRI
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#URI" ;
+  rdfs:label "u RI"^^xsd:string ;
+.
+ds:x509CRL
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#X509CRL" ;
+  rdfs:label "x509CRL"^^xsd:string ;
+.
+ds:x509Certificate
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#X509Certificate" ;
+  rdfs:label "x509Certificate"^^xsd:string ;
+.
+ds:x509DataRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#X509Data" ;
+  rdfs:label "x509Data ref"^^xsd:string ;
+.
+ds:x509IssuerName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#X509IssuerName" ;
+  rdfs:label "x509Issuer name"^^xsd:string ;
+.
+ds:x509IssuerSerialRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2000/09/xmldsig#X509IssuerSerial" ;
+  rdfs:label "x509Issuer serial ref"^^xsd:string ;
+.
+ds:x509SKI
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#X509SKI" ;
+  rdfs:label "x509SKI"^^xsd:string ;
+.
+ds:x509SerialNumber
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#X509SerialNumber" ;
+  rdfs:label "x509Serial number"^^xsd:string ;
+.
+ds:x509SubjectName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#X509SubjectName" ;
+  rdfs:label "x509Subject name"^^xsd:string ;
+.
+ds:xPath
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#XPath" ;
+  rdfs:label "x path"^^xsd:string ;
+.
+ds:y
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2000/09/xmldsig#Y" ;
+  rdfs:label "y"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.

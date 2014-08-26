@@ -1,0 +1,292 @@
+# baseURI: urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
+# imports: urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
+# imports: urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2
+
+# c14n-version: 3
+@prefix : <urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#> .
+@prefix cbc: <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix udt: <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2> ;
+  owl:imports <urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2, urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2, urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"^^xsd:string ;
+.
+:ExtensionAgencyID
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionAgencyIDType" ;
+  rdfs:label "Extension agency ID"^^xsd:string ;
+  rdfs:subClassOf udt:Identifier ;
+.
+:ExtensionAgencyName
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionAgencyNameType" ;
+  rdfs:label "Extension agency name"^^xsd:string ;
+  rdfs:subClassOf udt:Text ;
+.
+:ExtensionAgencyURI
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionAgencyURIType" ;
+  rdfs:label "Extension agency URI"^^xsd:string ;
+  rdfs:subClassOf udt:Identifier ;
+.
+:ExtensionContent
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionContentType" ;
+  rdfs:label "Extension content"^^xsd:string ;
+.
+:ExtensionReason
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionReasonType" ;
+  rdfs:label "Extension reason"^^xsd:string ;
+  rdfs:subClassOf udt:Text ;
+.
+:ExtensionReasonCode
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionReasonCodeType" ;
+  rdfs:label "Extension reason code"^^xsd:string ;
+  rdfs:subClassOf udt:Code ;
+.
+:ExtensionURI
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionURIType" ;
+  rdfs:label "Extension URI"^^xsd:string ;
+  rdfs:subClassOf udt:Identifier ;
+.
+:ExtensionVersionID
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionVersionIDType" ;
+  rdfs:label "Extension version ID"^^xsd:string ;
+  rdfs:subClassOf udt:Identifier ;
+.
+:UBLExtension
+  rdf:type owl:Class ;
+  dc:description "A single extension for private use."^^xsd:string ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#UBLExtensionType" ;
+  rdfs:label "UBLExtension"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A URI for the Agency that maintains the Extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom :ExtensionAgencyURI ;
+      owl:onProperty :extensionAgencyURIRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A URI for the Extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom :ExtensionURI ;
+      owl:onProperty :extensionURIRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A code for reason the Extension is being included."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom :ExtensionReasonCode ;
+      owl:onProperty :extensionReasonCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A description of the reason for the Extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom :ExtensionReason ;
+      owl:onProperty :extensionReasonRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A name for the Extension assigned by the creator of the extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom cbc:Name ;
+      owl:onProperty :nameRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An agency that maintains one or more Extensions."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom :ExtensionAgencyID ;
+      owl:onProperty :extensionAgencyIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An identifier for the Extension assigned by the creator of the extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom cbc:ID ;
+      owl:onProperty :iDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The definition of the extension content."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom :ExtensionContent ;
+      owl:onProperty :extensionContentRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The name of the agency that maintains the Extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom :ExtensionAgencyName ;
+      owl:onProperty :extensionAgencyNameRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The version of the Extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom :ExtensionVersionID ;
+      owl:onProperty :extensionVersionIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty :extensionContentRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :extensionAgencyIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :extensionAgencyNameRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :extensionAgencyURIRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :extensionReasonCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :extensionReasonRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :extensionURIRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :extensionVersionIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :iDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :nameRef ;
+    ] ;
+.
+:UBLExtensions
+  rdf:type owl:Class ;
+  dc:description "A container for all extensions present in the document."^^xsd:string ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#UBLExtensionsType" ;
+  rdfs:label "UBLExtensions"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A single extension for private use."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom :UBLExtension ;
+      owl:onProperty :uBLExtensionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty :uBLExtensionRef ;
+    ] ;
+.
+:extensionAgencyIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionAgencyID" ;
+  rdfs:label "extension agency IDRef"^^xsd:string ;
+.
+:extensionAgencyNameRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionAgencyName" ;
+  rdfs:label "extension agency name ref"^^xsd:string ;
+.
+:extensionAgencyURIRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionAgencyURI" ;
+  rdfs:label "extension agency URIRef"^^xsd:string ;
+.
+:extensionContentRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionContent" ;
+  rdfs:label "extension content ref"^^xsd:string ;
+.
+:extensionReasonCodeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionReasonCode" ;
+  rdfs:label "extension reason code ref"^^xsd:string ;
+.
+:extensionReasonRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionReason" ;
+  rdfs:label "extension reason ref"^^xsd:string ;
+.
+:extensionURIRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionURI" ;
+  rdfs:label "extension URIRef"^^xsd:string ;
+.
+:extensionVersionIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ExtensionVersionID" ;
+  rdfs:label "extension version IDRef"^^xsd:string ;
+.
+:iDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#ID" ;
+  rdfs:label "i DRef"^^xsd:string ;
+.
+:nameRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#Name" ;
+  rdfs:label "name ref"^^xsd:string ;
+.
+:uBLExtensionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#UBLExtension" ;
+  rdfs:label "u BLExtension ref"^^xsd:string ;
+.

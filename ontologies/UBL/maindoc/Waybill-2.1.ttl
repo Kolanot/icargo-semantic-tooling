@@ -1,0 +1,698 @@
+# baseURI: urn:oasis:names:specification:ubl:schema:xsd:Waybill-2
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
+# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
+# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2
+# imports: urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
+# imports: urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2
+
+# c14n-version: 3
+@prefix : <urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#> .
+@prefix cac: <urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2#> .
+@prefix cbc: <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2#> .
+@prefix ccts: <urn:un:unece:uncefact:documentation:2#> .
+@prefix cec: <urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<urn:oasis:names:specification:ubl:schema:xsd:Waybill-2>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2> ;
+  owl:imports <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2> ;
+  owl:imports <urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"^^xsd:string ;
+.
+:Waybill
+  rdf:type owl:Class ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#WaybillType" ;
+  rdfs:label "Waybill"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A container for all extensions present in the document."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom cec:UBLExtensions ;
+      owl:onProperty :uBLExtensionsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom cbc:UBLVersionID ;
+      owl:onProperty :uBLVersionIDRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. UBL Version Identifier. Identifier"^^xsd:string ;
+      ccts:examples "2.0.5"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "UBL Version Identifier"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      owl:allValuesFrom cbc:Name ;
+      owl:onProperty :nameRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Name. Type"^^xsd:string ;
+      ccts:definition "Text, assigned by the sender, that identifies this document to business users."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Name"^^xsd:string ;
+      ccts:examples "Air Waybill , House Waybill"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Name"^^xsd:string ;
+      ccts:representationTerm "Name"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      owl:allValuesFrom cbc:Description ;
+      owl:onProperty :descriptionRef ;
+      ccts:cardinality "0..n"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Text. Type"^^xsd:string ;
+      ccts:definition "Text describing the contents of the Waybill."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Description. Text"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Description"^^xsd:string ;
+      ccts:representationTerm "Text"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "12"^^xsd:int ;
+      owl:allValuesFrom cbc:Note ;
+      owl:onProperty :noteRef ;
+      ccts:cardinality "0..n"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Text. Type"^^xsd:string ;
+      ccts:definition "Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Note. Text"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Note"^^xsd:string ;
+      ccts:representationTerm "Text"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "13"^^xsd:int ;
+      owl:allValuesFrom cbc:ShippingOrderID ;
+      owl:onProperty :shippingOrderIDRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Shipping Order Identifier. Identifier"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Shipping Order Identifier"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "14"^^xsd:int ;
+      owl:allValuesFrom cbc:AdValoremIndicator ;
+      owl:onProperty :adValoremIndicatorRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Indicator. Type"^^xsd:string ;
+      ccts:definition "A term used in commerce in reference to certain duties, called ad valorem duties, which are levied on commodities at certain rates per centum on their value."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Ad Valorem_ Indicator. Indicator"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Indicator"^^xsd:string ;
+      ccts:propertyTermQualifier "Ad Valorem"^^xsd:string ;
+      ccts:representationTerm "Indicator"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "15"^^xsd:int ;
+      owl:allValuesFrom cbc:DeclaredCarriageValueAmount ;
+      owl:onProperty :declaredCarriageValueAmountRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Amount. Type"^^xsd:string ;
+      ccts:definition "Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Declared Carriage_ Value. Amount"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Value"^^xsd:string ;
+      ccts:propertyTermQualifier "Declared Carriage"^^xsd:string ;
+      ccts:representationTerm "Amount"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "16"^^xsd:int ;
+      owl:allValuesFrom cbc:OtherInstruction ;
+      owl:onProperty :otherInstructionRef ;
+      ccts:cardinality "0..n"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Text. Type"^^xsd:string ;
+      ccts:definition "Other free-text instructions related to the shipment to the forwarders or carriers. This should only be used where such information cannot be represented in other structured information entities within the document."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Other_ Instruction. Text"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Instruction"^^xsd:string ;
+      ccts:propertyTermQualifier "Other"^^xsd:string ;
+      ccts:representationTerm "Text"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "17"^^xsd:int ;
+      owl:allValuesFrom cac:ConsignorParty ;
+      owl:onProperty :consignorPartyRef ;
+      ccts:alternativeBusinessTerms "Consignor (WCO ID 71 and 72)"^^xsd:string ;
+      ccts:associatedObjectClass "Party"^^xsd:string ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "The party consigning goods, as stipulated in the transport contract by the party ordering transport."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Consignor_ Party. Party"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Party"^^xsd:string ;
+      ccts:propertyTermQualifier "Consignor"^^xsd:string ;
+      ccts:representationTerm "Party"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "18"^^xsd:int ;
+      owl:allValuesFrom cac:CarrierParty ;
+      owl:onProperty :carrierPartyRef ;
+      ccts:alternativeBusinessTerms "Transport Company, Shipping Line, NVOCC, Airline, Haulier, Courier, Carrier (WCO ID 49 and 50)"^^xsd:string ;
+      ccts:associatedObjectClass "Party"^^xsd:string ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "The party providing the transport of goods between named points."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Carrier_ Party. Party"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Party"^^xsd:string ;
+      ccts:propertyTermQualifier "Carrier"^^xsd:string ;
+      ccts:representationTerm "Party"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "19"^^xsd:int ;
+      owl:allValuesFrom cac:FreightForwarderParty ;
+      owl:onProperty :freightForwarderPartyRef ;
+      ccts:alternativeBusinessTerms "Consolidator (WCO ID 192 AND 193)"^^xsd:string ;
+      ccts:associatedObjectClass "Party"^^xsd:string ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "A party combining individual smaller consignments into a single larger shipment (a so-called consolidated consignment or shipment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Freight Forwarder_ Party. Party"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Party"^^xsd:string ;
+      ccts:propertyTermQualifier "Freight Forwarder"^^xsd:string ;
+      ccts:representationTerm "Party"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom cbc:CustomizationID ;
+      owl:onProperty :customizationIDRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "Identifies a user-defined customization of UBL for a specific use."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Customization Identifier. Identifier"^^xsd:string ;
+      ccts:examples "NES"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Customization Identifier"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "20"^^xsd:int ;
+      owl:allValuesFrom cac:Shipment ;
+      owl:onProperty :shipmentRef ;
+      ccts:associatedObjectClass "Shipment"^^xsd:string ;
+      ccts:cardinality "1"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "A description of the shipment."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Shipment"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Shipment"^^xsd:string ;
+      ccts:representationTerm "Shipment"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "21"^^xsd:int ;
+      owl:allValuesFrom cac:DocumentReference ;
+      owl:onProperty :documentReferenceRef ;
+      ccts:associatedObjectClass "Document Reference"^^xsd:string ;
+      ccts:cardinality "0..n"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "A reference to another document associated with this document."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Document Reference"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Document Reference"^^xsd:string ;
+      ccts:representationTerm "Document Reference"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "22"^^xsd:int ;
+      owl:allValuesFrom cac:ExchangeRate ;
+      owl:onProperty :exchangeRateRef ;
+      ccts:associatedObjectClass "Exchange Rate"^^xsd:string ;
+      ccts:cardinality "0..n"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "Information about the rate of exchange (conversion) between two currencies."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Exchange Rate"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Exchange Rate"^^xsd:string ;
+      ccts:representationTerm "Exchange Rate"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "23"^^xsd:int ;
+      owl:allValuesFrom cac:DocumentDistribution ;
+      owl:onProperty :documentDistributionRef ;
+      ccts:associatedObjectClass "Document Distribution"^^xsd:string ;
+      ccts:cardinality "0..n"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "A list of interested parties to whom this document is distributed."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Document Distribution"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Document Distribution"^^xsd:string ;
+      ccts:representationTerm "Document Distribution"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "24"^^xsd:int ;
+      owl:allValuesFrom cac:Signature ;
+      owl:onProperty :signatureRef ;
+      ccts:associatedObjectClass "Signature"^^xsd:string ;
+      ccts:cardinality "0..n"^^xsd:string ;
+      ccts:componentType "ASBIE"^^xsd:string ;
+      ccts:definition "A signature applied to this document."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Signature"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Signature"^^xsd:string ;
+      ccts:representationTerm "Signature"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom cbc:ProfileID ;
+      owl:onProperty :profileIDRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "Identifies a user-defined profile of the customization of UBL being used."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Profile Identifier. Identifier"^^xsd:string ;
+      ccts:examples "BasicProcurementProcess"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Profile Identifier"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom cbc:ProfileExecutionID ;
+      owl:onProperty :profileExecutionIDRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "Identifies an instance of executing a profile, to associate all transactions in a collaboration."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Profile Execution Identifier. Identifier"^^xsd:string ;
+      ccts:examples "BPP-1001"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Profile Execution Identifier"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom cbc:ID ;
+      owl:onProperty :iDRef ;
+      ccts:alternativeBusinessTerms "Master Waybill Number"^^xsd:string ;
+      ccts:cardinality "1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "An identifier for this document, assigned by the sender."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Identifier"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Identifier"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom cbc:CarrierAssignedID ;
+      owl:onProperty :carrierAssignedIDRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "An identifier (in the form of a reference number) assigned by a carrier or its agent to identify a specific shipment."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Carrier Assigned_ Identifier. Identifier"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Identifier"^^xsd:string ;
+      ccts:propertyTermQualifier "Carrier Assigned"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom cbc:UUID ;
+      owl:onProperty :uUIDRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Identifier. Type"^^xsd:string ;
+      ccts:definition "A universally unique identifier for an instance of this document."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. UUID. Identifier"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "UUID"^^xsd:string ;
+      ccts:representationTerm "Identifier"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom cbc:IssueDate ;
+      owl:onProperty :issueDateRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Date. Type"^^xsd:string ;
+      ccts:definition "The date, assigned by the sender, on which this document was issued."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Issue Date. Date"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Issue Date"^^xsd:string ;
+      ccts:representationTerm "Date"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom cbc:IssueTime ;
+      owl:onProperty :issueTimeRef ;
+      ccts:cardinality "0..1"^^xsd:string ;
+      ccts:componentType "BBIE"^^xsd:string ;
+      ccts:dataType "Time. Type"^^xsd:string ;
+      ccts:definition "The time, assigned by the sender, at which this document was issued."^^xsd:string ;
+      ccts:dictionaryEntryName "Waybill. Issue Time. Time"^^xsd:string ;
+      ccts:objectClass "Waybill"^^xsd:string ;
+      ccts:propertyTerm "Issue Time"^^xsd:string ;
+      ccts:representationTerm "Time"^^xsd:string ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty :iDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty :shipmentRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :adValoremIndicatorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :carrierAssignedIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :carrierPartyRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :consignorPartyRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :customizationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :declaredCarriageValueAmountRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :freightForwarderPartyRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :issueDateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :issueTimeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :nameRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :profileExecutionIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :profileIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :shippingOrderIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :uBLExtensionsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :uBLVersionIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty :uUIDRef ;
+    ] ;
+  ccts:alternativeBusinessTerms "Consignment Note"^^xsd:string ;
+  ccts:componentType "ABIE"^^xsd:string ;
+  ccts:definition "A transport document describing a shipment It is issued by the party who undertakes to provide transportation services, or undertakes to arrange for their provision, to the party who gives instructions for the transportation services (shipper, consignor, etc.). It states the instructions for the beneficiary and may contain the details of the transportation, charges, and terms and conditions under which the transportation service is provided."^^xsd:string ;
+  ccts:dictionaryEntryName "Waybill. Details"^^xsd:string ;
+  ccts:objectClass "Waybill"^^xsd:string ;
+.
+:adValoremIndicatorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#AdValoremIndicator" ;
+  rdfs:label "ad valorem indicator ref"^^xsd:string ;
+.
+:carrierAssignedIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#CarrierAssignedID" ;
+  rdfs:label "carrier assigned IDRef"^^xsd:string ;
+.
+:carrierPartyRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#CarrierParty" ;
+  rdfs:label "carrier party ref"^^xsd:string ;
+.
+:consignorPartyRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#ConsignorParty" ;
+  rdfs:label "consignor party ref"^^xsd:string ;
+.
+:customizationIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#CustomizationID" ;
+  rdfs:label "customization IDRef"^^xsd:string ;
+.
+:declaredCarriageValueAmountRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#DeclaredCarriageValueAmount" ;
+  rdfs:label "declared carriage value amount ref"^^xsd:string ;
+.
+:descriptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#Description" ;
+  rdfs:label "description ref"^^xsd:string ;
+.
+:documentDistributionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#DocumentDistribution" ;
+  rdfs:label "document distribution ref"^^xsd:string ;
+.
+:documentReferenceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#DocumentReference" ;
+  rdfs:label "document reference ref"^^xsd:string ;
+.
+:exchangeRateRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#ExchangeRate" ;
+  rdfs:label "exchange rate ref"^^xsd:string ;
+.
+:freightForwarderPartyRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#FreightForwarderParty" ;
+  rdfs:label "freight forwarder party ref"^^xsd:string ;
+.
+:iDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#ID" ;
+  rdfs:label "i DRef"^^xsd:string ;
+.
+:issueDateRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#IssueDate" ;
+  rdfs:label "issue date ref"^^xsd:string ;
+.
+:issueTimeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#IssueTime" ;
+  rdfs:label "issue time ref"^^xsd:string ;
+.
+:nameRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#Name" ;
+  rdfs:label "name ref"^^xsd:string ;
+.
+:noteRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#Note" ;
+  rdfs:label "note ref"^^xsd:string ;
+.
+:otherInstructionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#OtherInstruction" ;
+  rdfs:label "other instruction ref"^^xsd:string ;
+.
+:profileExecutionIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#ProfileExecutionID" ;
+  rdfs:label "profile execution IDRef"^^xsd:string ;
+.
+:profileIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#ProfileID" ;
+  rdfs:label "profile IDRef"^^xsd:string ;
+.
+:shipmentRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#Shipment" ;
+  rdfs:label "shipment ref"^^xsd:string ;
+.
+:shippingOrderIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#ShippingOrderID" ;
+  rdfs:label "shipping order IDRef"^^xsd:string ;
+.
+:signatureRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#Signature" ;
+  rdfs:label "signature ref"^^xsd:string ;
+.
+:uBLExtensionsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#UBLExtensions" ;
+  rdfs:label "u BLExtensions ref"^^xsd:string ;
+.
+:uBLVersionIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#UBLVersionID" ;
+  rdfs:label "u BLVersion IDRef"^^xsd:string ;
+.
+:uUIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:Waybill-2#UUID" ;
+  rdfs:label "u UIDRef"^^xsd:string ;
+.
+ccts:alternativeBusinessTerms
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "alternative business terms"^^xsd:string ;
+.
+ccts:associatedObjectClass
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "associated object class"^^xsd:string ;
+.
+ccts:cardinality
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "cardinality"^^xsd:string ;
+.
+ccts:componentType
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "component type"^^xsd:string ;
+.
+ccts:dataType
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "data type"^^xsd:string ;
+.
+ccts:definition
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "definition"^^xsd:string ;
+.
+ccts:dictionaryEntryName
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "dictionary entry name"^^xsd:string ;
+.
+ccts:examples
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "examples"^^xsd:string ;
+.
+ccts:objectClass
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "object class"^^xsd:string ;
+.
+ccts:propertyTerm
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "property term"^^xsd:string ;
+.
+ccts:propertyTermQualifier
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "property term qualifier"^^xsd:string ;
+.
+ccts:representationTerm
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "representation term"^^xsd:string ;
+.
