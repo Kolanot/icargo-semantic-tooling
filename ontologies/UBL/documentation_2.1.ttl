@@ -1,0 +1,18 @@
+# baseURI: urn:un:unece:uncefact:documentation
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix documentation:  <urn:un:unece:uncefact:documentation#> .
+@prefix dtype:   <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml:    <http://topbraid.org/sxml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:un:unece:uncefact:documentation>
+      rdf:type owl:Ontology ;
+      owl:imports <http://topbraid.org/sxml> , <http://www.linkedmodel.org/schema/dtype> ;
+      owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:un:unece:uncefact:documentation:2"^^xsd:string .

@@ -1,0 +1,582 @@
+# baseURI: urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule
+
+@prefix CoreComponentTypeSchemaModule:  <urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule#> .
+@prefix UnqualifiedDataTypes:  <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes#> .
+@prefix UnqualifiedDataTypes1:  <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes#> .
+@prefix UnqualifiedDataTypes2:  <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes#> .
+@prefix ccts:    <urn:un:unece:uncefact:documentation:2#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dtype:   <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml:    <http://topbraid.org/sxml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+skos:prefLabel
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "pref label"^^xsd:string .
+
+<urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes>
+      rdf:type owl:Ontology ;
+      owl:imports <urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule> , <http://topbraid.org/sxml> , <http://www.linkedmodel.org/schema/dtype> ;
+      owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2, urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2, urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"^^xsd:string .
+
+UnqualifiedDataTypes1:Amount
+      rdf:type owl:Class ;
+      rdfs:label "Amount"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Amount ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:normalizedString ;
+                owl:onProperty UnqualifiedDataTypes1:currencyID ;
+                ccts:categoryCode "SC"@en ;
+                ccts:definition "The currency of the amount."@en ;
+                ccts:dictionaryEntryName
+                        "Amount. Currency. Identifier"@en ;
+                ccts:objectClass "Amount Currency"@en ;
+                ccts:primitiveType "string"@en ;
+                ccts:propertyTermName
+                        "Identification"@en ;
+                ccts:representationTermName
+                        "Identifier"@en ;
+                ccts:uniqueID "UNDT000001-SC2"@en ;
+                ccts:usageRule "Reference UNECE Rec 9, using 3-letter alphabetic codes."@en
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty UnqualifiedDataTypes1:currencyID
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#AmountType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A number of monetary units specified using a given unit of currency."@en ;
+      ccts:dictionaryEntryName
+              "Amount. Type"@en ;
+      ccts:representationTermName
+              "Amount"@en ;
+      ccts:uniqueID "UBLUDT000001"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:BinaryObject
+      rdf:type owl:Class ;
+      rdfs:label "Binary object"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:BinaryObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:normalizedString ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode ;
+                ccts:categoryCode "SC"@en ;
+                ccts:definition "The mime type of the binary object."@en ;
+                ccts:dictionaryEntryName
+                        "Binary Object. Mime. Code"@en ;
+                ccts:objectClass "Binary Object"@en ;
+                ccts:primitiveType "string"@en ;
+                ccts:propertyTermName
+                        "Mime"@en ;
+                ccts:representationTermName
+                        "Code"@en ;
+                ccts:uniqueID "UNDT000002-SC3"@en
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#BinaryObjectType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A set of finite-length sequences of binary octets."@en ;
+      ccts:dictionaryEntryName
+              "Binary Object. Type"@en ;
+      ccts:primitiveType "binary"@en ;
+      ccts:representationTermName
+              "Binary Object"@en ;
+      ccts:uniqueID "UBLUDT000002"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Code
+      rdf:type owl:Class ;
+      rdfs:label "Code"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Code ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#CodeType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A character string (letters, figures, or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an attribute, together with relevant supplementary information."@en ;
+      ccts:dictionaryEntryName
+              "Code. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Code"@en ;
+      ccts:uniqueID "UBLUDT000007"@en ;
+      ccts:usageRule "Other supplementary components in the CCT are captured as part of the token and name for the schema module containing the code list and thus, are not declared as attributes."@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Date
+      rdf:type owl:Class ;
+      rdfs:label "Date"^^xsd:string ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                owl:allValuesFrom xsd:date ;
+                owl:onProperty dtype:value
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dtype:value
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#DateType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "One calendar day according the Gregorian calendar."@en ;
+      ccts:dictionaryEntryName
+              "Date. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Date"@en ;
+      ccts:uniqueID "UBLUDT000009"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:DateTime
+      rdf:type owl:Class ;
+      rdfs:label "Date time"^^xsd:string ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                owl:allValuesFrom xsd:dateTime ;
+                owl:onProperty dtype:value
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dtype:value
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#DateTimeType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A particular point in the progression of time, together with relevant supplementary information."@en ;
+      ccts:dictionaryEntryName
+              "Date Time. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Date Time"@en ;
+      ccts:uniqueID "UBLUDT000008"@en ;
+      ccts:usageRule "Can be used for a date and/or time."@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Graphic
+      rdf:type owl:Class ;
+      rdfs:label "Graphic"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:BinaryObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:normalizedString ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode ;
+                ccts:categoryCode "SC"@en ;
+                ccts:definition "The mime type of the graphic object."@en ;
+                ccts:dictionaryEntryName
+                        "Graphic. Mime. Code"@en ;
+                ccts:objectClass "Graphic"@en ;
+                ccts:primitiveType "normalizedString"@en ;
+                ccts:propertyTermName
+                        "Mime"@en ;
+                ccts:representationTermName
+                        "Code"@en ;
+                ccts:uniqueID "UNDT000003-SC3"@en
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#GraphicType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A diagram, graph, mathematical curve, or similar representation."@en ;
+      ccts:dictionaryEntryName
+              "Graphic. Type"@en ;
+      ccts:primitiveType "binary"@en ;
+      ccts:representationTermName
+              "Graphic"@en ;
+      ccts:uniqueID "UBLUDT000003"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Identifier
+      rdf:type owl:Class ;
+      rdfs:label "Identifier"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Identifier ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#IdentifierType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information."@en ;
+      ccts:dictionaryEntryName
+              "Identifier. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Identifier"@en ;
+      ccts:uniqueID "UBLUDT0000011"@en ;
+      ccts:usageRule "Other supplementary components in the CCT are captured as part of the token and name for the schema module containing the identifier list and thus, are not declared as attributes."@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Indicator
+      rdf:type owl:Class ;
+      rdfs:label "Indicator"^^xsd:string ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dtype:value
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                owl:allValuesFrom xsd:boolean ;
+                owl:onProperty dtype:value
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#IndicatorType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A list of two mutually exclusive Boolean values that express the only possible states of a property."@en ;
+      ccts:dictionaryEntryName
+              "Indicator. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Indicator"@en ;
+      ccts:uniqueID "UBLUDT0000012"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Measure
+      rdf:type owl:Class ;
+      rdfs:label "Measure"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Measure ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty UnqualifiedDataTypes1:unitCode
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:normalizedString ;
+                owl:onProperty UnqualifiedDataTypes1:unitCode ;
+                ccts:categoryCode "SC"@en ;
+                ccts:definition "The type of unit of measure."@en ;
+                ccts:dictionaryEntryName
+                        "Measure. Unit. Code"@en ;
+                ccts:objectClass "Measure Unit"@en ;
+                ccts:primitiveType "normalizedString"@en ;
+                ccts:propertyTermName
+                        "Code"@en ;
+                ccts:representationTermName
+                        "Code"@en ;
+                ccts:uniqueID "UNDT000013-SC2"@en ;
+                ccts:usageRule "Reference UNECE Rec. 20 and X12 355"@en
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#MeasureType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A numeric value determined by measuring an object using a specified unit of measure."@en ;
+      ccts:dictionaryEntryName
+              "Measure. Type"@en ;
+      ccts:primitiveType "decimal"@en ;
+      ccts:propertyTermName
+              "Type"@en ;
+      ccts:representationTermName
+              "Measure"@en ;
+      ccts:uniqueID "UBLUDT0000013"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Name
+      rdf:type owl:Class ;
+      rdfs:label "Name"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Text ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#NameType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A character string that constitutes the distinctive designation of a person, place, thing or concept."@en ;
+      ccts:dictionaryEntryName
+              "Name. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Name"@en ;
+      ccts:uniqueID "UBLUDT0000020"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Numeric
+      rdf:type owl:Class ;
+      rdfs:label "Numeric"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Numeric ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#NumericType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure."@en ;
+      ccts:dictionaryEntryName
+              "Numeric. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Numeric"@en ;
+      ccts:uniqueID "UBLUDT0000014"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Percent
+      rdf:type owl:Class ;
+      rdfs:label "Percent"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Numeric ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#PercentType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "Numeric information that is assigned or is determined by calculation, counting, or sequencing and is expressed as a percentage. It does not require a unit of quantity or unit of measure."@en ;
+      ccts:dictionaryEntryName
+              "Percent. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Percent"@en ;
+      ccts:uniqueID "UBLUDT0000016"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Picture
+      rdf:type owl:Class ;
+      rdfs:label "Picture"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:BinaryObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:normalizedString ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode ;
+                ccts:categoryCode "SC"@en ;
+                ccts:definition "The mime type of the picture object."@en ;
+                ccts:dictionaryEntryName
+                        "Picture. Mime. Code"@en ;
+                ccts:objectClass "Picture"@en ;
+                ccts:primitiveType "normalizedString"@en ;
+                ccts:propertyTermName
+                        "Mime"@en ;
+                ccts:representationTermName
+                        "Code"@en ;
+                ccts:uniqueID "UNDT000004-SC3"@en
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#PictureType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A diagram, graph, mathematical curve, or similar representation."@en ;
+      ccts:dictionaryEntryName
+              "Picture. Type"@en ;
+      ccts:primitiveType "binary"@en ;
+      ccts:representationTermName
+              "Picture"@en ;
+      ccts:uniqueID "UBLUDT000004"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Quantity
+      rdf:type owl:Class ;
+      rdfs:label "Quantity"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Quantity ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#QuantityType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A counted number of non-monetary units, possibly including a fractional part."@en ;
+      ccts:dictionaryEntryName
+              "Quantity. Type"@en ;
+      ccts:primitiveType "decimal"@en ;
+      ccts:representationTermName
+              "Quantity"@en ;
+      ccts:uniqueID "UBLUDT0000018"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Rate
+      rdf:type owl:Class ;
+      rdfs:label "Rate"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Numeric ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#RateType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A numeric expression of a rate that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure."@en ;
+      ccts:dictionaryEntryName
+              "Rate. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Rate"@en ;
+      ccts:uniqueID "UBLUDT0000017"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Sound
+      rdf:type owl:Class ;
+      rdfs:label "Sound"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:BinaryObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:normalizedString ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode ;
+                ccts:categoryCode "SC"@en ;
+                ccts:definition "The mime type of the sound object."@en ;
+                ccts:dictionaryEntryName
+                        "Sound. Mime. Code"@en ;
+                ccts:objectClass "Sound"@en ;
+                ccts:primitiveType "normalizedString"@en ;
+                ccts:propertyTermName
+                        "Mime"@en ;
+                ccts:representationTermName
+                        "Code"@en ;
+                ccts:uniqueID "UNDT000005-SC3"@en
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#SoundType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "An audio representation."@en ;
+      ccts:dictionaryEntryName
+              "Sound. Type"@en ;
+      ccts:primitiveType "binary"@en ;
+      ccts:representationTermName
+              "Sound"@en ;
+      ccts:uniqueID "UBLUDT000005"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Text
+      rdf:type owl:Class ;
+      rdfs:label "Text"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Text ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#TextType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A character string (i.e. a finite set of characters), generally in the form of words of a language."@en ;
+      ccts:dictionaryEntryName
+              "Text. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Text"@en ;
+      ccts:uniqueID "UBLUDT0000019"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Time
+      rdf:type owl:Class ;
+      rdfs:label "Time"^^xsd:string ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dtype:value
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                owl:allValuesFrom xsd:time ;
+                owl:onProperty dtype:value
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#TimeType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "An instance of time that occurs every day."@en ;
+      ccts:dictionaryEntryName
+              "Time. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Time"@en ;
+      ccts:uniqueID "UBLUDT0000010"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Value
+      rdf:type owl:Class ;
+      rdfs:label "Value"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:Numeric ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#ValueType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure."@en ;
+      ccts:dictionaryEntryName
+              "Value. Type"@en ;
+      ccts:primitiveType "string"@en ;
+      ccts:representationTermName
+              "Value"@en ;
+      ccts:uniqueID "UBLUDT0000015"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:Video
+      rdf:type owl:Class ;
+      rdfs:label "Video"^^xsd:string ;
+      rdfs:subClassOf CoreComponentTypeSchemaModule:BinaryObject ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:normalizedString ;
+                owl:onProperty UnqualifiedDataTypes1:mimeCode ;
+                ccts:categoryCode "SC"@en ;
+                ccts:definition "The mime type of the video object."@en ;
+                ccts:dictionaryEntryName
+                        "Video. Mime. Code"@en ;
+                ccts:objectClass "Video"@en ;
+                ccts:primitiveType "normalizedString"@en ;
+                ccts:propertyTermName
+                        "Mime"@en ;
+                ccts:representationTermName
+                        "Code"@en ;
+                ccts:uniqueID "UNDT000006-SC3"@en
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#VideoType" ;
+      ccts:categoryCode "UDT"@en ;
+      ccts:definition "A video representation."@en ;
+      ccts:dictionaryEntryName
+              "Video. Type"@en ;
+      ccts:primitiveType "binary"@en ;
+      ccts:representationTermName
+              "Video"@en ;
+      ccts:uniqueID "UBLUDT000006"@en ;
+      ccts:versionID "1.0"@en .
+
+UnqualifiedDataTypes1:currencyID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "currency ID"^^xsd:string ;
+      sxml:attribute "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#currencyID" .
+
+UnqualifiedDataTypes1:mimeCode
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "mime code"^^xsd:string ;
+      sxml:attribute "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#mimeCode" .
+
+UnqualifiedDataTypes1:unitCode
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "unit code"^^xsd:string ;
+      sxml:attribute "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2#unitCode" .
+
+ccts:categoryCode
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "category code"^^xsd:string .
+
+ccts:definition
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "definition"^^xsd:string .
+
+ccts:dictionaryEntryName
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "dictionary entry name"^^xsd:string .
+
+ccts:objectClass
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "object class"^^xsd:string .
+
+ccts:primitiveType
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "primitive type"^^xsd:string .
+
+ccts:propertyTermName
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "property term name"^^xsd:string .
+
+ccts:representationTermName
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "representation term name"^^xsd:string .
+
+ccts:uniqueID
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "unique ID"^^xsd:string .
+
+ccts:usageRule
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "usage rule"^^xsd:string .
+
+ccts:versionID
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "version ID"^^xsd:string .

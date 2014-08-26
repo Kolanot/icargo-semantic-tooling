@@ -1,0 +1,148 @@
+# baseURI: urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.w3.org/2000/09/xmldsig
+# imports: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents
+# imports: urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents
+
+@prefix CommonBasicComponents:  <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents#> .
+@prefix SignatureAggregateComponents:  <urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents#> .
+@prefix SignatureAggregateComponents1:  <urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents#> .
+@prefix SignatureAggregateComponents2:  <urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents#> .
+@prefix SignatureBasicComponents:  <urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents#> .
+@prefix ccts:    <urn:un:unece:uncefact:documentation:2#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dsig:    <http://www.w3.org/2000/09/xmldsig#> .
+@prefix dtype:   <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml:    <http://topbraid.org/sxml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+dc:description
+      rdfs:label "description"^^xsd:string .
+
+skos:prefLabel
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "pref label"^^xsd:string .
+
+<urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2000/09/xmldsig> , <urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents> , <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents> , <http://topbraid.org/sxml> , <http://www.linkedmodel.org/schema/dtype> ;
+      owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2, urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2, urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"^^xsd:string .
+
+SignatureAggregateComponents:SignatureInformation
+      rdf:type owl:Class ;
+      rdfs:label "Signature information"^^xsd:string ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty SignatureAggregateComponents:iDRef
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                sxml:order "0"^^xsd:int ;
+                owl:allValuesFrom CommonBasicComponents:ID ;
+                owl:onProperty SignatureAggregateComponents:iDRef ;
+                ccts:cardinality "0..1"^^xsd:string ;
+                ccts:componentType "BBIE"^^xsd:string ;
+                ccts:dataType "Identifier. Type"^^xsd:string ;
+                ccts:definition "This specifies the identifier of the signature distinguishing it from other signatures."^^xsd:string ;
+                ccts:dictionaryEntryName
+                        "Signature Information. Identifier"^^xsd:string ;
+                ccts:objectClass "Signature Information"^^xsd:string ;
+                ccts:propertyTerm "Identifier"^^xsd:string ;
+                ccts:representationTerm
+                        "Identifier"^^xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty SignatureAggregateComponents:signatureRef
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                dc:description "This is a single digital signature as defined by the W3C specification."^^xsd:string ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                sxml:order "2"^^xsd:int ;
+                owl:allValuesFrom dsig:Signature ;
+                owl:onProperty SignatureAggregateComponents:signatureRef
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                sxml:order "1"^^xsd:int ;
+                owl:allValuesFrom SignatureBasicComponents:ReferencedSignatureID ;
+                owl:onProperty SignatureAggregateComponents:referencedSignatureIDRef ;
+                ccts:cardinality "0..1"^^xsd:string ;
+                ccts:componentType "BBIE"^^xsd:string ;
+                ccts:dataType "Identifier. Type"^^xsd:string ;
+                ccts:definition "This associates this signature with the identifier of a signature business object in the document."^^xsd:string ;
+                ccts:dictionaryEntryName
+                        "Signature Information. Referenced Signature Identifier. Identifier"^^xsd:string ;
+                ccts:objectClass "Signature Information"^^xsd:string ;
+                ccts:propertyTerm "Referenced Signature Identifier"^^xsd:string ;
+                ccts:representationTerm
+                        "Identifier"^^xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty SignatureAggregateComponents:referencedSignatureIDRef
+              ] ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2#SignatureInformationType" ;
+      ccts:componentType "ABIE"^^xsd:string ;
+      ccts:definition "This class captures a single signature and optionally associates to a signature in the document with the corresponding identifier."^^xsd:string ;
+      ccts:dictionaryEntryName
+              "Signature Information. Details"^^xsd:string ;
+      ccts:objectClass "Signature Information"^^xsd:string .
+
+SignatureAggregateComponents:iDRef
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "i DRef"^^xsd:string ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2#ID" .
+
+SignatureAggregateComponents:referencedSignatureIDRef
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "referenced signature IDRef"^^xsd:string ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2#ReferencedSignatureID" .
+
+SignatureAggregateComponents:signatureRef
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "signature ref"^^xsd:string ;
+      sxml:tag "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2#Signature" .
+
+ccts:cardinality
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "cardinality"^^xsd:string .
+
+ccts:componentType
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "component type"^^xsd:string .
+
+ccts:dataType
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "data type"^^xsd:string .
+
+ccts:definition
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "definition"^^xsd:string .
+
+ccts:dictionaryEntryName
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "dictionary entry name"^^xsd:string .
+
+ccts:objectClass
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "object class"^^xsd:string .
+
+ccts:propertyTerm
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "property term"^^xsd:string .
+
+ccts:representationTerm
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "representation term"^^xsd:string .

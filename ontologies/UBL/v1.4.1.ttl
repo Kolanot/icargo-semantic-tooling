@@ -1,0 +1,109 @@
+# baseURI: http://uri.etsi.org/01903/v1.4.1
+# imports: http://topbraid.org/sxml
+# imports: http://uri.etsi.org/01903/v1.3.2
+# imports: http://www.linkedmodel.org/schema/dtype
+
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dtype:   <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml:    <http://topbraid.org/sxml#> .
+@prefix v:       <http://uri.etsi.org/01903/v1.3.2#> .
+@prefix v1.4:    <http://uri.etsi.org/01903/v1.4.1#> .
+@prefix v1.41:   <http://uri.etsi.org/01903/v1.4.1#> .
+@prefix v1.42:   <http://uri.etsi.org/01903/v1.4.1#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://uri.etsi.org/01903/v1.4.1>
+      rdf:type owl:Ontology ;
+      owl:imports <http://uri.etsi.org/01903/v1.3.2> , <http://topbraid.org/sxml> , <http://www.linkedmodel.org/schema/dtype> ;
+      owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://uri.etsi.org/01903/v1.4.1#, http://uri.etsi.org/01903/v1.4.1#, http://uri.etsi.org/01903/v1.4.1#"^^xsd:string .
+
+<http://uri.etsi.org/01903/v1.4.1#ArchiveTimeStampV2>
+      rdf:type owl:Class ;
+      rdfs:label "Archive time stamp v2"^^xsd:string ;
+      rdfs:subClassOf v:XAdESTimeStamp ;
+      sxml:tag "http://uri.etsi.org/01903/v1.4.1#ArchiveTimeStampV2" .
+
+<http://uri.etsi.org/01903/v1.4.1#TimeStampValidationData>
+      rdf:type owl:Class ;
+      rdfs:label "Time stamp validation data"^^xsd:string ;
+      rdfs:subClassOf <http://uri.etsi.org/01903/v1.4.1#ValidationData> ;
+      sxml:tag "http://uri.etsi.org/01903/v1.4.1#TimeStampValidationData" .
+
+<http://uri.etsi.org/01903/v1.4.1#ValidationData>
+      rdf:type owl:Class ;
+      rdfs:label "Validation data"^^xsd:string ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#revocationValuesRef>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:ID ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#id>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#certificateValuesRef>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#uR>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                sxml:order "1"^^xsd:int ;
+                owl:allValuesFrom v:RevocationValues ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#revocationValuesRef>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#id>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "true"^^xsd:boolean ;
+                owl:allValuesFrom xsd:anyURI ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#uR>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                sxml:isAttribute "false"^^xsd:boolean ;
+                sxml:order "0"^^xsd:int ;
+                owl:allValuesFrom v:CertificateValues ;
+                owl:onProperty <http://uri.etsi.org/01903/v1.4.1#certificateValuesRef>
+              ] ;
+      sxml:tag "http://uri.etsi.org/01903/v1.4.1#ValidationDataType" .
+
+<http://uri.etsi.org/01903/v1.4.1#certificateValuesRef>
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "certificate values ref"^^xsd:string ;
+      sxml:tag "http://uri.etsi.org/01903/v1.4.1#CertificateValues" .
+
+<http://uri.etsi.org/01903/v1.4.1#id>
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "id"^^xsd:string ;
+      sxml:attribute "http://uri.etsi.org/01903/v1.4.1#Id" .
+
+<http://uri.etsi.org/01903/v1.4.1#revocationValuesRef>
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "revocation values ref"^^xsd:string ;
+      sxml:tag "http://uri.etsi.org/01903/v1.4.1#RevocationValues" .
+
+<http://uri.etsi.org/01903/v1.4.1#uR>
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "u r"^^xsd:string ;
+      sxml:attribute "http://uri.etsi.org/01903/v1.4.1#UR" .
+
+skos:prefLabel
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "pref label"^^xsd:string .
