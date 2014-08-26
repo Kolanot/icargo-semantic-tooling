@@ -1,0 +1,49 @@
+# baseURI: http://www.nlip.org/PaperlessTransport/TransportExecutionPlan
+# imports: http://www.nlip.org/PaperlessTransport/GenericElements
+# imports: urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan
+
+@prefix :        <http://www.nlip.org/PaperlessTransport/TransportExecutionPlan#> .
+@prefix GenericElements:  <http://www.nlip.org/PaperlessTransport/GenericElements#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tep:     <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.nlip.org/PaperlessTransport/TransportExecutionPlan>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.nlip.org/PaperlessTransport/GenericElements> , <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+:TransportExecutionPlan
+      rdf:type owl:Class ;
+      rdfs:subClassOf <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan#TransportExecutionPlan> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan#profileIDRef>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom
+                        [ rdf:type owl:Restriction ;
+                          owl:hasValue "urn:tln.nlip.org:profiles:tep_profile:ver1.0"^^xsd:string ;
+                          owl:onProperty <http://www.linkedmodel.org/schema/dtype#value>
+                        ] ;
+                owl:onProperty <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan#profileIDRef>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan#uUIDRef>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan#issueDateRef>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty <urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan#documentStatusCodeRef>
+              ] .
