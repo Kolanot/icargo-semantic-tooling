@@ -1,5 +1,4 @@
 # baseURI: http://www.nlip.org/PaperlessTransport/GenericElements
-# imports: http://tno-logistics.nl/LogiCO
 # imports: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
 # imports: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
 # imports: urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
@@ -15,7 +14,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 <http://www.nlip.org/PaperlessTransport/GenericElements>
   rdf:type owl:Ontology ;
-  owl:imports <http://tno-logistics.nl/LogiCO> ;
   owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2> ;
   owl:imports <urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2> ;
   owl:imports <urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2> ;
@@ -25,7 +23,6 @@
 :Location
   rdf:type owl:Class ;
   rdfs:label "Location"^^xsd:string ;
-  rdfs:subClassOf <http://tno-logistics.nl/LogiCO#Location> ;
   rdfs:subClassOf cac:Location ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -95,7 +92,6 @@
 :Party
   rdf:type owl:Class ;
   rdfs:label "Party"^^xsd:string ;
-  rdfs:subClassOf <http://tno-logistics.nl/LogiCO#Actor> ;
   rdfs:subClassOf cac:Party ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
