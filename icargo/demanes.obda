@@ -1,0 +1,32 @@
+[PrefixDeclaration]
+:		http://www.icargo.eu/demanes#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[SourceDeclaration]
+sourceUri	Demanes
+connectionUrl	jdbc:mysql://intrepid.sensorlab.tno.nl:3306/demanes?sessionVariables=sql_mode='ANSI'
+username	root
+password	root
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	userinfo-1
+target		:id/User/{username} a :User ; :firstname {firstname} ; :lastname {lastname} ; :email {email} ; :organization :id/Organization/{organization} . 
+source		SELECT username, firstname, lastname, email, organization FROM userinfo
+
+mappingId	userinfo-2
+target		:id/Organization/{organization} a :Organization ; :name {organization} . 
+source		SELECT DISTINCT organization FROM userinfo
+
+mappingId	truckinfo-1
+target		:/id/Truck/{truckid} a :Truck ; :licensenumber {licensenumber} ; :activity {currentactivity} ; :fuellevel {fuellevel} ; :driver :id/User/{driver} . 
+source		SELECT * FROM truckinfo
+
+mappingId	terminalinfo-1
+target		:id/Terminal/{terminalid} a :Terminal ; :name {terminalname} ; :openingtime {openingtime} ; :closingtime {closingtime} . 
+source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
+]]
+
