@@ -1,102 +1,59 @@
 <?xml version="1.0"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns="http://www.icargo.eu/demanes2logico#"
-    xmlns:LogiCO="http://tno-logistics.nl/LogiCO#"
+    xmlns:demanes="http://interop.sensorlab.tno.nl/demanes#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:demanes="http://www.icargo.eu/demanes#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://interop.sensorlab.tno.nl/demanes2logico#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://www.icargo.eu/demanes2logico">
+    xmlns:logico="http://interop.sensorlab.tno.nl/LogiCO#"
+  xml:base="http://interop.sensorlab.tno.nl/demanes2logico">
   <owl:Ontology rdf:about="">
-    <owl:imports rdf:resource="http://www.icargo.eu/demanes"/>
-    <owl:imports rdf:resource="http://tno-logistics.nl/LogiCO"/>
+    <owl:imports rdf:resource="http://interop.sensorlab.tno.nl/LogiCO"/>
+    <owl:imports rdf:resource="http://interop.sensorlab.tno.nl/demanes"/>
   </owl:Ontology>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#User">
-    <rdfs:subClassOf rdf:resource="http://tno-logistics.nl/LogiCO#Actor"/>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#id">
+    <rdfs:subPropertyOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasID"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#Container">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://tno-logistics.nl/LogiCO#hasID"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://tno-logistics.nl/LogiCO#Container"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#TruckActivity">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#terminal"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#action"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#truck"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://tno-logistics.nl/LogiCO#hasStatus"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#container"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://tno-logistics.nl/LogiCO#hasDescription"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://tno-logistics.nl/LogiCO#Activity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#status">
-    <rdfs:subPropertyOf rdf:resource="http://tno-logistics.nl/LogiCO#hasStatus"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#name">
-    <rdfs:subPropertyOf rdf:resource="http://tno-logistics.nl/LogiCO#hasName"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#Organization">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://tno-logistics.nl/LogiCO#hasName"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://tno-logistics.nl/LogiCO#Actor"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#Terminal">
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#Container">
+    <rdfs:subClassOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#Container"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#longitude"/>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasID"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#description">
+    <rdfs:subPropertyOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasDescription"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#Terminal">
+    <rdfs:subClassOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#Terminal"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#openingtime"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="http://tno-logistics.nl/LogiCO#hasID"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#closingtime"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#latitude"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
@@ -105,94 +62,137 @@
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#latitude"/>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasID"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://tno-logistics.nl/LogiCO#Terminal"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#longitude"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#TruckActivity">
+    <rdfs:subClassOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#Activity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasDescription"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#container"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasStatus"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#truck"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#action"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#terminal"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#User">
+    <rdfs:subClassOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#name">
+    <rdfs:subPropertyOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#status">
+    <rdfs:subPropertyOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#Truck">
+    <rdfs:subClassOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#Truck"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#latitude"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#fuellevel"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#longitude"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://tno-logistics.nl/LogiCO#hasName"/>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasID"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#driver"/>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#openingtime"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#licensenumber"/>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#closingtime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#owner"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/demanes#currentactivity"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#id">
-    <rdfs:subPropertyOf rdf:resource="http://tno-logistics.nl/LogiCO#hasID"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#description">
-    <rdfs:subPropertyOf rdf:resource="http://tno-logistics.nl/LogiCO#hasDescription"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.icargo.eu/demanes#Truck">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#currentactivity"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#owner"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://tno-logistics.nl/LogiCO#Truck"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#driver"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+  <rdf:Description rdf:about="http://interop.sensorlab.tno.nl/demanes#Organization">
+    <rdfs:subClassOf rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#Actor"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://tno-logistics.nl/LogiCO#hasID"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#longitude"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#fuellevel"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#latitude"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://www.icargo.eu/demanes#licensenumber"/>
+        <owl:onProperty rdf:resource="http://interop.sensorlab.tno.nl/LogiCO#hasName"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </rdf:Description>
