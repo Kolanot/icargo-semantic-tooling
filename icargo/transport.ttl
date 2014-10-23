@@ -1,0 +1,233 @@
+# baseURI: http://interop.sensorlab.tno.nl/def/transport
+
+@prefix :        <http://interop.sensorlab.tno.nl/def/transport#> .
+@prefix cc:      <http://interop.sensorlab.tno.nl/CombinedContainers/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tu:      <http://interop.sensorlab.tno.nl/TruckersUnited/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://interop.sensorlab.tno.nl/def/transport>
+      rdf:type owl:Ontology .
+
+:Container
+      rdf:type owl:Class ;
+      rdfs:label "Container "@en .
+
+:Driver
+      rdf:type owl:Class .
+
+:GeoPosition
+      rdf:type owl:Class ;
+      rdfs:label "Geo position "@en .
+
+:Organization
+      rdf:type owl:Class ;
+      rdfs:label "Organization "@en .
+
+:Terminal
+      rdf:type owl:Class .
+
+:TerminalActivity
+      rdf:type owl:Class .
+
+:TransportActivity
+      rdf:type owl:Class .
+
+:Truck
+      rdf:type owl:Class ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :driver
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :id
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :owner
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :position
+              ] .
+
+:action
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :TransportActivity ;
+      rdfs:label "action "@en ;
+      rdfs:range xsd:string .
+
+:activities
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :Truck ;
+      rdfs:label "activities"@en ;
+      rdfs:range :TransportActivity ;
+      owl:inverseOf :truck .
+
+:ata  rdf:type owl:DatatypeProperty ;
+      rdfs:label "Actual Time of Arrival"@en ;
+      rdfs:range xsd:dateTime .
+
+:atd  rdf:type owl:DatatypeProperty ;
+      rdfs:label "Actual Time of Departure"@en ;
+      rdfs:range xsd:dateTime .
+
+:closingtime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Terminal ;
+      rdfs:label "closingtime "@en ;
+      rdfs:range xsd:dateTime .
+
+:container
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :TransportActivity ;
+      rdfs:label "container "@en ;
+      rdfs:range :Container .
+
+:description
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :TransportActivity ;
+      rdfs:label "description "@en ;
+      rdfs:range xsd:string .
+
+:driver
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :Truck ;
+      rdfs:label "driver "@en ;
+      rdfs:range :Driver .
+
+:drivers
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :Organization ;
+      rdfs:label "drivers"@en ;
+      rdfs:range :Driver ;
+      owl:inverseOf :organization .
+
+:email
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Driver ;
+      rdfs:label "email "@en ;
+      rdfs:range xsd:string .
+
+:eta  rdf:type owl:DatatypeProperty ;
+      rdfs:label "Estimated Time of Arrival"@en ;
+      rdfs:range xsd:dateTime .
+
+:etd  rdf:type owl:DatatypeProperty ;
+      rdfs:label "Estimated Time of Departure"@en ;
+      rdfs:range xsd:dateTime .
+
+:firstname
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Driver ;
+      rdfs:label "firstname "@en ;
+      rdfs:range xsd:string .
+
+:fuellevel
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Truck ;
+      rdfs:label "fuellevel "@en ;
+      rdfs:range xsd:float .
+
+:id   rdf:type owl:DatatypeProperty ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (:Container :Terminal :Truck)
+              ] ;
+      rdfs:label "id "@en ;
+      rdfs:range xsd:string .
+
+:lastname
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Driver ;
+      rdfs:label "lastname "@en ;
+      rdfs:range xsd:string .
+
+:latitude
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :GeoPosition ;
+      rdfs:label "latitude "@en ;
+      rdfs:range xsd:float .
+
+:licensenumber
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Truck ;
+      rdfs:label "licensenumber "@en ;
+      rdfs:range xsd:string .
+
+:longitude
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :GeoPosition ;
+      rdfs:label "longitude"@en ;
+      rdfs:range xsd:float .
+
+:name
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (:Organization :Terminal)
+              ] ;
+      rdfs:label "name "@en ;
+      rdfs:range xsd:string .
+
+:openingtime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Terminal ;
+      rdfs:label "openingtime "@en ;
+      rdfs:range xsd:dateTime .
+
+:organization
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :Driver ;
+      rdfs:label "organization "@en ;
+      rdfs:range :Organization ;
+      owl:inverseOf :drivers .
+
+:owner
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :Truck ;
+      rdfs:label "owner "@en ;
+      rdfs:range :Organization ;
+      owl:inverseOf :trucks .
+
+:position
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "position "@en ;
+      rdfs:range :GeoPosition .
+
+:status
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :TransportActivity , :Truck ;
+      rdfs:label "status "@en ;
+      rdfs:range xsd:string .
+
+:terminal
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :TransportActivity ;
+      rdfs:label "terminal "@en ;
+      rdfs:range :Terminal .
+
+:truck
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :TransportActivity ;
+      rdfs:label "truck "@en ;
+      rdfs:range :Truck ;
+      owl:inverseOf :activities .
+
+:trucks
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :Organization ;
+      rdfs:label "trucks "@en ;
+      rdfs:range :Truck ;
+      owl:inverseOf :owner .
+
+:username
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string .

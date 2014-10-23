@@ -1,5 +1,5 @@
 [PrefixDeclaration]
-:		http://www.icargo.eu/demanes#
+:		http://interop.sensorlab.tno.nl/def/transport#
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
 xsd:		http://www.w3.org/2001/XMLSchema#
@@ -14,7 +14,7 @@ driverClass	com.mysql.jdbc.Driver
 
 [MappingDeclaration] @collection [[
 mappingId	userinfo-1
-target		:id/User/{username} a :User ; :firstname {firstname} ; :lastname {lastname} ; :email {email} . 
+target		:id/User/{username} a :Driver ; :firstname {firstname} ; :lastname {lastname} ; :email {email} . 
 source		SELECT username, firstname, lastname, email FROM userinfo
 
 mappingId	userinfo-3
@@ -22,7 +22,7 @@ target		:id/Organization/{organization} a :Organization ; :name {organization} .
 source		SELECT DISTINCT organization FROM userinfo
 
 mappingId	truckinfo-1
-target		:/id/Truck/{truckid} a :Truck ; :licensenumber {licensenumber} ; :latitude {latitude} ; :longitude {longitude} ; :fuellevel {fuellevel} ; :currentactivity {currentactivity} . 
+target		:/id/Truck/{truckid} a :Truck ; :licensenumber {licensenumber} ; :fuellevel {fuellevel} ; :status {currentactivity} . 
 source		SELECT truckid, licensenumber, owner, driver, longitude, latitude, fuellevel, currentactivity FROM truckinfo
 
 mappingId	terminalinfo-1
@@ -34,7 +34,7 @@ target		:id/User/{username} :organization :id/Organization/{organization} .
 source		SELECT username, organization FROM userinfo
 
 mappingId	truckinfo-2
-target		:/id/Truck/{truckid} :owner :id/Organization/{owner} ; :driver :id/User/{driver} . 
-source		SELECT truckid, owner, driver FROM truckinfo
+target		:/id/Truck/{truckid} :owner :id/Organization/{owner} ; :driver :id/User/{username} . 
+source		SELECT truckid, owner, username FROM truckinfo
 ]]
 
