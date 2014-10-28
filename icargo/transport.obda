@@ -1,5 +1,7 @@
 [PrefixDeclaration]
 :		http://interop.sensorlab.tno.nl/def/transport#
+cc:		http://interop.sensorlab.tno.nl/CombinedContainers/
+tu:		http://interop.sensorlab.tno.nl/TruckersUnited/
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
 xsd:		http://www.w3.org/2001/XMLSchema#
@@ -13,28 +15,58 @@ password	root
 driverClass	com.mysql.jdbc.Driver
 
 [MappingDeclaration] @collection [[
-mappingId	userinfo-1
-target		:id/User/{username} a :Driver ; :firstname {firstname} ; :lastname {lastname} ; :email {email} . 
+mappingId	Driver
+target		tu:id/Driver/{username} a :Driver ; :firstname {firstname} ; :lastname {lastname} ; :email {email} . 
 source		SELECT username, firstname, lastname, email FROM userinfo
 
-mappingId	userinfo-3
-target		:id/Organization/{organization} a :Organization ; :name {organization} . 
+mappingId	Organization
+target		tu:id/Organization/{organization} a :Organization ; :name {organization} . 
 source		SELECT DISTINCT organization FROM userinfo
 
-mappingId	truckinfo-1
-target		:/id/Truck/{truckid} a :Truck ; :licensenumber {licensenumber} ; :fuellevel {fuellevel} ; :status {currentactivity} . 
-source		SELECT truckid, licensenumber, owner, driver, longitude, latitude, fuellevel, currentactivity FROM truckinfo
+mappingId	Truck
+target		tu:id/Truck/{truckid} a :Truck ; :licensenumber {licensenumber} ; :fuellevel {fuellevel} ; :status {currentactivity} . 
+source		SELECT truckid, licensenumber, fuellevel, currentactivity FROM truckinfo
 
-mappingId	terminalinfo-1
-target		:id/Terminal/{terminalid} a :Terminal ; :openingtime {openingtime} ; :closingtime {closingtime} . 
+mappingId	Terminal
+target		cc:id/Terminal/{terminalid} a :Terminal ; :name {terminalname} ; :openingtime {openingtime} ; :closingtime {closingtime} . 
 source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
 
-mappingId	userinfo-2
-target		:id/User/{username} :organization :id/Organization/{organization} . 
+mappingId	Container
+target		cc:id/Container/{containerid} a :Container . 
+source		SELECT containerid FROM activityinfo
+			UNION
+			SELECT containerid FROM activityinfohistory
+
+mappingId	Activity
+target		tu:id/Activity/{assignment} a :TransportActivity ; :action {action} ; :status {planningstatus} . 
+source		SELECT assignment, action, planningstatus FROM activityinfo
+			UNION
+			SELECT assignment, action, planningstatus FROM activityinfohistory
+
+mappingId	GeoPositionForTruck
+target		tu:id/GeoPosition/{truckid} a :GeoPosition ; :latitude {latitude} ; :longitude {longitude} . 
+source		SELECT truckid, latitude, longitude  FROM truckinfo
+
+mappingId	GeoPositionForTerminal
+target		cc:id/GeoPosition/{terminalid} a :GeoPosition ; :latitude {latitude} ; :longitude {longitude} . 
+source		SELECT terminalid, latitude, longitude  FROM terminalinfo
+
+mappingId	Driver-relations
+target		tu:id/Driver/{username} :organization tu:id/Organization/{organization} . 
 source		SELECT username, organization FROM userinfo
 
-mappingId	truckinfo-2
-target		:/id/Truck/{truckid} :owner :id/Organization/{owner} ; :driver :id/User/{username} . 
+mappingId	Truck-relations
+target		tu:id/Truck/{truckid} :owner tu:id/Organization/{owner} ; :driver tu:id/Driver/{username} ; :position tu:id/GeoPosition/{truckid} . 
 source		SELECT truckid, owner, username FROM truckinfo
+
+mappingId	Terminal-relations
+target		cc:id/Terminal/{terminalid} :position cc:id/GeoPosition/{terminalid} . 
+source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
+
+mappingId	Activity-relations
+target		tu:id/Activity/{assignment} :truck tu:id/Truck/{licenseplatenumber} ; :container cc:id/Container/{containerid} . 
+source		SELECT assignment, licenseplatenumber, containerid, terminalid  FROM activityinfo
+			UNION
+			SELECT assignment, licenseplatenumber, containerid, terminalid  FROM activityinfohistory 
 ]]
 

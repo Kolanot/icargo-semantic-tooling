@@ -27,7 +27,12 @@
       rdfs:label "Organization "@en .
 
 :Terminal
-      rdf:type owl:Class .
+      rdf:type owl:Class ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :position
+              ] .
 
 :TerminalActivity
       rdf:type owl:Class .
@@ -116,6 +121,12 @@
       rdfs:label "email "@en ;
       rdfs:range xsd:string .
 
+:endtime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :TransportActivity ;
+      rdfs:label "end time"@en ;
+      rdfs:range xsd:dateTime .
+
 :eta  rdf:type owl:DatatypeProperty ;
       rdfs:label "Estimated Time of Arrival"@en ;
       rdfs:range xsd:dateTime .
@@ -202,9 +213,18 @@
       rdfs:label "position "@en ;
       rdfs:range :GeoPosition .
 
+:starttime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :TransportActivity ;
+      rdfs:label "start time"@en ;
+      rdfs:range xsd:dateTime .
+
 :status
       rdf:type owl:DatatypeProperty ;
-      rdfs:domain :TransportActivity , :Truck ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (:TransportActivity :Truck)
+              ] ;
       rdfs:label "status "@en ;
       rdfs:range xsd:string .
 
