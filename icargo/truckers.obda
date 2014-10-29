@@ -1,5 +1,5 @@
 [PrefixDeclaration]
-:		http://interop.sensorlab.tno.nl/def/transport#
+to:		http://interop.sensorlab.tno.nl/def/truckers#
 cc:		http://interop.sensorlab.tno.nl/CombinedContainers/
 tu:		http://interop.sensorlab.tno.nl/TruckersUnited/
 owl:		http://www.w3.org/2002/07/owl#
@@ -16,55 +16,55 @@ driverClass	com.mysql.jdbc.Driver
 
 [MappingDeclaration] @collection [[
 mappingId	Driver
-target		tu:id/Driver/{username} a :Driver ; :firstname {firstname} ; :lastname {lastname} ; :email {email} . 
+target		tu:id/Driver/{username} a to:Driver ; to:firstname {firstname} ; to:lastname {lastname} ; to:email {email} . 
 source		SELECT username, firstname, lastname, email FROM userinfo
 
 mappingId	Organization
-target		tu:id/Organization/{organization} a :Organization ; :name {organization} . 
+target		tu:id/Organization/{organization} a to:Organization ; to:name {organization} . 
 source		SELECT DISTINCT organization FROM userinfo
 
 mappingId	Truck
-target		tu:id/Truck/{truckid} a :Truck ; :licensenumber {licensenumber} ; :fuellevel {fuellevel} ; :status {currentactivity} . 
+target		tu:id/Truck/{truckid} a to:Truck ; to:licensenumber {licensenumber} ; to:fuellevel {fuellevel} ; to:status {currentactivity} . 
 source		SELECT truckid, licensenumber, fuellevel, currentactivity FROM truckinfo
 
 mappingId	Terminal
-target		cc:id/Terminal/{terminalid} a :Terminal ; :name {terminalname} ; :openingtime {openingtime} ; :closingtime {closingtime} . 
+target		cc:id/Terminal/{terminalid} a to:Terminal ; to:name {terminalname} ; to:openingtime {openingtime} ; to:closingtime {closingtime} . 
 source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
 
 mappingId	Container
-target		cc:id/Container/{containerid} a :Container . 
+target		cc:id/Container/{containerid} a to:Container . 
 source		SELECT containerid FROM activityinfo
 			UNION
 			SELECT containerid FROM activityinfohistory
 
 mappingId	Activity
-target		tu:id/Activity/{assignment} a :TransportActivity ; :action {action} ; :status {planningstatus} . 
+target		tu:id/Activity/{assignment} a to:TransportActivity ; to:action {action} ; to:status {planningstatus} . 
 source		SELECT assignment, action, planningstatus FROM activityinfo
 			UNION
 			SELECT assignment, action, planningstatus FROM activityinfohistory
 
 mappingId	GeoPositionForTruck
-target		tu:id/GeoPosition/{truckid} a :GeoPosition ; :latitude {latitude} ; :longitude {longitude} . 
+target		tu:id/GeoPosition/{truckid} a to:GeoPosition ; to:latitude {latitude} ; to:longitude {longitude} . 
 source		SELECT truckid, latitude, longitude  FROM truckinfo
 
 mappingId	GeoPositionForTerminal
-target		cc:id/GeoPosition/{terminalid} a :GeoPosition ; :latitude {latitude} ; :longitude {longitude} . 
+target		cc:id/GeoPosition/{terminalid} a to:GeoPosition ; to:latitude {latitude} ; to:longitude {longitude} . 
 source		SELECT terminalid, latitude, longitude  FROM terminalinfo
 
 mappingId	Driver-relations
-target		tu:id/Driver/{username} :organization tu:id/Organization/{organization} . 
+target		tu:id/Driver/{username} to:organization tu:id/Organization/{organization} . 
 source		SELECT username, organization FROM userinfo
 
 mappingId	Truck-relations
-target		tu:id/Truck/{truckid} :owner tu:id/Organization/{owner} ; :driver tu:id/Driver/{username} ; :position tu:id/GeoPosition/{truckid} . 
+target		tu:id/Truck/{truckid} to:owner tu:id/Organization/{owner} ; to:driver tu:id/Driver/{username} ; to:position tu:id/GeoPosition/{truckid} . 
 source		SELECT truckid, owner, username FROM truckinfo
 
 mappingId	Terminal-relations
-target		cc:id/Terminal/{terminalid} :position cc:id/GeoPosition/{terminalid} . 
+target		cc:id/Terminal/{terminalid} to:position cc:id/GeoPosition/{terminalid} . 
 source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
 
 mappingId	Activity-relations
-target		tu:id/Activity/{assignment} :truck tu:id/Truck/{licenseplatenumber} ; :container cc:id/Container/{containerid} . 
+target		tu:id/Activity/{assignment} to:truck tu:id/Truck/{licenseplatenumber} ; to:container cc:id/Container/{containerid} . 
 source		SELECT assignment, licenseplatenumber, containerid, terminalid  FROM activityinfo
 			UNION
 			SELECT assignment, licenseplatenumber, containerid, terminalid  FROM activityinfohistory 

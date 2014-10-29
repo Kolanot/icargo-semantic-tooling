@@ -1,6 +1,6 @@
-# baseURI: http://interop.sensorlab.tno.nl/def/transport
+# baseURI: http://interop.sensorlab.tno.nl/def/truckers
 
-@prefix :        <http://interop.sensorlab.tno.nl/def/transport#> .
+@prefix :        <http://interop.sensorlab.tno.nl/def/truckers#> .
 @prefix cc:      <http://interop.sensorlab.tno.nl/CombinedContainers/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -8,7 +8,7 @@
 @prefix tu:      <http://interop.sensorlab.tno.nl/TruckersUnited/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-<http://interop.sensorlab.tno.nl/def/transport>
+<http://interop.sensorlab.tno.nl/def/truckers>
       rdf:type owl:Ontology .
 
 :Container
