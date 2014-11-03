@@ -3,77 +3,81 @@
 # imports: http://interop.sensorlab.tno.nl/LogiServ
 # imports: http://interop.sensorlab.tno.nl/def/truckers
 
-@prefix :        <http://interop.sensorlab.tno.nl/truckers2logico#> .
-@prefix LogiServ:  <http://interop.sensorlab.tno.nl/LogiServ#> .
-@prefix logico:  <http://interop.sensorlab.tno.nl/LogiCO#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix to:      <http://interop.sensorlab.tno.nl/def/truckers#> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-
+# c14n-version: 3
+@prefix : <http://interop.sensorlab.tno.nl/truckers2logico#> .
+@prefix LogiServ: <http://interop.sensorlab.tno.nl/LogiServ#> .
+@prefix logico: <http://interop.sensorlab.tno.nl/LogiCO#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix to: <http://interop.sensorlab.tno.nl/def/truckers#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 to:Container
-      rdfs:subClassOf logico:Container , logico:Identifier ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty logico:hasID ;
-                owl:someValuesFrom logico:Identifier
-              ] .
-
+  rdfs:subClassOf logico:Container ;
+.
 to:Driver
-      rdfs:subClassOf logico:Actor .
-
+  rdfs:subClassOf logico:Actor ;
+.
 to:GeoPosition
-      rdfs:subClassOf logico:GeoPoint .
-
+  rdfs:subClassOf logico:GeoPoint ;
+.
 to:Organization
-      rdfs:subClassOf logico:Actor .
-
+  rdfs:subClassOf logico:Actor ;
+.
 to:Terminal
-      rdfs:subClassOf logico:Location , logico:Terminal .
-
+  rdfs:subClassOf logico:Terminal ;
+.
 to:TerminalActivity
-      rdfs:subClassOf LogiServ:Activity .
-
+  rdfs:subClassOf LogiServ:Activity ;
+.
 to:TransportActivity
-      rdfs:subClassOf LogiServ:Transport .
-
+  rdfs:subClassOf LogiServ:Transport ;
+.
 to:Truck
-      rdfs:subClassOf logico:Truck .
-
+  rdfs:subClassOf logico:Truck ;
+.
 to:container
-      rdfs:subPropertyOf logico:moves .
-
+  rdfs:subPropertyOf LogiServ:involves ;
+.
 to:description
-      rdfs:subPropertyOf logico:hasDescription .
-
+  rdfs:subPropertyOf logico:hasDescription ;
+.
 to:email
-      rdfs:subPropertyOf logico:hasEmail .
-
+  rdfs:subPropertyOf logico:hasEmail ;
+.
 to:firstname
-      rdfs:subPropertyOf logico:hasName .
-
+  rdfs:subPropertyOf logico:hasName ;
+.
 to:id
-      rdfs:subPropertyOf logico:hasIDValue .
-
+  rdfs:subPropertyOf logico:hasIDValue ;
+.
 to:lastname
-      rdfs:subPropertyOf logico:hasName .
-
+  rdfs:subPropertyOf logico:hasName ;
+.
 to:latitude
-      rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
-
+  rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+.
 to:longitude
-      rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
-
+  rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+.
 to:name
-      rdfs:subPropertyOf logico:hasName .
-
+  rdfs:subPropertyOf logico:hasName ;
+.
 to:position
-      rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
-
+  rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#location> ;
+.
 to:status
-      rdfs:subPropertyOf logico:hasStatus .
-
+  rdfs:subPropertyOf logico:hasStatus ;
+.
+to:terminal
+  rdfs:subPropertyOf LogiServ:involves ;
+.
+to:truck
+  rdfs:subPropertyOf LogiServ:involves ;
+.
 <http://interop.sensorlab.tno.nl/truckers2logico>
-      rdf:type owl:Ontology ;
-      owl:imports <http://interop.sensorlab.tno.nl/LogiCO> , <http://interop.sensorlab.tno.nl/LogiServ> , <http://interop.sensorlab.tno.nl/def/truckers> .
+  rdf:type owl:Ontology ;
+  owl:imports <http://interop.sensorlab.tno.nl/LogiCO> ;
+  owl:imports <http://interop.sensorlab.tno.nl/LogiServ> ;
+  owl:imports <http://interop.sensorlab.tno.nl/def/truckers> ;
+.

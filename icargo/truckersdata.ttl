@@ -1,0 +1,1328 @@
+# baseURI: http://interop.sensorlab.tno.nl/TruckersUnited
+# imports: http://interop.sensorlab.tno.nl/def/truckers
+# imports: http://interop.sensorlab.tno.nl/truckers2logico
+
+# c14n-version: 3
+@prefix : <http://interop.sensorlab.tno.nl/TruckersUnited#> .
+@prefix cc: <http://interop.sensorlab.tno.nl/CombinedContainers/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix t2l: <http://interop.sensorlab.tno.nl/truckers2logico#> .
+@prefix to: <http://interop.sensorlab.tno.nl/def/truckers#> .
+@prefix tu: <http://interop.sensorlab.tno.nl/TruckersUnited/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/AMFU%20892923%2F8>
+  rdf:type to:Container ;
+  to:id "ABC"^^xsd:string ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/AMFU%20892942%2F8>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/APHU%20633476%2F3>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/BSIU%20251052%2F5>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAIU%20273424%2F2>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAIU%20320099%2F8>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAIU%20367966%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAXU%20730890%2F9>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CONTAINER_ID>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CPSU%20106735%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CRLU%20116279%2F5>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CSLU%20113599%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/DRYU%20268795%2F9>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/ECMU%20426720%2F3>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/ECMU%20931517%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EGSU%20310398%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EISU%20205867%2F6>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EMCU%20395188%2F6>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EXFU%20055469%2F8>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/GLDU%20575771%2F8>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HGTU%20150004%2F5>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HLXU%20110653%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HOTU%20161261%2F1>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HOTU%20261551%2F2>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/INBU%20399876%2F1>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/KKFU%20113089%2F8>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/KKFU%20117173%2F1>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MAGU%20488848%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MAGU%20534572%2F0>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MAXU%20244206%2F8>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MEDU%20217561%2F2>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MEDU%20340895%2F6>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MOAU%20058619%2F0>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MOAU%20140259%2F5>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MOFU%20071777%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MSCU%20473912%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/NYKU%20355069%2F5>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/NYKU%20820578%2F9>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/OOLU%20012533%2F0>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/PGRU%20411619%2F0>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/SEGU%20730835%2F5>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCKU%20294153%2F1>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCLU%20669185%2F0>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20539593%2F2>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20542224%2F1>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20891467%2F2>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20948602%2F8>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TEMU%20506723%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TEMU%20655980%2F9>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TIFU%20148687%2F9>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TNOU%20241074%2F6>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRHU%20249894%2F6>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20171880%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20171963%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20172011%2F0>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20172057%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20172646%2F4>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20390616%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20584778%2F3>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TTNU%20516150%2F0>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/UNIU%20600175%2F7>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/YMLU%20336104%2F2>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/YMLU%20359225%2F2>
+  rdf:type to:Container ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/GeoPosition/ECT%2FDELTATERMINAL>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1954E1 ;
+  to:longitude 4.0295E0 ;
+.
+<http://interop.sensorlab.tno.nl/CombinedContainers/id/Terminal/ECT%2FDELTATERMINAL>
+  rdf:type to:Terminal ;
+  to:closingtime "23:59:59" ;
+  to:name "ECT/DELTATERMINAL" ;
+  to:openingtime "00:00:00" ;
+  to:position <http://interop.sensorlab.tno.nl/CombinedContainers/id/GeoPosition/ECT%2FDELTATERMINAL> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited>
+  rdf:type owl:Ontology ;
+  owl:imports <http://interop.sensorlab.tno.nl/def/truckers> ;
+  owl:imports <http://interop.sensorlab.tno.nl/truckers2logico> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_103862>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/INBU%20399876%2F1> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-93> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_103890>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/YMLU%20336104%2F2> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-PN-74> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_103948>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/NYKU%20355069%2F5> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/26-BBB-6> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104021>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/APHU%20633476%2F3> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-88> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104100>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/YMLU%20359225%2F2> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/73-BDG-4> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104143>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/UNIU%20600175%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/03-BDJ-7> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104305>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAXU%20730890%2F9> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-93> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104324>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/ECMU%20426720%2F3> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/76-BBD-7> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104375>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MEDU%20217561%2F2> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-VG-82> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104378>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAIU%20367966%2F4> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-PG-06> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104429>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TTNU%20516150%2F0> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-88> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104508>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCLU%20669185%2F0> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104546>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20542224%2F1> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-93> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104568>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/PGRU%20411619%2F0> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/27-BBB-6> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104605>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MAGU%20534572%2F0> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-93> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104632>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/OOLU%20012533%2F0> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-VG-82> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104650>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCKU%20294153%2F1> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-PN-74> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104681>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TEMU%20655980%2F9> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/73-BDG-4> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104693>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20539593%2F2> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HG-28> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104708>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20891467%2F2> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/27-BBB-6> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104732>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/DRYU%20268795%2F9> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-88> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104787>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TEMU%20506723%2F4> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-VG-82> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104847>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MOFU%20071777%2F4> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104853>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MEDU%20340895%2F6> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-PG-06> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104961>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CSLU%20113599%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104983>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CONTAINER_ID> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/80-BDJ-5> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105024>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EGSU%20310398%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/90-BBD-3> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105036>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MSCU%20473912%2F4> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105145>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CONTAINER_ID> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/03-BDJ-7> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105147>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MAGU%20488848%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/03-BDJ-7> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105187>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20171880%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BDD-1> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105216>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20171963%2F4> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105228>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20172646%2F4> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BDD-1> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105237>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20172011%2F0> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105240>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20172057%2F4> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-93> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105262>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CRLU%20116279%2F5> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105297>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MAXU%20244206%2F8> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BDD-1> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105322>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HOTU%20261551%2F2> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HF-50> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105340>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/SEGU%20730835%2F5> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-PN-74> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105341>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/GLDU%20575771%2F8> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-88> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105344>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRHU%20249894%2F6> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/90-BBD-3> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105367>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CONTAINER_ID> ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20390616%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BBD-4> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105407>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HLXU%20110653%2F4> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/73-BDG-4> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105622>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TIFU%20148687%2F9> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HF-50> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105656>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/NYKU%20820578%2F9> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/76-BBD-7> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105682>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/ECMU%20931517%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105695>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EISU%20205867%2F6> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-ZX-42> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105702>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EMCU%20395188%2F6> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105722>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAIU%20320099%2F8> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-88> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105732>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/KKFU%20113089%2F8> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-BX-23> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105762>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TCNU%20948602%2F8> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/80-BDJ-5> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105797>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/EXFU%20055469%2F8> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HF-50> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106563>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MOAU%20140259%2F5> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-NG-56> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106839>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/MOAU%20058619%2F0> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-PG-06> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106863>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/BSIU%20251052%2F5> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BBD-4> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106873>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CAIU%20273424%2F2> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-ZX-42> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106881>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HGTU%20150004%2F5> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SL-55> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106898>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TNOU%20241074%2F6> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SN-33> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106933>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/KKFU%20117173%2F1> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BDD-1> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107018>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/AMFU%20892942%2F8> ;
+  to:status "BUSY" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107027>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/AMFU%20892923%2F8> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107096>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/HOTU%20161261%2F1> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-DZ-33> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107176>
+  rdf:type to:TransportActivity ;
+  to:action "Pick up" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CPSU%20106735%2F7> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107239>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/CONTAINER_ID> ;
+  to:status "FINISHED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-ZX-42> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_108351>
+  rdf:type to:TransportActivity ;
+  to:action "Depose" ;
+  to:container <http://interop.sensorlab.tno.nl/CombinedContainers/id/Container/TRLU%20584778%2F3> ;
+  to:status "NOT_EXECUTED" ;
+  to:truck <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HG-28> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Ab>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Ab" ;
+  to:lastname "Hoekwater" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Anneke>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Anneke" ;
+  to:lastname "Genderen v" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Bas>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Bas" ;
+  to:lastname "Visser" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Berry>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Berry" ;
+  to:lastname "Broek vd" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Cor>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Cor" ;
+  to:lastname "Reus d" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Daan>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Daan" ;
+  to:lastname "Otterspeer" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Edwin>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Edwin" ;
+  to:lastname "Lodder" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Erik>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Erik" ;
+  to:lastname "Balen v" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Gijs>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Gijs" ;
+  to:lastname "Keyzer d" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Harm>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Harm" ;
+  to:lastname "Vendelbosch" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Henk>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Henk" ;
+  to:lastname "Hovius" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Iwan>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Iwan" ;
+  to:lastname "Pair le" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Johan>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Johan" ;
+  to:lastname "Schild vd" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Johannes%20LAJ>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Johannes LAJ" ;
+  to:lastname "Geer vd" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/John>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "John" ;
+  to:lastname "Eck v" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Kees>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Kees" ;
+  to:lastname "Meijeren v" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Martinus>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Martinus" ;
+  to:lastname "Kreij d" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Norman>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Norman" ;
+  to:lastname "Sprock" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Robin>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Robin" ;
+  to:lastname "Bron" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Ruud>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Ruud" ;
+  to:lastname "Vos d" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Turgay>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Turgay" ;
+  to:lastname "Yolci" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Wilhelmus%20CMG>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Wilhelmus CMG" ;
+  to:lastname "Vette d" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Willem>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Willem" ;
+  to:lastname "Zevenbergen" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Wim>
+  rdf:type to:Driver ;
+  to:email "JGT" ;
+  to:firstname "Wim" ;
+  to:lastname "Exalto" ;
+  to:organization <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/01-BBD-4>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1898E1 ;
+  to:longitude 4.2476E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/01-BDD-1>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.187E1 ;
+  to:longitude 4.4136E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/03-BDJ-7>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.2142E1 ;
+  to:longitude 5.4068E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/26-BBB-6>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1862E1 ;
+  to:longitude 4.5903E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/27-BBB-6>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1984E1 ;
+  to:longitude 4.0234E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/73-BDG-4>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1953E1 ;
+  to:longitude 4.0598E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/75-BBD-7>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1868E1 ;
+  to:longitude 4.3806E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/76-BBD-7>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1876E1 ;
+  to:longitude 4.359E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/80-BDJ-5>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1868E1 ;
+  to:longitude 4.3809E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/90-BBD-3>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1941E1 ;
+  to:longitude 4.1106E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/92-BBK-8>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1897E1 ;
+  to:longitude 5.3949E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-DZ-33>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.0884E1 ;
+  to:longitude 6.9688E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-PG-06>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1871E1 ;
+  to:longitude 4.2526E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SB-88>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1877E1 ;
+  to:longitude 4.4301E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SB-92>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1953E1 ;
+  to:longitude 4.0527E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SB-93>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1954E1 ;
+  to:longitude 4.0228E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SL-55>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.187E1 ;
+  to:longitude 4.3713E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SN-33>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.082E1 ;
+  to:longitude 7.1121E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-VG-82>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1874E1 ;
+  to:longitude 4.3844E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-BX-23>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1641E1 ;
+  to:longitude 5.9252E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-HF-50>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1935E1 ;
+  to:longitude 4.0232E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-HG-28>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1923E1 ;
+  to:longitude 4.4174E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-LL-54>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1102E1 ;
+  to:longitude 5.8474E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-NG-56>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1827E1 ;
+  to:longitude 4.7851E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-PN-74>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.2794E1 ;
+  to:longitude 5.7533E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-ZX-42>
+  rdf:type to:GeoPosition ;
+  to:latitude 5.1894E1 ;
+  to:longitude 4.4766E0 ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT>
+  rdf:type to:Organization ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Ab> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Anneke> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Bas> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Berry> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Cor> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Daan> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Edwin> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Erik> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Gijs> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Harm> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Henk> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Iwan> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Johan> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Johannes%20LAJ> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/John> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Kees> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Martinus> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Norman> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Robin> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Ruud> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Turgay> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Wilhelmus%20CMG> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Willem> ;
+  to:drivers <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Wim> ;
+  to:name "JGT" ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BBD-4> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BDD-1> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/03-BDJ-7> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/26-BBB-6> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/27-BBB-6> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/73-BDG-4> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/75-BBD-7> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/76-BBD-7> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/80-BDJ-5> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/90-BBD-3> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/92-BBK-8> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-DZ-33> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-PG-06> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-88> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-93> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SL-55> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SN-33> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-VG-82> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-BX-23> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HF-50> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HG-28> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-NG-56> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-PN-74> ;
+  to:trucks <http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-ZX-42> ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BBD-4>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105367> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106863> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Gijs> ;
+  to:fuellevel 9.9E1 ;
+  to:licensenumber "01-BBD-4" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/01-BBD-4> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/01-BDD-1>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105187> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105228> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105297> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106933> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Henk> ;
+  to:fuellevel 8.8E1 ;
+  to:licensenumber "01-BDD-1" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/01-BDD-1> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/03-BDJ-7>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104143> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105145> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105147> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Anneke> ;
+  to:fuellevel 6.3E1 ;
+  to:licensenumber "03-BDJ-7" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/03-BDJ-7> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/26-BBB-6>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_103948> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Bas> ;
+  to:fuellevel 9.9E1 ;
+  to:licensenumber "26-BBB-6" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/26-BBB-6> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/27-BBB-6>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104568> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104708> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Martinus> ;
+  to:fuellevel 2.4E1 ;
+  to:licensenumber "27-BBB-6" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/27-BBB-6> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/73-BDG-4>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104100> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104681> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105407> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Ab> ;
+  to:fuellevel 1.0E2 ;
+  to:licensenumber "73-BDG-4" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/73-BDG-4> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/75-BBD-7>
+  rdf:type to:Truck ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Edwin> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "75-BBD-7" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/75-BBD-7> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/76-BBD-7>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104324> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105656> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Erik> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "76-BBD-7" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/76-BBD-7> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/80-BDJ-5>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104983> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105762> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Kees> ;
+  to:fuellevel 1.0E2 ;
+  to:licensenumber "80-BDJ-5" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/80-BDJ-5> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/90-BBD-3>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105024> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105344> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Kees> ;
+  to:fuellevel 3.4E1 ;
+  to:licensenumber "90-BBD-3" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/90-BBD-3> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/92-BBK-8>
+  rdf:type to:Truck ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Ab> ;
+  to:fuellevel 4.2E1 ;
+  to:licensenumber "92-BBK-8" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/92-BBK-8> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-DZ-33>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107096> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Cor> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-DZ-33" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-DZ-33> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-PG-06>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104378> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104853> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106839> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Johannes%20LAJ> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-PG-06" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-PG-06> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-88>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104021> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104429> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104732> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105341> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105722> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Wim> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-SB-88" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SB-88> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-92>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104508> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104847> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105036> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105237> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105682> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107027> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Ruud> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-SB-92" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SB-92> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SB-93>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_103862> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104305> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104546> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104605> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105240> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/John> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-SB-93" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SB-93> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SL-55>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106881> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Norman> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-SL-55" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SL-55> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-SN-33>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106898> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Berry> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-SN-33" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-SN-33> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BX-VG-82>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104375> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104632> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104787> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Wilhelmus%20CMG> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BX-VG-82" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BX-VG-82> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-BX-23>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105732> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Willem> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BZ-BX-23" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-BX-23> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HF-50>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105322> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105622> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105797> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Iwan> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BZ-HF-50" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-HF-50> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-HG-28>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104693> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_108351> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Harm> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BZ-HG-28" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-HG-28> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-LL-54>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104961> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105216> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105262> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105702> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107018> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107176> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Johan> ;
+  to:fuellevel 2.9E1 ;
+  to:licensenumber "BZ-LL-54" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-LL-54> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-NG-56>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106563> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Turgay> ;
+  to:fuellevel 0.0E0 ;
+  to:licensenumber "BZ-NG-56" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-NG-56> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-PN-74>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_103890> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_104650> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105340> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Robin> ;
+  to:fuellevel 9.9E1 ;
+  to:licensenumber "BZ-PN-74" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-PN-74> ;
+  to:status "Driving" ;
+.
+<http://interop.sensorlab.tno.nl/TruckersUnited/id/Truck/BZ-ZX-42>
+  rdf:type to:Truck ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_105695> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_106873> ;
+  to:activities <http://interop.sensorlab.tno.nl/TruckersUnited/id/Activity/BPA_107239> ;
+  to:driver <http://interop.sensorlab.tno.nl/TruckersUnited/id/Driver/Daan> ;
+  to:fuellevel 3.2E1 ;
+  to:licensenumber "BZ-ZX-42" ;
+  to:owner <http://interop.sensorlab.tno.nl/TruckersUnited/id/Organization/JGT> ;
+  to:position <http://interop.sensorlab.tno.nl/TruckersUnited/id/GeoPosition/BZ-ZX-42> ;
+  to:status "Driving" ;
+.
