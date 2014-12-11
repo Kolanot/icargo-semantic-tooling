@@ -9,14 +9,16 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 <http://interop.sensorlab.tno.nl/def/truckers>
-      rdf:type owl:Ontology .
+      rdf:type owl:Ontology ;
+      rdfs:comment "A simple ontology to describe road transport."^^xsd:string .
 
 :Container
       rdf:type owl:Class ;
       rdfs:label "Container "@en .
 
 :Driver
-      rdf:type owl:Class .
+      rdf:type owl:Class ;
+      rdfs:label "Driver"@en .
 
 :GeoPosition
       rdf:type owl:Class ;
@@ -28,6 +30,7 @@
 
 :Terminal
       rdf:type owl:Class ;
+      rdfs:label "Terminal"@en ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -35,13 +38,16 @@
               ] .
 
 :TerminalActivity
-      rdf:type owl:Class .
+      rdf:type owl:Class ;
+      rdfs:label "Terminal activity"@en .
 
 :TransportActivity
-      rdf:type owl:Class .
+      rdf:type owl:Class ;
+      rdfs:label "Transport activity"@en .
 
 :Truck
       rdf:type owl:Class ;
+      rdfs:label "Truck"@en ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -250,4 +256,5 @@
 
 :username
       rdf:type owl:DatatypeProperty ;
+      rdfs:label "username"@en ;
       rdfs:range xsd:string .

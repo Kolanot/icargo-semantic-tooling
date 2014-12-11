@@ -1,6 +1,7 @@
 [PrefixDeclaration]
-to:		http://interop.sensorlab.tno.nl/def/truckers#
+:		http://interop.sensorlab.tno.nl/def/truckers#
 cc:		http://interop.sensorlab.tno.nl/CombinedContainers/
+to:		http://interop.sensorlab.tno.nl/def/truckers#
 tu:		http://interop.sensorlab.tno.nl/TruckersUnited/
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -8,7 +9,7 @@ xsd:		http://www.w3.org/2001/XMLSchema#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
 
 [SourceDeclaration]
-sourceUri	Demanes
+sourceUri	TruckersUnitedDB
 connectionUrl	jdbc:mysql://intrepid.sensorlab.tno.nl:3306/demanes?sessionVariables=sql_mode='ANSI'
 username	root
 password	root
@@ -32,16 +33,17 @@ target		cc:id/Terminal/{terminalid} a to:Terminal ; to:name {terminalname} ; to:
 source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
 
 mappingId	Container
-target		cc:id/Container/{containerid} a to:Container . 
+target		cc:id/Container/{containerid} a to:Container ; to:id {containerid} . 
 source		SELECT containerid FROM activityinfo
 			UNION
 			SELECT containerid FROM activityinfohistory
 
 mappingId	Activity
-target		tu:id/Activity/{assignment} a to:TransportActivity ; to:action {action} ; to:status {planningstatus} . 
-source		SELECT assignment, action, planningstatus FROM activityinfo
+target		tu:id/Activity/{assignment} a to:TransportActivity ; to:action {action} ; to:status {planningstatus} ; to:starttime {starttime} ; to:endtime {endtime} ; to:eta {etat} . 
+source		SELECT assignment, action, planningstatus, starttime, endtime, etat FROM activityinfohistory
 			UNION
-			SELECT assignment, action, planningstatus FROM activityinfohistory
+			SELECT assignment, action, planningstatus, startdate, enddate, etat FROM activityinfo
+			
 
 mappingId	GeoPositionForTruck
 target		tu:id/GeoPosition/{truckid} a to:GeoPosition ; to:latitude {latitude} ; to:longitude {longitude} . 
