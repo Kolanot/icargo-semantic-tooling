@@ -1,48 +1,46 @@
 # baseURI: http://www.icargo.eu/def/containers
-# imports: http://interop.sensorlab.tno.nl/LogiCO
+# imports: http://tno-logistics.nl/LogiCO
 
 @prefix :        <http://www.icargo.eu/def/containers#> .
+@prefix LogiCO:  <http://tno-logistics.nl/LogiCO#> .
 @prefix ap:      <http://www.icargo.eu/example/id/> .
-@prefix logico:  <http://interop.sensorlab.tno.nl/LogiCO#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml:     <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-logico:hasLocation
+LogiCO:hasLocation
       rdf:type owl:ObjectProperty , owl:TransitiveProperty .
 
 <http://www.icargo.eu/def/containers>
       rdf:type owl:Ontology ;
-      owl:imports <http://interop.sensorlab.tno.nl/LogiCO> ;
+      owl:imports <http://tno-logistics.nl/LogiCO> ;
       owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
 
 :Container
       rdf:type owl:Class ;
       rdfs:label "Container"@en ;
-      rdfs:subClassOf logico:Container .
+      rdfs:subClassOf LogiCO:Container .
 
 :Location
       rdf:type owl:Class ;
       rdfs:label "Location "@en ;
-      rdfs:subClassOf logico:Location .
+      rdfs:subClassOf LogiCO:Location .
 
 :Ship
       rdf:type owl:Class ;
       rdfs:label "Ship "@en ;
-      rdfs:subClassOf logico:Vessel .
+      rdfs:subClassOf LogiCO:Vessel .
 
 :Truck
       rdf:type owl:Class ;
       rdfs:label "Truck "@en ;
-      rdfs:subClassOf logico:Truck .
+      rdfs:subClassOf LogiCO:Truck .
 
 :hasName
       rdf:type owl:DatatypeProperty ;
-      rdfs:domain logico:Entity ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf logico:hasCode .
+      rdfs:subPropertyOf LogiCO:hasName .
 
 :size
       rdf:type owl:DatatypeProperty ;
