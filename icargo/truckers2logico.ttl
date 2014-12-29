@@ -2,54 +2,56 @@
 # imports: http://interop.sensorlab.tno.nl/def/truckers
 # imports: http://ontology.tno.nl/logiserv
 
-@prefix :        <http://interop.sensorlab.tno.nl/truckers2logico#> .
+@prefix LogiCO:  <http://ontology.tno.nl/logico#> .
+@prefix LogiServ:  <http://ontology.tno.nl/logiserv#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix t2l:     <http://interop.sensorlab.tno.nl/truckers2logico#> .
 @prefix to:      <http://interop.sensorlab.tno.nl/def/truckers#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 to:Container
-      rdfs:subClassOf <http://ontology.tno.nl/logico#Container> .
+      rdfs:subClassOf LogiCO:Container .
 
 to:Driver
-      rdfs:subClassOf <http://ontology.tno.nl/logico#Actor> .
+      rdfs:subClassOf LogiCO:Actor .
 
 to:GeoPosition
-      rdfs:subClassOf <http://ontology.tno.nl/logico#GeoPoint> .
+      rdfs:subClassOf LogiCO:GeoPoint .
 
 to:Organization
-      rdfs:subClassOf <http://ontology.tno.nl/logico#Actor> .
+      rdfs:subClassOf LogiCO:Actor .
 
 to:Terminal
-      rdfs:subClassOf <http://ontology.tno.nl/logico#Terminal> .
+      rdfs:subClassOf LogiCO:Terminal .
 
 to:TerminalActivity
-      rdfs:subClassOf <http://ontology.tno.nl/logiserv#Activity> .
+      rdfs:subClassOf LogiServ:Activity .
 
 to:TransportActivity
-      rdfs:subClassOf <http://ontology.tno.nl/logiserv#Transport> .
+      rdfs:subClassOf LogiServ:Transport .
 
 to:Truck
-      rdfs:subClassOf <http://ontology.tno.nl/logico#Truck> .
+      rdfs:subClassOf LogiCO:Truck .
 
 to:container
-      rdfs:subPropertyOf <http://ontology.tno.nl/logiserv#involves> .
+      rdfs:subPropertyOf LogiServ:involves .
 
 to:description
-      rdfs:subPropertyOf <http://ontology.tno.nl/logico#hasDescription> .
+      rdfs:subPropertyOf LogiCO:hasDescription .
 
 to:email
-      rdfs:subPropertyOf <http://ontology.tno.nl/logico#hasEmail> .
+      rdfs:subPropertyOf LogiCO:hasEmail .
 
 to:firstname
-      rdfs:subPropertyOf <http://ontology.tno.nl/logico#hasName> .
+      rdfs:subPropertyOf LogiCO:hasName .
 
 to:id
-      rdfs:subPropertyOf <http://ontology.tno.nl/logico#hasIDValue> .
+      rdfs:subPropertyOf LogiCO:hasIDValue .
 
 to:lastname
-      rdfs:subPropertyOf <http://ontology.tno.nl/logico#hasName> .
+      rdfs:subPropertyOf LogiCO:hasName .
 
 to:latitude
       rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
@@ -58,19 +60,19 @@ to:longitude
       rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
 
 to:name
-      rdfs:subPropertyOf <http://ontology.tno.nl/logico#hasName> .
+      rdfs:subPropertyOf LogiCO:hasName .
 
 to:position
       rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
 
 to:status
-      rdfs:subPropertyOf <http://ontology.tno.nl/logico#hasStatus> .
+      rdfs:subPropertyOf LogiCO:hasStatus .
 
 to:terminal
-      rdfs:subPropertyOf <http://ontology.tno.nl/logiserv#involves> .
+      rdfs:subPropertyOf LogiServ:involves .
 
 to:truck
-      rdfs:subPropertyOf <http://ontology.tno.nl/logiserv#involves> .
+      rdfs:subPropertyOf LogiServ:involves .
 
 <http://interop.sensorlab.tno.nl/truckers2logico>
       rdf:type owl:Ontology ;

@@ -10,10 +10,10 @@ rdfs:		http://www.w3.org/2000/01/rdf-schema#
 
 [SourceDeclaration]
 sourceUri	TruckersUnitedDB
-connectionUrl	jdbc:mysql://intrepid.sensorlab.tno.nl:3306/demanes?sessionVariables=sql_mode='ANSI'
-username	root
-password	root
-driverClass	com.mysql.jdbc.Driver
+connectionUrl	jdbc:postgresql://interop.sensorlab.tno.nl:5432/truckersunited
+username	postgres
+password	interop
+driverClass	org.postgresql.Driver
 
 [MappingDeclaration] @collection [[
 mappingId	Driver
@@ -35,15 +35,10 @@ source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminali
 mappingId	Container
 target		cc:id/Container/{containerid} a to:Container ; to:id {containerid} . 
 source		SELECT containerid FROM activityinfo
-			UNION
-			SELECT containerid FROM activityinfohistory
 
 mappingId	Activity
 target		tu:id/Activity/{assignment} a to:TransportActivity ; to:action {action} ; to:status {planningstatus} ; to:starttime {starttime} ; to:endtime {endtime} ; to:eta {etat} . 
-source		SELECT assignment, action, planningstatus, starttime, endtime, etat FROM activityinfohistory
-			UNION
-			SELECT assignment, action, planningstatus, startdate, enddate, etat FROM activityinfo
-			
+source		SELECT assignment, action, planningstatus, starttime, endtime, etat FROM activityinfo
 
 mappingId	GeoPositionForTruck
 target		tu:id/GeoPosition/{truckid} a to:GeoPosition ; to:latitude {latitude} ; to:longitude {longitude} . 
@@ -63,12 +58,10 @@ source		SELECT truckid, owner, username FROM truckinfo
 
 mappingId	Terminal-relations
 target		cc:id/Terminal/{terminalid} to:position cc:id/GeoPosition/{terminalid} . 
-source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
+source		SELECT terminalid FROM terminalinfo
 
 mappingId	Activity-relations
-target		tu:id/Activity/{assignment} to:truck tu:id/Truck/{licenseplatenumber} ; to:container cc:id/Container/{containerid} . 
+target		tu:id/Activity/{assignment} to:truck tu:id/Truck/{licenseplatenumber} ; to:container cc:id/Container/{containerid} ; to:terminal cc:id/Terminal/{terminalid} . 
 source		SELECT assignment, licenseplatenumber, containerid, terminalid  FROM activityinfo
-			UNION
-			SELECT assignment, licenseplatenumber, containerid, terminalid  FROM activityinfohistory 
 ]]
 
