@@ -1,0 +1,108 @@
+## What: TruckersUnited demo
+## Project: iCargo
+## Author: Maarten Steen, TNO
+
+# Requirements
+On server:
+- PostgreSQL database server (www.postgresql.org) 
+- Postgres JDBC driver (jdbc.postgresql.org)
+- Ontowiki with Virtuoso Opensource as backend (www.ontowiki.net)
+- ontop Quest with openrdf Sesame and Workbench in Jetty app server (https://github.com/ontop/ontop/wiki/ObdalibQuestSesameInstall)
+
+On development machine:
+- pgAdmin to manage PostgreSQL (www.pgadmin.org) 
+- Postgres JDBC driver (jdbc.postgresql.org)
+- Protege with ontopPro plugin (ontop.inf.unibz.it/?page_id=2)
+- TopBraid Composer (www.topquadrant.com/downloads/)
+
+# Demo Data
+The randomly generated, and therefore anonymous data, for the TruckersUnited demo is contained within a Postgres database backup file (TruckersUnitedDB.backup). This file can be used to restore the TruckersUnited database is an arbitrary Postgres installation. For your convenience it is hosted and accessible on the interop.sensorlab.tno.nl:5432 database server at TNO.
+
+The demo data has been generated using Excel (see TruckersUnitedDemoData.xlsx), after which each table was exported to CSV and converted to UTF8-encoding. These CSV files are also included as userinfo.csv, truckinfo.csv, terminalinfo.csv and activityinfo.csv.
+
+Use pgAdmin to restore the TruckersUnitedDB.backup to your own PostgreSQL server or access it on interop.sensorlab.tno.nl:5432. Ask TNO for credentials to access the database.
+
+# Create ontology
+Start TopBraid Composer.
+Import logistics ontology project from Git: https://github.com/danielelm/tno.git
+Import container ontology project from Git: https://github.com/m-steen/icargo-semantic-tooling.git
+Edit/Visualize truckers.ttl and other ontologies as desired.
+In truckers2logico.ttl the mapping to LogiCO and LogiServ is specified.
+Copy truckers.ttl, truckers.obda, truckers.q, LogiCO.ttl, LogiServ.ttl to a directory where Protege can access them.
+
+# Map database to the ontology
+Start Protege.
+(In Preferences configure the PostgreSQL JDBC Driver.)
+Open truckers.ttl ontology, the truckers.obda mapping file and truckers.q query file are automatically loaded as well.  
+If necessary, help Protege to locate LogiCO.ttl in local filesystem.
+
+Go to ontop Mappings Tab in Protege.
+Check/update database mappings.
+
+# Test mappings by querying data in Protege
+Go to ontop Sparql Tab in Protege.
+Start the Quest reasoner.
+Try some queries, for example:
+
+PREFIX : <http://interop.sensorlab.tno.nl/def/truckers#>
+PREFIX to: <http://interop.sensorlab.tno.nl/def/truckers#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX tu: <http://interop.sensorlab.tno.nl/TruckersUnited/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cc: <http://interop.sensorlab.tno.nl/CombinedContainers/>
+
+SELECT ?truck ?fname ?lname
+WHERE {
+	?t a :Truck ; :licensenumber ?truck ; :driver ?d .
+	?d :firstname ?fname ; :lastname ?lname .
+} ORDER BY ?truck
+
+# Materialize the dataset in RDF
+In Protege, select ontop->Import data from mappings...
+Choose Write individuals to file in format TTL.
+Add the following prefix declarations at the beginning of the file:
+========================================================================
+# baseURI: http://interop.sensorlab.tno.nl/TruckersUnited/
+# imports: http://interop.sensorlab.tno.nl/def/truckers
+# imports: http://interop.sensorlab.tno.nl/truckers2logico
+
+@prefix tu:      <http://interop.sensorlab.tno.nl/TruckersUnited/> .
+@prefix cc:      <http://interop.sensorlab.tno.nl/CombinedContainers/> .
+@prefix to:      <http://interop.sensorlab.tno.nl/def/truckers#> .
+@prefix t2l:     <http://interop.sensorlab.tno.nl/truckers2logico#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://interop.sensorlab.tno.nl/TruckersUnited/>
+      rdf:type owl:Ontology ;
+      rdfs:comment "The Truckers United dataset."^^xsd:string ;
+      owl:imports <http://interop.sensorlab.tno.nl/def/truckers> , <http://interop.sensorlab.tno.nl/truckers2logico> .
+========================================================================
+Now you have a file with the dataset in RDF.
+
+# Upload dataset to RDF triple store
+Surf to Web interface of Ontowiki at http://interop.sensorlab.tno.nl/ 
+Log in to Ontowiki as Administrator (Admin/1nter0perability!).
+Create a new Knowledge Base with Title: "TruckersUnited" and URI: "http://interop.sensorlab.tno.nl/TruckersUnited/".
+Upload the dataset (RDF file in Turtle format).
+Add data to knowledge base; upload the following ontology files:
+- truckers.ttl
+- truckers2logico.ttl (only if you want to be able to query the dataset using LogiCO concepts)
+
+The result is an Access Point management interface where you can browse, update, delete and query the dataset.
+However, the data is semi-static in this scenario. You can manually change the data, but live updates from the trucks are not automatically propagated.
+
+# Create virtual RDF repository in OpenRDF Workbench
+(using ontop Quest and mappings)
+Copy the ontology (truckers.ttl) and the mapping file (truckers.obda) to the server.
+Surf to OpenRDF Workbench Web interface at http://interop.sensorlab.tno.nl:8080/openrdf-workbench/
+Create a new repository with Type: Ontop Virtual RDF Store, 
+and use the ontology and mapping file to configure the repository.
+
+# Access data as Linked Data at SPARQL endpoint
+We now have SPARQL endpoint available at: http://interop.sensorlab.tno.nl:8080/openrdf-sesame/repositories/TruckersUnited
+With a REST client you can send queries according to the protocol specified at http://rdf4j.org/sesame/2.7/docs/system.docbook?view#The_Sesame_REST_HTTP_Protocol

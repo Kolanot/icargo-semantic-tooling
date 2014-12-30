@@ -1,0 +1,67 @@
+[PrefixDeclaration]
+:		http://interop.sensorlab.tno.nl/def/truckers#
+cc:		http://interop.sensorlab.tno.nl/CombinedContainers/
+to:		http://interop.sensorlab.tno.nl/def/truckers#
+tu:		http://interop.sensorlab.tno.nl/TruckersUnited/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[SourceDeclaration]
+sourceUri	TruckersUnitedDB
+connectionUrl	jdbc:postgresql://interop.sensorlab.tno.nl:5432/truckersunited
+username	postgres
+password	interop
+driverClass	org.postgresql.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	Driver
+target		tu:id/Driver/{username} a to:Driver ; to:firstname {firstname} ; to:lastname {lastname} ; to:email {email} . 
+source		SELECT username, firstname, lastname, email FROM userinfo
+
+mappingId	Organization
+target		tu:id/Organization/{organization} a to:Organization ; to:name {organization} . 
+source		SELECT DISTINCT organization FROM userinfo
+
+mappingId	Truck
+target		tu:id/Truck/{truckid} a to:Truck ; to:licensenumber {licensenumber} ; to:fuellevel {fuellevel} ; to:status {currentactivity} . 
+source		SELECT truckid, licensenumber, fuellevel, currentactivity FROM truckinfo
+
+mappingId	Terminal
+target		cc:id/Terminal/{terminalid} a to:Terminal ; to:name {terminalname} ; to:openingtime {openingtime} ; to:closingtime {closingtime} . 
+source		SELECT terminalid, terminalname, openingtime, closingtime FROM terminalinfo
+
+mappingId	Container
+target		cc:id/Container/{containerid} a to:Container ; to:id {containerid} . 
+source		SELECT containerid FROM activityinfo
+
+mappingId	Activity
+target		tu:id/Activity/{assignment} a to:TransportActivity ; to:action {action} ; to:status {planningstatus} ; to:starttime {starttime} ; to:endtime {endtime} ; to:eta {etat} . 
+source		SELECT assignment, action, planningstatus, starttime, endtime, etat FROM activityinfo
+
+mappingId	GeoPositionForTruck
+target		tu:id/GeoPosition/{truckid} a to:GeoPosition ; to:latitude {latitude} ; to:longitude {longitude} . 
+source		SELECT truckid, latitude, longitude  FROM truckinfo
+
+mappingId	GeoPositionForTerminal
+target		cc:id/GeoPosition/{terminalid} a to:GeoPosition ; to:latitude {latitude} ; to:longitude {longitude} . 
+source		SELECT terminalid, latitude, longitude  FROM terminalinfo
+
+mappingId	Driver-relations
+target		tu:id/Driver/{username} to:organization tu:id/Organization/{organization} . 
+source		SELECT username, organization FROM userinfo
+
+mappingId	Truck-relations
+target		tu:id/Truck/{truckid} to:owner tu:id/Organization/{owner} ; to:driver tu:id/Driver/{username} ; to:position tu:id/GeoPosition/{truckid} . 
+source		SELECT truckid, owner, username FROM truckinfo
+
+mappingId	Terminal-relations
+target		cc:id/Terminal/{terminalid} to:position cc:id/GeoPosition/{terminalid} . 
+source		SELECT terminalid FROM terminalinfo
+
+mappingId	Activity-relations
+target		tu:id/Activity/{assignment} to:truck tu:id/Truck/{licenseplatenumber} ; to:container cc:id/Container/{containerid} ; to:terminal cc:id/Terminal/{terminalid} . 
+source		SELECT assignment, licenseplatenumber, containerid, terminalid  FROM activityinfo
+]]
+
