@@ -1,0 +1,49 @@
+## What: small POC ontop demo
+## Project: iCargo
+## Author: Maarten Steen, TNO
+
+# Requirements:
+- PostgreSQL database server (www.postgresql.org) 
+- pgAdmin to manage PostgreSQL (www.pgadmin.org) 
+- Postgres JDBC driver (jdbc.postgresql.org) 
+- Alternatively use H2 database (www.h2database.com) 
+- Protege with ontopPro plugin (ontop.inf.unibz.it/?page_id=2)
+- TopBraid Composer (www.topquadrant.com/downloads/)
+
+# Demo Data
+In pgAdmin connect to the PostgreSQL database server.
+In pgAdmin create icargo database.
+In pgAdmin use 'demo.sql' script to create and fill tables.
+
+# Create an ontology
+Start TopBraid Composer:
+Import logistics ontology project from Git: https://github.com/danielelm/tno.git
+Import container ontology project from Git: https://github.com/m-steen/icargo-semantic-tooling.git
+Edit/Visualize containers.ttl and other ontologies as desired.
+Copy containers.ttl, containers.obda, containers.q, LogiCO.ttl to a directory where Protege can access them.
+
+# Map database to the ontology
+Start Protege.
+(In Preferences configure the PostgreSQL JDBC Driver.)
+Open containers.ttl ontology 
+If necessary, help Protege to locate LogiCO.ttl in local filesystem.
+
+Go to ontop Mappings Tab in Protege.
+Check/update database mappings.
+
+# Query data as Linked Data
+Go to ontop Sparql Tab in Protege.
+Try some queries, for example:
+
+PREFIX : <http://www.icargo.eu/containers/def#>
+PREFIX ap: <http://www.icargo.eu/example/id/>
+PREFIX LogiCO: <http://tno-logistics.nl/LogiCO#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?c ?ld WHERE {
+?c a :Container. ?l a :Location. ?l LogiCO:hasName ?ld.
+{ ?c LogiCO:hasLocation ?l }
+UNION
+{ ?c LogiCO:isMovedBy ?t. ?t LogiCO:hasLocation ?l}
+}
+
